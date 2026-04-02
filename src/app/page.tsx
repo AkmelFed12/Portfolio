@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     title: 'Ladji Moussa OUATTARA | Portfolio',
     description:
       'BS Computer Science student, full-stack learner, and available for internship opportunities in 2026.',
-    images: ['/og-portfolio.svg'],
+    images: ['/og-home.svg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ladji Moussa OUATTARA | Portfolio',
     description:
       'BS Computer Science student, full-stack learner, and available for internship opportunities in 2026.',
-    images: ['/og-portfolio.svg'],
+    images: ['/og-home.svg'],
   },
 };
 

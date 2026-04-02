@@ -1,4 +1,5 @@
-'use client';
+import DownloadResumeButton from '@/components/DownloadResumeButton';
+import PrintResumeButton from '@/components/PrintResumeButton';
 
 export default function Resume() {
   return (
@@ -19,16 +20,7 @@ export default function Resume() {
           <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
             <h3 className="text-2xl font-bold mb-2 text-blue-600 dark:text-blue-400">Download</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-4">Get my resume as a PDF</p>
-            <a
-              href="/CV_LADJI_MOUSSA_OUATTARA.pdf"
-              download
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-              Download PDF
-            </a>
+            <DownloadResumeButton />
           </div>
 
           <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
@@ -48,15 +40,7 @@ export default function Resume() {
           <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
             <h3 className="text-2xl font-bold mb-2 text-blue-600 dark:text-blue-400">Print</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-4">Print this page</p>
-            <button
-              onClick={() => window.print()}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded transition"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-              </svg>
-              Print
-            </button>
+            <PrintResumeButton />
           </div>
         </div>
 

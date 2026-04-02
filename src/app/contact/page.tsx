@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from 'react';
 import ResumeDownload from '@/components/ResumeDownload';
+import { trackEvent } from '@/lib/analytics';
 
 
 export default function Contact() {
@@ -31,6 +32,10 @@ export default function Contact() {
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
+    trackEvent('contact_form_submit_whatsapp', {
+      source: 'contact_page',
+      has_email: Boolean(formData.email),
+    });
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);

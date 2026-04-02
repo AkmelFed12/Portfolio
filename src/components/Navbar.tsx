@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,6 +53,7 @@ export default function Navbar() {
             <a
               href="/CV_LADJI_MOUSSA_OUATTARA.pdf"
               download
+              onClick={() => trackEvent('resume_download', { source: 'navbar_desktop' })}
               className="px-3 py-2 rounded-md text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition"
             >
               Download CV
@@ -104,6 +106,7 @@ export default function Navbar() {
             <a
               href="/CV_LADJI_MOUSSA_OUATTARA.pdf"
               download
+              onClick={() => trackEvent('resume_download', { source: 'navbar_mobile' })}
               className="block px-3 py-2 rounded text-center text-white bg-blue-600 hover:bg-blue-700 transition"
             >
               Download CV

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'Projects | Ladji Moussa OUATTARA',
     description:
       'Selected projects including ASAA Portal, MyFinance LMO, and Barakatrack by Ladji Moussa OUATTARA.',
-    images: ['/og-portfolio.svg'],
+    images: ['/og-projects.svg'],
   },
 };
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Services | Ladji Moussa OUATTARA',
     description: 'Portfolio websites, full-stack apps, landing pages, and maintenance services.',
-    images: ['/og-portfolio.svg'],
+    images: ['/og-services.svg'],
   },
 };
 

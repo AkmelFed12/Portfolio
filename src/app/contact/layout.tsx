@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact | Ladji Moussa OUATTARA',
     description: 'Reach out via WhatsApp, email, and phone for project inquiries.',
-    images: ['/og-portfolio.svg'],
+    images: ['/og-contact.svg'],
   },
 };
 
