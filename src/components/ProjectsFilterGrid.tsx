@@ -102,17 +102,18 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
       </div>
 
       <div key={filter} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
-        {filteredProjects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            tech={project.tech}
-            link={project.link}
-            github={project.github}
-            image={project.image}
-            mobileImage={project.mobileImage}
-          />
+        {filteredProjects.map((project, index) => (
+          <div key={project.id} className={`stagger-item-${(index % 6) + 1}`}>
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              tech={project.tech}
+              link={project.link}
+              github={project.github}
+              image={project.image}
+              mobileImage={project.mobileImage}
+            />
+          </div>
         ))}
       </div>
     </div>
