@@ -3,6 +3,11 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Services',
   description: 'Web services offered by Ladji Moussa OUATTARA including websites, dashboards, and maintenance.',
+  openGraph: {
+    title: 'Services | Ladji Moussa OUATTARA',
+    description: 'Portfolio websites, full-stack apps, landing pages, and maintenance services.',
+    images: ['/og-portfolio.svg'],
+  },
 };
 
 export default function ServicesPage() {

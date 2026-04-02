@@ -6,7 +6,20 @@ import { getProjectsPublic } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Home',
-  description: 'Portfolio homepage of Ladji Moussa OUATTARA, BS Computer Science student and full-stack learner.',
+  description: 'Portfolio homepage of Ladji Moussa OUATTARA, BS Computer Science student, full-stack learner, and internship-ready developer in 2026.',
+  openGraph: {
+    title: 'Ladji Moussa OUATTARA | Portfolio',
+    description:
+      'BS Computer Science student, full-stack learner, and available for internship opportunities in 2026.',
+    images: ['/og-portfolio.svg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ladji Moussa OUATTARA | Portfolio',
+    description:
+      'BS Computer Science student, full-stack learner, and available for internship opportunities in 2026.',
+    images: ['/og-portfolio.svg'],
+  },
 };
 
 type HomePageProps = {
@@ -35,6 +48,11 @@ export default async function Home({ searchParams }: HomePageProps) {
           goal1: 'Contribuer a des fonctionnalites frontend/backend en environnement reel.',
           goal2: 'Renforcer les bonnes pratiques: qualite, architecture, collaboration Git.',
           goal3: 'Developper une vraie rigueur d\'ingenierie logicielle orientee impact.',
+          internshipTitle: 'Disponible pour un stage en 2026',
+          internshipText:
+            "Ouvert aux opportunites de stage pour contribuer sur de vrais produits et progresser aux cotes d'une equipe experimentee.",
+          internshipCta1: 'Me contacter',
+          internshipCta2: 'Telecharger CV',
           techTitle: 'Technologies que j\'utilise le plus',
           techSubtitle: 'Stack principale en pratique quotidienne',
           badge1: 'Diplome prevu: 2028',
@@ -55,6 +73,11 @@ export default async function Home({ searchParams }: HomePageProps) {
           goal1: 'Contribute to real frontend and backend features in production workflows.',
           goal2: 'Strengthen engineering habits: code quality, architecture, and Git collaboration.',
           goal3: 'Grow as a disciplined learner with measurable impact on real projects.',
+          internshipTitle: 'Available for Internship 2026',
+          internshipText:
+            'Open to internship opportunities where I can contribute to real product development while learning from experienced engineers.',
+          internshipCta1: 'Contact Me',
+          internshipCta2: 'Download CV',
           techTitle: 'Tech I Use Most',
           techSubtitle: 'Primary stack I use in day-to-day project delivery',
           badge1: 'Expected Graduation: 2028',
@@ -137,6 +160,30 @@ export default async function Home({ searchParams }: HomePageProps) {
             <li className="bg-white/15 rounded-lg p-4">{t.goal2}</li>
             <li className="bg-white/15 rounded-lg p-4">{t.goal3}</li>
           </ul>
+        </div>
+      </section>
+
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="rounded-2xl border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-950/40 p-6 sm:p-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-blue-800 dark:text-blue-300">
+            {t.internshipTitle}
+          </h2>
+          <p className="text-blue-900 dark:text-blue-200 mb-5">{t.internshipText}</p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href={lang === 'fr' ? '/contact?lang=fr' : '/contact'}
+              className="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition"
+            >
+              {t.internshipCta1}
+            </Link>
+            <a
+              href="/CV_LADJI_MOUSSA_OUATTARA.pdf"
+              download
+              className="px-5 py-2.5 rounded-lg border border-blue-600 text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 font-semibold transition"
+            >
+              {t.internshipCta2}
+            </a>
+          </div>
         </div>
       </section>
 

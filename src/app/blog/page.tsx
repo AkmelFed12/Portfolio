@@ -5,6 +5,11 @@ import { getBlogPosts } from '@/lib/content';
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'Articles from Ladji Moussa OUATTARA about learning, projects, and practical web development.',
+  openGraph: {
+    title: 'Blog | Ladji Moussa OUATTARA',
+    description: 'Articles about project delivery, learning strategy, and full-stack development.',
+    images: ['/og-portfolio.svg'],
+  },
 };
 
 export default async function Blog() {

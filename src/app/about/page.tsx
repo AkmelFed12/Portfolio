@@ -5,6 +5,11 @@ import JourneyTimeline from '@/components/JourneyTimeline';
 export const metadata: Metadata = {
   title: 'About',
   description: 'About Ladji Moussa OUATTARA, BS Computer Science student and project-based full-stack learner.',
+  openGraph: {
+    title: 'About | Ladji Moussa OUATTARA',
+    description: 'Education, timeline, and project-based learning journey of Ladji Moussa OUATTARA.',
+    images: ['/og-portfolio.svg'],
+  },
 };
 
 type AboutPageProps = {

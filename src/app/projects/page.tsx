@@ -5,6 +5,12 @@ import { getProjectsPublic } from '@/lib/content';
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'Selected projects by Ladji Moussa OUATTARA including ASAA Portal, MyFinance LMO, and Barakatrack.',
+  openGraph: {
+    title: 'Projects | Ladji Moussa OUATTARA',
+    description:
+      'Selected projects including ASAA Portal, MyFinance LMO, and Barakatrack by Ladji Moussa OUATTARA.',
+    images: ['/og-portfolio.svg'],
+  },
 };
 
 type ProjectsPageProps = {
