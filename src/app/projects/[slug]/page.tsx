@@ -103,6 +103,7 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
       impact: ['Delivered a usable product', 'Improved engineering discipline', 'Created portfolio-ready output'],
       next: 'Continue improving product quality based on user feedback.',
     };
+  const relatedProjects = projects.filter((item) => item.slug !== slug).slice(0, 2);
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -174,6 +175,25 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
           </a>
         )}
       </div>
+
+      {relatedProjects.length > 0 && (
+        <section className="mt-14">
+          <h2 className="text-2xl font-bold mb-4">Related Projects</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {relatedProjects.map((item) => (
+              <Link
+                key={item.slug}
+                href={`/projects/${item.slug}`}
+                className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 hover:border-blue-500 transition"
+              >
+                <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{item.title}</h3>
+                <p className="text-sm text-gray-700 dark:text-gray-300">{item.description}</p>
+                <p className="mt-3 text-sm font-semibold text-blue-600 dark:text-blue-400">Read Case Study →</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
