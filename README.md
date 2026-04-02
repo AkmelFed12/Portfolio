@@ -156,6 +156,22 @@ This project is open source and available under the MIT License.
 
 For questions or suggestions, please reach out through the contact page.
 
+## KPI Notes (GA4)
+
+Track these conversion events weekly:
+
+- `whatsapp_click`: visitors opening a direct WhatsApp conversation.
+- `contact_form_submit_whatsapp`: visitors submitting the portfolio contact form and redirecting to WhatsApp.
+- `resume_download`: recruiters or visitors downloading the CV.
+- `resume_print`: high-intent visitors printing the resume page.
+
+Suggested early targets:
+
+- `whatsapp_click`: >= 3% of sessions.
+- `contact_form_submit_whatsapp`: >= 1.5% of sessions.
+- `resume_download`: >= 2% of sessions.
+- `resume_print`: at least a few actions per month.
+
 ---
 
 **Built with ❤️ using Next.js**

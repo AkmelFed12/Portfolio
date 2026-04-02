@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ProjectCard from '@/components/ProjectCard';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import TrackedWhatsAppButton from '@/components/TrackedWhatsAppButton';
 import { getProjectsPublic } from '@/lib/content';
 
 export const metadata: Metadata = {
@@ -40,6 +41,7 @@ export default async function Home({ searchParams }: HomePageProps) {
             "Je construis des projets full-stack utiles qui repondent a des besoins reels, avec un focus sur la clarte, la fiabilite backend et l'amelioration continue.",
           ctaWork: 'Voir mes projets',
           ctaContact: 'Me contacter',
+          ctaWhatsApp: 'WhatsApp Direct',
           featured: 'Projets Phares',
           viewAll: 'Voir tous les projets',
           goals: 'Objectifs de Stage (2026 - 2028)',
@@ -53,6 +55,7 @@ export default async function Home({ searchParams }: HomePageProps) {
             "Ouvert aux opportunites de stage pour contribuer sur de vrais produits et progresser aux cotes d'une equipe experimentee.",
           internshipCta1: 'Me contacter',
           internshipCta2: 'Telecharger CV',
+          internshipCta3: 'Discuter sur WhatsApp',
           techTitle: 'Technologies que j\'utilise le plus',
           techSubtitle: 'Stack principale en pratique quotidienne',
           badge1: 'Diplome prevu: 2028',
@@ -65,6 +68,7 @@ export default async function Home({ searchParams }: HomePageProps) {
             'Building practical full-stack projects that solve real community needs, with strong focus on clean UX, backend reliability, and continuous improvement.',
           ctaWork: 'View My Work',
           ctaContact: 'Get In Touch',
+          ctaWhatsApp: 'WhatsApp Direct',
           featured: 'Featured Projects',
           viewAll: 'View All Projects',
           goals: 'Internship Goals (2026 - 2028)',
@@ -78,6 +82,7 @@ export default async function Home({ searchParams }: HomePageProps) {
             'Open to internship opportunities where I can contribute to real product development while learning from experienced engineers.',
           internshipCta1: 'Contact Me',
           internshipCta2: 'Download CV',
+          internshipCta3: 'Chat on WhatsApp',
           techTitle: 'Tech I Use Most',
           techSubtitle: 'Primary stack I use in day-to-day project delivery',
           badge1: 'Expected Graduation: 2028',
@@ -120,6 +125,11 @@ export default async function Home({ searchParams }: HomePageProps) {
             >
               {t.ctaContact}
             </Link>
+            <TrackedWhatsAppButton
+              label={t.ctaWhatsApp}
+              source="hero_primary_cta"
+              className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition transform hover:scale-105"
+            />
           </div>
         </div>
       </section>
@@ -183,6 +193,11 @@ export default async function Home({ searchParams }: HomePageProps) {
             >
               {t.internshipCta2}
             </a>
+            <TrackedWhatsAppButton
+              label={t.internshipCta3}
+              source="internship_section_cta"
+              className="px-5 py-2.5 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold transition"
+            />
           </div>
         </div>
       </section>

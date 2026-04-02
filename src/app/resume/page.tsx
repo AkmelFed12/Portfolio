@@ -1,5 +1,6 @@
 import DownloadResumeButton from '@/components/DownloadResumeButton';
 import PrintResumeButton from '@/components/PrintResumeButton';
+import ResumeInternshipCTA from '@/components/ResumeInternshipCTA';
 
 export default function Resume() {
   return (
@@ -43,6 +44,7 @@ export default function Resume() {
             <PrintResumeButton />
           </div>
         </div>
+        <ResumeInternshipCTA />
 
         <div id="resume-content" className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-12 print:shadow-none print:p-0">
           {/* Header */}
