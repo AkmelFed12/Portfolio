@@ -82,11 +82,26 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
         ))}
       </div>
 
-      <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
-        {labels.showing}: {filteredProjects.length}
-      </p>
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-gray-800 px-4 py-2">
+          <span className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+            Filter
+          </span>
+          <span className="text-sm font-semibold text-gray-900 dark:text-white">
+            {buttons.find((btn) => btn.key === filter)?.label}
+          </span>
+        </div>
+        <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 dark:bg-blue-950/40 px-4 py-2 border border-blue-200 dark:border-blue-900 animate-fade-in">
+          <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">
+            {labels.showing}
+          </span>
+          <span className="inline-flex min-w-8 justify-center rounded-full bg-blue-600 px-2 py-0.5 text-xs font-bold text-white">
+            {filteredProjects.length}
+          </span>
+        </div>
+      </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div key={filter} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
         {filteredProjects.map((project) => (
           <ProjectCard
             key={project.id}
