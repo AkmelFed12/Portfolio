@@ -32,6 +32,7 @@ export default async function Home({ searchParams }: HomePageProps) {
   const lang = params?.lang === 'fr' ? 'fr' : 'en';
   const projects = await getProjectsPublic();
   const featuredProjects = projects.slice(0, 3);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lmoportfolio.vercel.app';
 
   const t =
     lang === 'fr'
@@ -90,8 +91,42 @@ export default async function Home({ searchParams }: HomePageProps) {
           badge3: 'Open to Collaboration',
         };
 
+  const personJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Ladji Moussa OUATTARA',
+    url: siteUrl,
+    jobTitle: 'BS Computer Science Student | Full-Stack Learner',
+    email: 'mailto:ouattaralm12@gmail.com',
+    telephone: '+2250574724233',
+    sameAs: [
+      'https://github.com/AkmelFed12',
+      'https://www.linkedin.com/in/ladji-moussa-ouattara-8b5778298',
+    ],
+  };
+
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Ladji Moussa OUATTARA Portfolio',
+    url: siteUrl,
+    inLanguage: 'en',
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personJsonLd).replace(/</g, '\\u003c'),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteJsonLd).replace(/</g, '\\u003c'),
+        }}
+      />
       <section className="min-h-[60vh] bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-black dark:to-gray-900 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
           <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 animate-slide-down">
