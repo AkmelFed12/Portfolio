@@ -8,8 +8,10 @@ interface GiscusCommentsProps {
 
 export default function GiscusComments({ mapping = 'pathname' }: GiscusCommentsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const isEnabled = process.env.NEXT_PUBLIC_GISCUS_ENABLED === 'true';
 
   useEffect(() => {
+    if (!isEnabled) return;
     if (!containerRef.current) return;
     if (containerRef.current.childElementCount > 0) return;
 
@@ -37,13 +39,21 @@ export default function GiscusComments({ mapping = 'pathname' }: GiscusCommentsP
     script.setAttribute('data-lang', 'en');
 
     containerRef.current.appendChild(script);
-  }, [mapping]);
+  }, [mapping, isEnabled]);
 
   const configured =
     process.env.NEXT_PUBLIC_GISCUS_REPO &&
     process.env.NEXT_PUBLIC_GISCUS_REPO_ID &&
     process.env.NEXT_PUBLIC_GISCUS_CATEGORY &&
     process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID;
+
+  if (!isEnabled) {
+    return (
+      <div className="rounded-lg border border-gray-200 dark:border-gray-800 p-6 text-center text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900">
+        Discussion is currently disabled. You can still share feedback via WhatsApp or Contact page.
+      </div>
+    );
+  }
 
   if (!configured) {
     return (
@@ -55,4 +65,3 @@ export default function GiscusComments({ mapping = 'pathname' }: GiscusCommentsP
 
   return <div ref={containerRef} />;
 }
-
