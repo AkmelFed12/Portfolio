@@ -5,6 +5,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   tech: string[];
+  caseStudyLink?: string;
   link?: string;
   github?: string;
   image?: string;
@@ -15,6 +16,7 @@ export default function ProjectCard({
   title,
   description,
   tech,
+  caseStudyLink,
   link,
   github,
   image,
@@ -80,6 +82,14 @@ export default function ProjectCard({
           </div>
         </div>
         <div className="flex space-x-4 mb-4">
+          {caseStudyLink && (
+            <a
+              href={caseStudyLink}
+              className="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded transition"
+            >
+              Case Study
+            </a>
+          )}
           {link && (
             <a
               href={link}

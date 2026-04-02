@@ -58,6 +58,13 @@ export default async function Home({ searchParams }: HomePageProps) {
           internshipCta1: 'Me contacter',
           internshipCta2: 'Telecharger CV',
           internshipCta3: 'Discuter sur WhatsApp',
+          achievementsTitle: 'Realisations 2026',
+          achievement1Date: 'Fevrier 2026',
+          achievement1: 'Mise en production et evolution continue du projet ASAA Portal.',
+          achievement2Date: 'Mars 2026',
+          achievement2: 'Amelioration UX de portfolio avec SEO, schema, sitemap et FAQ.',
+          achievement3Date: 'Avril 2026',
+          achievement3: 'Mise en place analytics conversion (WhatsApp, CV, contact).',
           techTitle: 'Technologies que j\'utilise le plus',
           techSubtitle: 'Stack principale en pratique quotidienne',
           badge1: 'Diplome prevu: 2028',
@@ -85,6 +92,13 @@ export default async function Home({ searchParams }: HomePageProps) {
           internshipCta1: 'Contact Me',
           internshipCta2: 'Download CV',
           internshipCta3: 'Chat on WhatsApp',
+          achievementsTitle: 'Featured Achievements 2026',
+          achievement1Date: 'February 2026',
+          achievement1: 'Shipped and iterated ASAA Portal in production environment.',
+          achievement2Date: 'March 2026',
+          achievement2: 'Upgraded portfolio UX with SEO, schema, sitemap, and FAQ.',
+          achievement3Date: 'April 2026',
+          achievement3: 'Implemented conversion analytics for WhatsApp, CV, and contact flow.',
           techTitle: 'Tech I Use Most',
           techSubtitle: 'Primary stack I use in day-to-day project delivery',
           badge1: 'Expected Graduation: 2028',
@@ -179,6 +193,7 @@ export default async function Home({ searchParams }: HomePageProps) {
                 title={project.title}
                 description={project.description}
                 tech={project.tech}
+                caseStudyLink={`/projects/${project.slug}`}
                 link={project.link}
                 github={project.github}
                 image={project.image}
@@ -235,6 +250,24 @@ export default async function Home({ searchParams }: HomePageProps) {
               className="px-5 py-2.5 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold transition"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <h2 className="text-3xl font-bold mb-6 text-center">{t.achievementsTitle}</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <article className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5">
+            <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement1Date}</p>
+            <p className="text-gray-700 dark:text-gray-300">{t.achievement1}</p>
+          </article>
+          <article className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5">
+            <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement2Date}</p>
+            <p className="text-gray-700 dark:text-gray-300">{t.achievement2}</p>
+          </article>
+          <article className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5">
+            <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement3Date}</p>
+            <p className="text-gray-700 dark:text-gray-300">{t.achievement3}</p>
+          </article>
         </div>
       </section>
 

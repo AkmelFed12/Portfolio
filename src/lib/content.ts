@@ -48,6 +48,12 @@ export async function getProjectsPublic(): Promise<Project[]> {
 
   return rows.map((row) => ({
     id: row.id,
+    slug:
+      (row as { slug?: string }).slug ||
+      row.title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, ''),
     title: row.title,
     description: row.description,
     tech: row.tech.split(',').map((item) => item.trim()).filter(Boolean),

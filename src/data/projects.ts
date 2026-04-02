@@ -1,5 +1,6 @@
 export type Project = {
   id: number;
+  slug: string;
   title: string;
   description: string;
   tech: string[];
@@ -12,6 +13,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
+    slug: 'asaa-portal',
     title: 'ASAA Portal - Islamic Quiz 2026',
     description:
       'Comprehensive membership and event management platform built for Islamic Quiz 2026, including pre-selection workflows, member space, and official organization website.',
@@ -23,6 +25,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    slug: 'myfinance-lmo',
     title: 'MyFinance LMO',
     description:
       'Personal finance management application focused on budget tracking, expense categorization, and practical financial analytics for daily decision-making.',
@@ -33,6 +36,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    slug: 'barakatrack-by-lmo',
     title: 'Barakatrack by LMO',
     description:
       'Workflow tracking and management system with real-time updates, data visualization, and reporting features to improve team productivity.',

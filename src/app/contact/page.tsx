@@ -13,6 +13,14 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  const openEmailFallback = (name: string, email: string, message: string) => {
+    const subject = encodeURIComponent('Portfolio Contact Request');
+    const body = encodeURIComponent(
+      `Hello Ladji,\n\nName: ${name || 'Not provided'}\nEmail: ${email || 'Not provided'}\n\nMessage:\n${message || 'No message'}`
+    );
+    window.location.href = `mailto:ouattaralm12@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -37,7 +45,10 @@ export default function Contact() {
       source: 'contact_page',
       has_email: Boolean(formData.email),
     });
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    const popup = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    if (!popup) {
+      openEmailFallback(formData.name, emailValue, formData.message);
+    }
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
     setFormData({ name: '', email: '', message: '' });
@@ -133,6 +144,9 @@ export default function Contact() {
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
               Fill this form and you will be redirected to WhatsApp with your prefilled message.
             </p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
+              If WhatsApp does not open, use the fallback email button below.
+            </p>
             {submitted && (
               <div className="mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg animate-scale-in border border-green-400 dark:border-green-700">
                 Redirected to WhatsApp successfully. Thank you for your message.
@@ -188,6 +202,13 @@ export default function Contact() {
                 className="w-full px-6 py-3 font-semibold rounded-lg transition transform shadow-lg bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 hover:scale-105 text-white"
               >
                 Send on WhatsApp
+              </button>
+              <button
+                type="button"
+                onClick={() => openEmailFallback(formData.name, formData.email, formData.message)}
+                className="w-full px-6 py-3 font-semibold rounded-lg border border-blue-600 text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 transition"
+              >
+                Fallback: Send by Email
               </button>
             </form>
           </div>
