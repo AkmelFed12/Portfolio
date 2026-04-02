@@ -18,8 +18,8 @@ export const projects: Project[] = [
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     link: 'https://asaaofficiel.vercel.app/index.html',
     github: 'https://github.com/AkmelFed12/PRESELECTION-QI26-tst',
-    image: '/images/asaa-portal-desktop.png',
-    mobileImage: '/images/asaa-portal-mobile.png',
+    image: '/images/asaa-portal-desktop-v2.png',
+    mobileImage: '/images/asaa-portal-mobile-v2.png',
   },
   {
     id: 2,
