@@ -48,15 +48,44 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const posts = await getBlogPosts();
   const post = posts.find((item) => item.slug === slug);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lmoportfolio.vercel.app';
 
   if (!post) {
     notFound();
   }
 
   const morePosts = posts.filter((item) => item.slug !== post.slug).slice(0, 2);
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    mainEntityOfPage: `${siteUrl}/blog/${post.slug}`,
+    image: post.coverImage ? [`${siteUrl}${post.coverImage}`] : [`${siteUrl}/og-blog.svg`],
+    publisher: {
+      '@type': 'Organization',
+      name: 'LMO Web Services',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/og-home.svg`,
+      },
+    },
+  };
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c'),
+        }}
+      />
       <article className="min-h-screen bg-white dark:bg-black">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline mb-8 inline-block">

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import ProjectCard from '@/components/ProjectCard';
+import ProjectsFilterGrid from '@/components/ProjectsFilterGrid';
 import { getProjectsPublic } from '@/lib/content';
 
 export const metadata: Metadata = {
@@ -87,20 +87,7 @@ export default async function Projects({ searchParams }: ProjectsPageProps) {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              tech={project.tech}
-              link={project.link}
-              github={project.github}
-              image={project.image}
-              mobileImage={project.mobileImage}
-            />
-          ))}
-        </div>
+        <ProjectsFilterGrid projects={projects} lang={lang} />
       </section>
     </div>
   );

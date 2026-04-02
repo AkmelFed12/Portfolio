@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ProjectCard from '@/components/ProjectCard';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import FAQSection from '@/components/FAQSection';
 import TrackedWhatsAppButton from '@/components/TrackedWhatsAppButton';
 import { getProjectsPublic } from '@/lib/content';
 
@@ -248,6 +249,8 @@ export default async function Home({ searchParams }: HomePageProps) {
           ))}
         </div>
       </section>
+
+      <FAQSection lang={lang} />
 
       <NewsletterSignup />
     </div>
