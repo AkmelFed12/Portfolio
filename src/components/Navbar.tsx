@@ -11,42 +11,31 @@ export default function Navbar() {
   const searchParams = useSearchParams();
   const lang = searchParams.get('lang') === 'fr' ? 'fr' : 'en';
 
-  const withLang = (path: string) => `${path}?lang=${lang}`;
-  const switchLang = lang === 'fr' ? 'en' : 'fr';
-  const switchHref = `${pathname}?lang=${switchLang}`;
+  const withLang = (path: string) => (lang === 'fr' ? `${path}?lang=fr` : path);
+  const switchHref = lang === 'fr' ? pathname : `${pathname}?lang=fr`;
+
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <nav className="bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href={withLang('/')} className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 gap-3">
+          <Link
+            href={withLang('/')}
+            className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+          >
             Ladji Moussa
           </Link>
 
-          <div className="flex items-center gap-4">
-            <Link
-              href={switchHref}
-              className="px-3 py-1 rounded-full text-xs font-semibold border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 transition"
-            >
-              {lang === 'fr' ? 'EN' : 'FR'}
-            </Link>
-            <ThemeToggle />
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900"
-            >
-              <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-              </svg>
-            </button>
-          </div>
-
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             <Link href={withLang('/')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
               Home
             </Link>
             <Link href={withLang('/projects')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
               Projects
+            </Link>
+            <Link href={withLang('/services')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
+              Services
             </Link>
             <Link href={withLang('/about')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
               About
@@ -60,29 +49,65 @@ export default function Navbar() {
             <Link href={withLang('/contact')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
               Contact
             </Link>
+            <a
+              href="/CV_LADJI_MOUSSA_OUATTARA.pdf"
+              download
+              className="px-3 py-2 rounded-md text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition"
+            >
+              Download CV
+            </a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <Link
+              href={switchHref}
+              className="px-3 py-1 rounded-full text-xs font-semibold border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+            >
+              {lang === 'fr' ? 'EN' : 'FR'}
+            </Link>
+            <ThemeToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900"
+              aria-label="Toggle menu"
+            >
+              <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
+              </svg>
+            </button>
           </div>
         </div>
 
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-2">
-            <Link href={withLang('/')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
+          <div className="lg:hidden pb-4 space-y-2">
+            <Link onClick={closeMenu} href={withLang('/')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
               Home
             </Link>
-            <Link href={withLang('/projects')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
+            <Link onClick={closeMenu} href={withLang('/projects')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
               Projects
             </Link>
-            <Link href={withLang('/about')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
+            <Link onClick={closeMenu} href={withLang('/services')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
+              Services
+            </Link>
+            <Link onClick={closeMenu} href={withLang('/about')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
               About
             </Link>
-            <Link href={withLang('/blog')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
+            <Link onClick={closeMenu} href={withLang('/blog')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
               Blog
             </Link>
-            <Link href={withLang('/resume')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
+            <Link onClick={closeMenu} href={withLang('/resume')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
               Resume
             </Link>
-            <Link href={withLang('/contact')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
+            <Link onClick={closeMenu} href={withLang('/contact')} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded">
               Contact
             </Link>
+            <a
+              href="/CV_LADJI_MOUSSA_OUATTARA.pdf"
+              download
+              className="block px-3 py-2 rounded text-center text-white bg-blue-600 hover:bg-blue-700 transition"
+            >
+              Download CV
+            </a>
           </div>
         )}
       </div>

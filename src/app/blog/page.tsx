@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
 import BlogList from '@/components/BlogList';
 import { getBlogPosts } from '@/lib/content';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'Articles from Ladji Moussa OUATTARA about learning, projects, and practical web development.',
+};
 
 export default async function Blog() {
   const posts = await getBlogPosts();
@@ -12,7 +18,7 @@ export default async function Blog() {
             Blog & Articles
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300">
-            Insights, tutorials, and thoughts on web development
+            Insights from my learning and project-building journey
           </p>
         </div>
       </section>

@@ -1,17 +1,42 @@
+import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SocialShareButtons from '@/components/SocialShareButtons';
 import GiscusComments from '@/components/GiscusComments';
 import { getBlogPosts } from '@/lib/content';
 
+type BlogPostPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
   const posts = await getBlogPosts();
-  const post = posts.find((item) => item.slug === params.slug);
+  const post = posts.find((item) => item.slug === slug);
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+      description: 'The requested article was not found.',
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+  };
+}
+
+export default async function BlogPost({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const posts = await getBlogPosts();
+  const post = posts.find((item) => item.slug === slug);
 
   if (!post) {
     notFound();
@@ -23,14 +48,17 @@ export default async function BlogPost({ params }: { params: { slug: string } })
     <div>
       <article className="min-h-screen bg-white dark:bg-black">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <Link
-            href="/blog"
-            className="text-blue-600 dark:text-blue-400 hover:underline mb-8 inline-block"
-          >
+          <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline mb-8 inline-block">
             ← Back to Blog
           </Link>
 
           <header className="mb-12 animate-fade-in">
+            {post.coverImage && (
+              <div className="relative w-full h-64 rounded-xl overflow-hidden mb-8 border border-gray-200 dark:border-gray-700">
+                <Image src={post.coverImage} alt={`${post.title} cover image`} fill sizes="100vw" className="object-cover" />
+              </div>
+            )}
+
             <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               {post.title}
             </h1>
@@ -105,9 +133,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
                 href={`/blog/${item.slug}`}
                 className="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 transition"
               >
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  {item.title}
-                </h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{item.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{item.excerpt}</p>
               </Link>
             ))}

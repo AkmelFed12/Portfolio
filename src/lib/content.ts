@@ -31,6 +31,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
     category: row.category || 'General',
     readTime: row.read_time || '5 min read',
     author: row.author || 'Ladji Moussa OUATTARA',
+    coverImage: (row as { cover_image?: string }).cover_image || undefined,
     content: splitContent(row.content || ''),
   }));
 }

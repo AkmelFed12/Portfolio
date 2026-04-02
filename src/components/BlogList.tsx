@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import SocialShareButtons from '@/components/SocialShareButtons';
 import type { BlogPost } from '@/data/blogPosts';
@@ -70,38 +71,47 @@ export default function BlogList({ posts }: BlogListProps) {
         {filtered.map((post, index) => (
           <Link key={post.id} href={`/blog/${post.slug}`}>
             <article
-              className={`bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all hover:scale-105 stagger-item-${(index % 3) + 1} h-full cursor-pointer`}
+              className={`bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all hover:scale-[1.01] stagger-item-${(index % 3) + 1} h-full cursor-pointer`}
             >
-              <div className="mb-4 flex items-center justify-between">
-                <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
-                  {post.category}
-                </span>
-                <span className="text-sm text-gray-600 dark:text-gray-400">
-                  {post.readTime}
-                </span>
-              </div>
-              <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition">
-                {post.title}
-              </h2>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">{post.excerpt}</p>
-              <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700 mb-4">
-                <time className="text-sm text-gray-600 dark:text-gray-400">
-                  {new Date(post.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
-                </time>
-                <span className="text-blue-600 dark:text-blue-400 font-semibold transition">
-                  Read More →
-                </span>
-              </div>
-              <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
-                <SocialShareButtons
-                  title={post.title}
-                  description={post.excerpt}
-                  url={`${baseUrl}/blog/${post.slug}`}
-                />
+              {post.coverImage && (
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={post.coverImage}
+                    alt={`${post.title} cover image`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
+                    {post.category}
+                  </span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">{post.readTime}</span>
+                </div>
+                <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition">
+                  {post.title}
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">{post.excerpt}</p>
+                <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700 mb-4">
+                  <time className="text-sm text-gray-600 dark:text-gray-400">
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                  <span className="text-blue-600 dark:text-blue-400 font-semibold transition">Read More →</span>
+                </div>
+                <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                  <SocialShareButtons
+                    title={post.title}
+                    description={post.excerpt}
+                    url={`${baseUrl}/blog/${post.slug}`}
+                  />
+                </div>
               </div>
             </article>
           </Link>

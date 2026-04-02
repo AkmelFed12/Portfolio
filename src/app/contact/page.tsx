@@ -3,6 +3,7 @@
 import { FormEvent, useState } from 'react';
 import ResumeDownload from '@/components/ResumeDownload';
 
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -23,8 +24,8 @@ export default function Contact() {
     e.preventDefault();
     const whatsappNumber = '2250574724233';
     const whatsappMessage =
-      `Bonjour, je vous contacte depuis votre portfolio.%0A%0A` +
-      `Nom: ${encodeURIComponent(formData.name)}%0A` +
+      `Hello, I am contacting you from your portfolio.%0A%0A` +
+      `Name: ${encodeURIComponent(formData.name)}%0A` +
       `Email: ${encodeURIComponent(formData.email)}%0A` +
       `Message: ${encodeURIComponent(formData.message)}`;
 
@@ -44,7 +45,7 @@ export default function Contact() {
             Get In Touch
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
-            Have a project in mind? Let's talk about it!
+            Have a project in mind? Let&apos;s discuss it.
           </p>
           <p className="text-sm text-green-700 dark:text-green-300 mb-8 font-semibold">
             Preferred channel: WhatsApp. Typical reply within 24h.
@@ -55,7 +56,6 @@ export default function Contact() {
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Information */}
           <div className="animate-slide-left">
             <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
             <div className="space-y-6">
@@ -79,22 +79,13 @@ export default function Contact() {
               <div className="stagger-item-2">
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Phone Numbers</h3>
                 <div className="space-y-1">
-                  <a
-                    href="tel:+22501500700"
-                    className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline block transition"
-                  >
+                  <a href="tel:+2250150070083" className="text-blue-600 dark:text-blue-400 hover:underline block transition">
                     +225 01 500 700 83
                   </a>
-                  <a
-                    href="tel:+22505747242"
-                    className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline block transition"
-                  >
+                  <a href="tel:+2250574724233" className="text-blue-600 dark:text-blue-400 hover:underline block transition">
                     +225 05 747 242 33
                   </a>
-                  <a
-                    href="tel:+22507055830"
-                    className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline block transition"
-                  >
+                  <a href="tel:+2250705583082" className="text-blue-600 dark:text-blue-400 hover:underline block transition">
                     +225 07 055 830 82
                   </a>
                 </div>
@@ -102,7 +93,8 @@ export default function Contact() {
               <div className="stagger-item-3">
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Location</h3>
                 <p className="text-gray-700 dark:text-gray-300">
-                  Côte d'Ivoire, Abidjan, Treichville<br />
+                  Cote d&apos;Ivoire, Abidjan, Treichville
+                  <br />
                   Avenue 4 Rue 13
                 </p>
               </div>
@@ -130,15 +122,14 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="animate-slide-right">
             <h2 className="text-3xl font-bold mb-8">Send Me a Message</h2>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
-              Fill the form and you will be redirected to WhatsApp to send your message directly.
+              Fill this form and you will be redirected to WhatsApp with your prefilled message.
             </p>
             {submitted && (
               <div className="mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg animate-scale-in border border-green-400 dark:border-green-700">
-                ✓ Redirection vers WhatsApp effectuee. Merci pour votre message.
+                Redirected to WhatsApp successfully. Thank you for your message.
               </div>
             )}
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -191,7 +182,7 @@ export default function Contact() {
                 type="submit"
                 className="w-full px-6 py-3 font-semibold rounded-lg transition transform shadow-lg bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 hover:scale-105 text-white"
               >
-                Envoyer sur WhatsApp
+                Send on WhatsApp
               </button>
             </form>
           </div>

@@ -1,44 +1,44 @@
-import type { Metadata } from "next";
-import { Suspense } from "react";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
+import type { Metadata } from 'next';
+import { Suspense } from 'react';
+import './globals.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Ladji Moussa OUATTARA | Portfolio",
-    template: "%s | Ladji Moussa OUATTARA",
+    default: 'Ladji Moussa OUATTARA | Portfolio',
+    template: '%s | Ladji Moussa OUATTARA',
   },
   description:
-    "BS Computer Science student and full-stack learner building practical web applications with real-world impact.",
+    'BS Computer Science student and full-stack learner building practical web applications with real-world impact.',
   openGraph: {
-    title: "Ladji Moussa OUATTARA | Portfolio",
+    title: 'Ladji Moussa OUATTARA | Portfolio',
     description:
-      "BS Computer Science student and full-stack learner building practical web applications with real-world impact.",
+      'BS Computer Science student and full-stack learner building practical web applications with real-world impact.',
     url: siteUrl,
-    siteName: "Ladji Portfolio",
+    siteName: 'Ladji Portfolio',
     images: [
       {
-        url: "/og-portfolio.svg",
+        url: '/og-portfolio.svg',
         width: 1200,
         height: 630,
-        alt: "Ladji Moussa OUATTARA Portfolio",
+        alt: 'Ladji Moussa OUATTARA Portfolio',
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Ladji Moussa OUATTARA | Portfolio",
+    card: 'summary_large_image',
+    title: 'Ladji Moussa OUATTARA | Portfolio',
     description:
-      "BS Computer Science student and full-stack learner building practical web applications with real-world impact.",
-    images: ["/og-portfolio.svg"],
+      'BS Computer Science student and full-stack learner building practical web applications with real-world impact.',
+    images: ['/og-portfolio.svg'],
   },
 };
 
@@ -55,6 +55,7 @@ export default function RootLayout({
           <Navbar />
         </Suspense>
         <main className="flex-1">{children}</main>
+        <WhatsAppFloat />
         <Footer />
       </body>
     </html>
