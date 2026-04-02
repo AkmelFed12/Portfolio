@@ -2,8 +2,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white text-center py-8 mt-20">
-      <div className="max-w-4xl mx-auto px-4">
+    <footer className="mt-20">
+      <div className="bg-[#f4f0e8] border-y border-[#e6dcc8] text-center py-3">
+        <p className="tracking-[0.24em] text-[#b08a3e] text-sm sm:text-lg font-semibold">
+          DESIGN & CREATED BY LMO WEB SERVICES
+        </p>
+      </div>
+      <div className="bg-gray-900 dark:bg-black text-white text-center py-8">
+        <div className="max-w-4xl mx-auto px-4">
         <p className="text-gray-400 mb-4">
           © {currentYear} Ladji Moussa OUATTARA. All rights reserved.
         </p>
@@ -25,6 +31,7 @@ export default function Footer() {
             LinkedIn
           </a>
         </div>
+      </div>
       </div>
     </footer>
   );

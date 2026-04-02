@@ -1,23 +1,45 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Professional portfolio showcasing my work and skills",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Ladji Moussa OUATTARA | Portfolio",
+    template: "%s | Ladji Moussa OUATTARA",
+  },
+  description:
+    "BS Computer Science student and full-stack learner building practical web applications with real-world impact.",
+  openGraph: {
+    title: "Ladji Moussa OUATTARA | Portfolio",
+    description:
+      "BS Computer Science student and full-stack learner building practical web applications with real-world impact.",
+    url: siteUrl,
+    siteName: "Ladji Portfolio",
+    images: [
+      {
+        url: "/og-portfolio.svg",
+        width: 1200,
+        height: 630,
+        alt: "Ladji Moussa OUATTARA Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ladji Moussa OUATTARA | Portfolio",
+    description:
+      "BS Computer Science student and full-stack learner building practical web applications with real-world impact.",
+    images: ["/og-portfolio.svg"],
+  },
 };
 
 export default function RootLayout({
@@ -26,13 +48,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-white dark:bg-black text-gray-900 dark:text-white">
         <GoogleAnalytics />
-        <Navbar />
+        <Suspense fallback={null}>
+          <Navbar />
+        </Suspense>
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

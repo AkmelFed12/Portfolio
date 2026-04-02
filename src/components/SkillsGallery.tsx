@@ -3,34 +3,23 @@ export default function SkillsGallery() {
     {
       category: 'Frontend Development',
       skills: [
-        { name: 'React', level: 85 },
-        { name: 'Next.js', level: 90 },
-        { name: 'TypeScript', level: 80 },
-        { name: 'Tailwind CSS', level: 90 },
-        { name: 'HTML/CSS', level: 95 },
-        { name: 'JavaScript', level: 85 },
+        { name: 'React', level: 70 },
+        { name: 'Next.js', level: 70 },
+        { name: 'TypeScript', level: 65 },
+        { name: 'Tailwind CSS', level: 80 },
+        { name: 'HTML/CSS', level: 90 },
+        { name: 'JavaScript', level: 75 },
       ],
     },
     {
       category: 'Backend Development',
       skills: [
-        { name: 'Node.js', level: 75 },
-        { name: 'Express.js', level: 70 },
-        { name: 'PostgreSQL', level: 70 },
-        { name: 'MongoDB', level: 65 },
-        { name: 'REST APIs', level: 80 },
-        { name: 'Firebase', level: 75 },
-      ],
-    },
-    {
-      category: 'Tools & Technologies',
-      skills: [
-        { name: 'Git/GitHub', level: 85 },
-        { name: 'Docker', level: 60 },
-        { name: 'VS Code', level: 95 },
-        { name: 'Vercel', level: 90 },
-        { name: 'npm/yarn', level: 90 },
-        { name: 'AI Tools', level: 85 },
+        { name: 'Node.js', level: 60 },
+        { name: 'Express.js', level: 55 },
+        { name: 'PostgreSQL', level: 50 },
+        { name: 'MongoDB', level: 60 },
+        { name: 'REST APIs', level: 65 },
+        { name: 'Firebase', level: 70 },
       ],
     },
   ];
@@ -41,7 +30,7 @@ export default function SkillsGallery() {
         <h2 className="text-4xl font-bold mb-12 text-center animate-fade-in">
           Skills & Proficiency
         </h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.category}

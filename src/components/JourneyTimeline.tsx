@@ -1,22 +1,22 @@
 export default function JourneyTimeline() {
   const timeline = [
     {
-      year: '2024',
-      title: 'Full Stack Developer',
-      description: 'Building the ASAA Portal and developing multiple projects with modern web technologies.',
-      achievements: ['ASAA Portal launched', 'MyFinance LMO created', 'Barakatrack developed'],
+      year: '2026',
+      title: 'BS Computer Science Student',
+      description: 'Currently a BS Computer Science student and full-stack learner, improving through practical projects and continuous study.',
+      achievements: ['ASAA Portal project in production', 'MyFinance LMO project developed', 'Barakatrack project developed'],
     },
     {
-      year: '2023',
-      title: 'Learning Full Stack Development',
-      description: 'Started serious journey into full-stack web development with React and Node.js.',
-      achievements: ['Learned Next.js', 'Mastered TypeScript', 'Database design'],
+      year: '2025',
+      title: 'Started Full Stack Development',
+      description: 'Started focused full-stack learning journey with frontend and backend technologies through personal and academic projects.',
+      achievements: ['React and Node.js practice projects', 'Next.js and TypeScript learning', 'Database fundamentals'],
     },
     {
       year: '2022',
       title: 'Started Computer Science Education',
-      description: 'Began studies at International University of Grand-Bassam, focusing on computer science fundamentals.',
-      achievements: ['Core programming', 'Web basics', 'Problem solving'],
+      description: 'Began computer science studies at International University of Grand-Bassam before redirecting academic path.',
+      achievements: ['Core programming', 'Web fundamentals', 'Problem solving'],
     },
     {
       year: '2021',
@@ -55,7 +55,7 @@ export default function JourneyTimeline() {
                       </span>
                       {index === 0 && (
                         <span className="text-lg font-semibold text-green-600 dark:text-green-400">
-                          🎯 Current
+                          Current
                         </span>
                       )}
                     </div>

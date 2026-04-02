@@ -285,6 +285,98 @@ git push                 # Push to GitHub
 
 ---
 
+## 10. Neon Database (Admin Dashboard)
+
+Use Neon to power the admin dashboard so you can edit blog posts, projects, and testimonials without touching code.
+
+### A. Create a Neon Database
+1. Create a Neon project at https://neon.tech
+2. Copy your **Connection String**
+
+### B. Add Environment Variable
+1. Open `.env.local`
+2. Add:
+```
+DATABASE_URL=your_neon_connection_string
+```
+
+### C. Create Tables
+Run the SQL inside `db/schema.sql` in the Neon SQL editor.
+
+### D. Visit the Admin Panel
+Open:
+```
+http://localhost:3000/admin
+```
+
+---
+
+## 11. Giscus Comments (Blog)
+
+Enable GitHub-backed comments on blog posts using Giscus.
+
+### A. Create a Giscus Discussion Category
+1. Go to https://giscus.app
+2. Choose your GitHub repo
+3. Create a discussion category and copy:
+   - Repo
+   - Repo ID
+   - Category
+   - Category ID
+
+### B. Add Environment Variables
+Add these in `.env.local`:
+```
+NEXT_PUBLIC_GISCUS_REPO=owner/repo
+NEXT_PUBLIC_GISCUS_REPO_ID=your_repo_id
+NEXT_PUBLIC_GISCUS_CATEGORY=Announcements
+NEXT_PUBLIC_GISCUS_CATEGORY_ID=your_category_id
+```
+
+Restart the dev server after adding these.
+
+---
+
+## 12. SEO URL Configuration
+
+Set your production URL so social sharing metadata points to the correct domain.
+
+In `.env.local`:
+```
+NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
+```
+
+Use your real deployed URL in Vercel environment variables as well.
+
+---
+
+## 13. Admin Login Security
+
+The `/admin` dashboard is now protected by login.
+
+### A. Add Environment Variables
+In `.env.local`, set:
+```
+ADMIN_PASSWORD=your_strong_password
+ADMIN_SESSION_SECRET=a_long_random_secret_at_least_16_chars
+```
+
+### B. Restart Server
+After adding these values, restart:
+```
+npm run dev
+```
+
+### C. Sign In
+Visit:
+```
+http://localhost:3000/admin/login
+```
+
+Use your `ADMIN_PASSWORD` to access `/admin`.
+
+---
+
 ## Questions or Issues?
 
 If you encounter any problems:

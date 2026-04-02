@@ -1,7 +1,6 @@
 'use client';
 
-import { FormEvent, useState, useEffect } from 'react';
-import emailjs from 'emailjs-com';
+import { FormEvent, useState } from 'react';
 import ResumeDownload from '@/components/ResumeDownload';
 
 export default function Contact() {
@@ -11,16 +10,6 @@ export default function Contact() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    // Initialize EmailJS
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-    if (publicKey) {
-      emailjs.init(publicKey);
-    }
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -28,48 +17,23 @@ export default function Contact() {
       ...prev,
       [name]: value,
     }));
-    setError('');
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
-    setError('');
+    const whatsappNumber = '2250574724233';
+    const whatsappMessage =
+      `Bonjour, je vous contacte depuis votre portfolio.%0A%0A` +
+      `Nom: ${encodeURIComponent(formData.name)}%0A` +
+      `Email: ${encodeURIComponent(formData.email)}%0A` +
+      `Message: ${encodeURIComponent(formData.message)}`;
 
-    try {
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-      if (!serviceId || !templateId) {
-        throw new Error(
-          'Email service is not configured. Please set up EmailJS credentials in your .env.local file.'
-        );
-      }
-
-      const templateParams = {
-        to_email: 'ouattaralm12@gmail.com',
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        reply_to: formData.email,
-      };
-
-      await emailjs.send(serviceId, templateId, templateParams);
-
-      setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
-    } catch (err: any) {
-      setError(
-        err.message ||
-          'Failed to send message. Please try again or use the email addresses below.'
-      );
-      console.error('EmailJS error:', err);
-    } finally {
-      setLoading(false);
-    }
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 4000);
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
@@ -81,6 +45,9 @@ export default function Contact() {
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
             Have a project in mind? Let's talk about it!
+          </p>
+          <p className="text-sm text-green-700 dark:text-green-300 mb-8 font-semibold">
+            Preferred channel: WhatsApp. Typical reply within 24h.
           </p>
           <ResumeDownload />
         </div>
@@ -166,14 +133,12 @@ export default function Contact() {
           {/* Contact Form */}
           <div className="animate-slide-right">
             <h2 className="text-3xl font-bold mb-8">Send Me a Message</h2>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+              Fill the form and you will be redirected to WhatsApp to send your message directly.
+            </p>
             {submitted && (
               <div className="mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg animate-scale-in border border-green-400 dark:border-green-700">
-                ✓ Thank you for your message! I'll get back to you soon.
-              </div>
-            )}
-            {error && (
-              <div className="mb-6 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg animate-scale-in border border-red-400 dark:border-red-700">
-                ✗ {error}
+                ✓ Redirection vers WhatsApp effectuee. Merci pour votre message.
               </div>
             )}
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -224,14 +189,9 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                disabled={loading}
-                className={`w-full px-6 py-3 font-semibold rounded-lg transition transform shadow-lg ${
-                  loading
-                    ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105'
-                } text-white`}
+                className="w-full px-6 py-3 font-semibold rounded-lg transition transform shadow-lg bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 hover:scale-105 text-white"
               >
-                {loading ? 'Sending...' : 'Send Message'}
+                Envoyer sur WhatsApp
               </button>
             </form>
           </div>

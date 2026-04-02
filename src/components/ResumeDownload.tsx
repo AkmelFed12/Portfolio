@@ -1,3 +1,5 @@
+'use client';
+
 export default function ResumeDownload() {
   const handleDownload = async () => {
     // Try to download actual PDF first
