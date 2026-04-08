@@ -7,7 +7,17 @@
   --surface: #ffffff;
   --surface-soft: #f1f5f9;
   --muted: #64748b;
-  --ring: #0891b2;
+  --ring: #1095a7;
+  --accent-50: #ecfeff;
+  --accent-100: #cffafe;
+  --accent-200: #a5f3fc;
+  --accent-300: #67e8f9;
+  --accent-400: #22d3ee;
+  --accent-500: #16bacf;
+  --accent-600: #1095a7;
+  --accent-700: #0f7c8c;
+  --accent-800: #106473;
+  --accent-900: #164e63;
 }
 
 @theme inline {
@@ -219,6 +229,38 @@ body {
 .focus-ring {
   @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500 dark:focus-visible:ring-cyan-400 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900;
 }
+
+/* Brand lock: custom turquoise signature mapped to cyan utility classes */
+.text-cyan-300 { color: var(--accent-300) !important; }
+.text-cyan-400 { color: var(--accent-400) !important; }
+.text-cyan-600 { color: var(--accent-600) !important; }
+.text-cyan-700 { color: var(--accent-700) !important; }
+.text-cyan-800 { color: var(--accent-800) !important; }
+.bg-cyan-50 { background-color: var(--accent-50) !important; }
+.bg-cyan-100 { background-color: var(--accent-100) !important; }
+.bg-cyan-600 { background-color: var(--accent-600) !important; }
+.bg-cyan-700 { background-color: var(--accent-700) !important; }
+.bg-cyan-800 { background-color: var(--accent-800) !important; }
+.bg-cyan-900 { background-color: var(--accent-900) !important; }
+.border-cyan-200 { border-color: var(--accent-200) !important; }
+.border-cyan-500 { border-color: var(--accent-500) !important; }
+.border-cyan-600 { border-color: var(--accent-600) !important; }
+.border-cyan-900 { border-color: var(--accent-900) !important; }
+.hover\:text-cyan-600:hover { color: var(--accent-600) !important; }
+.hover\:text-cyan-700:hover { color: var(--accent-700) !important; }
+.hover\:bg-cyan-50:hover { background-color: var(--accent-50) !important; }
+.hover\:bg-cyan-500:hover { background-color: var(--accent-500) !important; }
+.hover\:bg-cyan-600:hover { background-color: var(--accent-600) !important; }
+.hover\:bg-cyan-700:hover { background-color: var(--accent-700) !important; }
+.hover\:bg-cyan-800:hover { background-color: var(--accent-800) !important; }
+.dark .dark\:text-cyan-200 { color: var(--accent-200) !important; }
+.dark .dark\:text-cyan-300 { color: var(--accent-300) !important; }
+.dark .dark\:text-cyan-400 { color: var(--accent-400) !important; }
+.dark .dark\:bg-cyan-900 { background-color: color-mix(in oklab, var(--accent-900) 72%, black 28%) !important; }
+.dark .dark\:border-cyan-700 { border-color: var(--accent-700) !important; }
+.dark .dark\:border-cyan-900 { border-color: var(--accent-900) !important; }
+.focus-visible\:ring-cyan-500:focus-visible { --tw-ring-color: var(--accent-500) !important; }
+.dark .dark\:focus-visible\:ring-cyan-400:focus-visible { --tw-ring-color: var(--accent-400) !important; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
