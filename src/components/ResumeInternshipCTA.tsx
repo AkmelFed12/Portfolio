@@ -5,11 +5,11 @@ import TrackedWhatsAppButton from '@/components/TrackedWhatsAppButton';
 
 export default function ResumeInternshipCTA() {
   return (
-    <div className="mt-10 rounded-xl border border-green-200 dark:border-green-900 bg-green-50 dark:bg-green-950/40 p-6">
-      <h2 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-2">
+    <div className="mt-10 rounded-xl border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-950/40 p-6">
+      <h2 className="text-2xl font-bold text-blue-800 dark:text-blue-300 mb-2">
         Available for Internship 2026
       </h2>
-      <p className="text-green-900 dark:text-green-200 mb-4">
+      <p className="text-blue-900 dark:text-blue-200 mb-4">
         If your team is looking for a disciplined full-stack learner, I would be glad to discuss.
       </p>
       <div className="flex flex-wrap gap-3">

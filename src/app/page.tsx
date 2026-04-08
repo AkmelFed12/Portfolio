@@ -142,9 +142,9 @@ export default async function Home({ searchParams }: HomePageProps) {
           __html: JSON.stringify(websiteJsonLd).replace(/</g, '\\u003c'),
         }}
       />
-      <section className="min-h-[60vh] bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-black dark:to-gray-900 flex items-center justify-center py-20">
+      <section className="min-h-[60vh] bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-gray-900 dark:via-black dark:to-gray-900 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-          <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 animate-slide-down">
+          <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-blue-700 bg-clip-text text-transparent mb-6 animate-slide-down">
             Ladji Moussa OUATTARA
           </h1>
           <p className="text-2xl text-gray-700 dark:text-gray-300 mb-6 animate-slide-up">{t.role}</p>
@@ -152,10 +152,10 @@ export default async function Home({ searchParams }: HomePageProps) {
             <span className="px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
               {t.badge1}
             </span>
-            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300">
+            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
               {t.badge2}
             </span>
-            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-amber-100 dark:bg-amber-900 text-amber-700 dark:text-amber-300">
+            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
               {t.badge3}
             </span>
           </div>
@@ -165,7 +165,7 @@ export default async function Home({ searchParams }: HomePageProps) {
           <div className="flex gap-4 justify-center flex-wrap stagger-item-1">
             <Link
               href={lang === 'fr' ? '/projects?lang=fr' : '/projects'}
-              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-semibold transition transform hover:scale-105 shadow-lg"
+              className="px-8 py-3 bg-gradient-to-r from-slate-900 to-blue-700 hover:from-slate-950 hover:to-blue-800 text-white rounded-lg font-semibold transition transform hover:scale-105 shadow-lg"
             >
               {t.ctaWork}
             </Link>
@@ -213,7 +213,7 @@ export default async function Home({ searchParams }: HomePageProps) {
       </section>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white p-8 shadow-xl">
+        <div className="rounded-2xl bg-gradient-to-r from-slate-800 to-blue-800 text-white p-8 shadow-xl">
           <h2 className="text-3xl font-bold mb-2">{t.goals}</h2>
           <p className="text-white/90 mb-6">{t.goalsSubtitle}</p>
           <ul className="grid md:grid-cols-3 gap-4">
@@ -289,3 +289,4 @@ export default async function Home({ searchParams }: HomePageProps) {
     </div>
   );
 }
+

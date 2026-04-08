@@ -36,7 +36,7 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-16">
+    <section className="bg-gradient-to-r from-slate-900 to-blue-700 py-16">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-bold text-white mb-4">
           Subscribe to My Newsletter
@@ -75,7 +75,7 @@ export default function NewsletterSignup() {
               className={`px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105 ${
                 loading
                   ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-white text-purple-600 hover:bg-blue-50'
+                  : 'bg-white text-blue-700 hover:bg-blue-50'
               }`}
             >
               {loading ? 'Subscribing...' : 'Subscribe'}
@@ -96,3 +96,4 @@ export default function NewsletterSignup() {
     </section>
   );
 }
+

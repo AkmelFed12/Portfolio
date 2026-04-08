@@ -56,15 +56,15 @@ export default function Contact() {
 
   return (
     <div>
-      <section className="min-h-[40vh] bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-black flex items-center justify-center py-20">
+      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-gray-900 dark:to-black flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-slide-down">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-blue-700 bg-clip-text text-transparent animate-slide-down">
             Get In Touch
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
             Have a project in mind? Let&apos;s discuss it.
           </p>
-          <p className="text-sm text-green-700 dark:text-green-300 mb-8 font-semibold">
+          <p className="text-sm text-blue-700 dark:text-blue-300 mb-8 font-semibold">
             Preferred channel: WhatsApp. Typical reply within 24h.
           </p>
           <ResumeDownload />
@@ -148,7 +148,7 @@ export default function Contact() {
               If WhatsApp does not open, use the fallback email button below.
             </p>
             {submitted && (
-              <div className="mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg animate-scale-in border border-green-400 dark:border-green-700">
+              <div className="mb-6 p-4 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-lg animate-scale-in border border-blue-400 dark:border-blue-700">
                 Redirected to WhatsApp successfully. Thank you for your message.
               </div>
             )}
@@ -199,7 +199,7 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 font-semibold rounded-lg transition transform shadow-lg bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 hover:scale-105 text-white"
+                className="w-full px-6 py-3 font-semibold rounded-lg transition transform shadow-lg bg-gradient-to-r from-slate-900 to-blue-700 hover:from-slate-950 hover:to-blue-800 hover:scale-105 text-white"
               >
                 Send on WhatsApp
               </button>
@@ -217,3 +217,4 @@ export default function Contact() {
     </div>
   );
 }
+

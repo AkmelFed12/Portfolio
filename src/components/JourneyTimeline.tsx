@@ -35,7 +35,7 @@ export default function JourneyTimeline() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-600 to-purple-600" />
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-slate-800 to-blue-700" />
 
           {/* Timeline items */}
           <div className="space-y-12">
@@ -50,11 +50,11 @@ export default function JourneyTimeline() {
                 <div className="flex-1">
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition">
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      <span className="text-3xl font-bold bg-gradient-to-r from-slate-900 to-blue-700 bg-clip-text text-transparent">
                         {item.year}
                       </span>
                       {index === 0 && (
-                        <span className="text-lg font-semibold text-green-600 dark:text-green-400">
+                        <span className="text-lg font-semibold text-blue-600 dark:text-blue-400">
                           Current
                         </span>
                       )}
@@ -81,7 +81,7 @@ export default function JourneyTimeline() {
 
                 {/* Timeline dot */}
                 <div className="flex md:flex-col items-center justify-center">
-                  <div className="w-6 h-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg" />
+                  <div className="w-6 h-6 bg-gradient-to-r from-slate-900 to-blue-700 rounded-full border-4 border-white dark:border-gray-900 shadow-lg" />
                 </div>
 
                 {/* Empty space on other side */}
@@ -94,3 +94,4 @@ export default function JourneyTimeline() {
     </section>
   );
 }
+

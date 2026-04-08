@@ -5,9 +5,9 @@ import ResumeInternshipCTA from '@/components/ResumeInternshipCTA';
 export default function Resume() {
   return (
     <div>
-      <section className="min-h-[40vh] bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-black flex items-center justify-center py-20">
+      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-gray-900 dark:to-black flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-slide-down">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-blue-700 bg-clip-text text-transparent animate-slide-down">
             My Resume
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300">
@@ -29,7 +29,7 @@ export default function Resume() {
             <p className="text-gray-700 dark:text-gray-300 mb-4">Read my resume here</p>
             <a
               href="#resume-content"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded transition"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded transition"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -230,3 +230,4 @@ export default function Resume() {
     </div>
   );
 }
+

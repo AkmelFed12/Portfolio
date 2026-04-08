@@ -60,7 +60,7 @@ export default function ProjectCard({
         </h3>
         {!link && (
           <div className="mb-3">
-            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200">
+            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
               No live demo yet
             </span>
           </div>
@@ -85,7 +85,7 @@ export default function ProjectCard({
           {caseStudyLink && (
             <a
               href={caseStudyLink}
-              className="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded transition"
+              className="inline-block px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded transition"
             >
               Case Study
             </a>
@@ -122,3 +122,4 @@ export default function ProjectCard({
     </div>
   );
 }
+

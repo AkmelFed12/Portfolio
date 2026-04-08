@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16 gap-3">
           <Link
             href={withLang('/')}
-            className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            className="font-bold text-xl bg-gradient-to-r from-slate-900 to-blue-700 bg-clip-text text-transparent"
           >
             Ladji Moussa
           </Link>
@@ -117,3 +117,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
