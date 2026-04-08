@@ -86,7 +86,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
           __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c'),
         }}
       />
-      <article className="min-h-screen bg-white dark:bg-black">
+      <article className="min-h-screen bg-white dark:bg-slate-950">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline mb-8 inline-block">
             ← Back to Blog
@@ -99,7 +99,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
               </div>
             )}
 
-            <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-blue-700 bg-clip-text text-transparent">
+            <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100">
               {post.title}
             </h1>
 
@@ -163,7 +163,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-black py-12">
+      <section className="bg-white dark:bg-slate-950 py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold mb-6">More Articles</h2>
           <div className="space-y-4">
@@ -183,4 +183,5 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
     </div>
   );
 }
+
 

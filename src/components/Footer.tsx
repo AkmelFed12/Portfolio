@@ -8,7 +8,7 @@ export default function Footer() {
           DESIGN & CREATED BY LMO WEB SERVICES
         </p>
       </div>
-      <div className="bg-gray-900 dark:bg-black text-white text-center py-8">
+      <div className="bg-gray-900 dark:bg-slate-950 text-white text-center py-8">
         <div className="max-w-4xl mx-auto px-4">
         <p className="text-gray-400 mb-4">
           © {currentYear} Ladji Moussa OUATTARA. All rights reserved.
@@ -36,3 +36,4 @@ export default function Footer() {
     </footer>
   );
 }
+

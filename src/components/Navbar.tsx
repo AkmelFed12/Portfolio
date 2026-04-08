@@ -18,12 +18,12 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+    <nav className="bg-white dark:bg-slate-950 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 gap-3">
           <Link
             href={withLang('/')}
-            className="font-bold text-xl bg-gradient-to-r from-slate-900 to-blue-700 bg-clip-text text-transparent"
+            className="font-bold text-xl text-slate-900 dark:text-slate-100"
           >
             Ladji Moussa
           </Link>
@@ -117,4 +117,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
 

@@ -26,7 +26,7 @@ export default async function AdminPage() {
   const testimonials = await getTestimonials();
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-black">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-950">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
@@ -419,3 +419,4 @@ export default async function AdminPage() {
     </div>
   );
 }
+

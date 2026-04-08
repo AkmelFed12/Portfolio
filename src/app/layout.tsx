@@ -64,7 +64,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white dark:bg-black text-gray-900 dark:text-white">
+      <body className="min-h-full flex flex-col bg-white dark:bg-slate-950 text-gray-900 dark:text-white">
         <GoogleAnalytics />
         <Suspense fallback={null}>
           <Navbar />
@@ -76,3 +76,4 @@ export default function RootLayout({
     </html>
   );
 }
+

@@ -5,9 +5,9 @@ import ResumeInternshipCTA from '@/components/ResumeInternshipCTA';
 export default function Resume() {
   return (
     <div>
-      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-gray-900 dark:to-black flex items-center justify-center py-20">
+      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-950 dark:to-slate-900 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-blue-700 bg-clip-text text-transparent animate-slide-down">
+          <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100 animate-slide-down">
             My Resume
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300">
@@ -230,4 +230,5 @@ export default function Resume() {
     </div>
   );
 }
+
 

@@ -25,7 +25,7 @@ export default function SkillsGallery() {
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-black">
+    <section className="py-20 bg-white dark:bg-slate-950">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold mb-12 text-center animate-fade-in">
           Skills & Proficiency
@@ -66,4 +66,5 @@ export default function SkillsGallery() {
     </section>
   );
 }
+
 

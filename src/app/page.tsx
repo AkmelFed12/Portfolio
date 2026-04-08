@@ -142,9 +142,9 @@ export default async function Home({ searchParams }: HomePageProps) {
           __html: JSON.stringify(websiteJsonLd).replace(/</g, '\\u003c'),
         }}
       />
-      <section className="min-h-[60vh] bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-gray-900 dark:via-black dark:to-gray-900 flex items-center justify-center py-20">
+      <section className="min-h-[60vh] bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-          <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-blue-700 bg-clip-text text-transparent mb-6 animate-slide-down">
+          <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 dark:text-slate-100 mb-6 animate-slide-down">
             Ladji Moussa OUATTARA
           </h1>
           <p className="text-2xl text-gray-700 dark:text-gray-300 mb-6 animate-slide-up">{t.role}</p>
@@ -289,4 +289,5 @@ export default async function Home({ searchParams }: HomePageProps) {
     </div>
   );
 }
+
 

@@ -50,7 +50,7 @@ export default function JourneyTimeline() {
                 <div className="flex-1">
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition">
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="text-3xl font-bold bg-gradient-to-r from-slate-900 to-blue-700 bg-clip-text text-transparent">
+                      <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">
                         {item.year}
                       </span>
                       {index === 0 && (
@@ -94,4 +94,5 @@ export default function JourneyTimeline() {
     </section>
   );
 }
+
 
