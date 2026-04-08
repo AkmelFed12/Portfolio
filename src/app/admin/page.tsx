@@ -122,7 +122,7 @@ export default async function AdminPage() {
                   <div className="flex gap-2 justify-end">
                     <button
                       type="submit"
-                      className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
+                      className="px-4 py-2 rounded bg-cyan-600 text-white hover:bg-cyan-700"
                     >
                       Update
                     </button>
@@ -190,7 +190,7 @@ export default async function AdminPage() {
             />
             <button
               type="submit"
-              className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
+              className="px-4 py-2 rounded bg-cyan-600 text-white hover:bg-cyan-700"
             >
               Create Post
             </button>
@@ -248,7 +248,7 @@ export default async function AdminPage() {
                 <div className="flex gap-2 justify-end">
                   <button
                     type="submit"
-                    className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
+                    className="px-4 py-2 rounded bg-cyan-600 text-white hover:bg-cyan-700"
                   >
                     Update
                   </button>
@@ -302,7 +302,7 @@ export default async function AdminPage() {
             />
             <button
               type="submit"
-              className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
+              className="px-4 py-2 rounded bg-cyan-600 text-white hover:bg-cyan-700"
             >
               Create Project
             </button>
@@ -357,7 +357,7 @@ export default async function AdminPage() {
                 <div className="flex gap-2 justify-end">
                   <button
                     type="submit"
-                    className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
+                    className="px-4 py-2 rounded bg-cyan-600 text-white hover:bg-cyan-700"
                   >
                     Update
                   </button>
@@ -409,7 +409,7 @@ export default async function AdminPage() {
             />
             <button
               type="submit"
-              className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
+              className="px-4 py-2 rounded bg-cyan-600 text-white hover:bg-cyan-700"
             >
               Create Testimonial
             </button>
@@ -419,5 +419,6 @@ export default async function AdminPage() {
     </div>
   );
 }
+
 
 

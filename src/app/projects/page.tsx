@@ -73,15 +73,15 @@ export default async function Projects({ searchParams }: ProjectsPageProps) {
           <p className="text-gray-700 dark:text-slate-200 mb-6">{t.caseDesc}</p>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
-              <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2">{t.challenge}</h3>
+              <h3 className="font-bold text-cyan-600 dark:text-cyan-400 mb-2">{t.challenge}</h3>
               <p className="text-gray-700 dark:text-slate-200">{t.challengeText}</p>
             </div>
             <div>
-              <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2">{t.solution}</h3>
+              <h3 className="font-bold text-cyan-600 dark:text-cyan-400 mb-2">{t.solution}</h3>
               <p className="text-gray-700 dark:text-slate-200">{t.solutionText}</p>
             </div>
             <div>
-              <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2">{t.result}</h3>
+              <h3 className="font-bold text-cyan-600 dark:text-cyan-400 mb-2">{t.result}</h3>
               <p className="text-gray-700 dark:text-slate-200">{t.resultText}</p>
             </div>
           </div>
@@ -92,6 +92,7 @@ export default async function Projects({ searchParams }: ProjectsPageProps) {
     </div>
   );
 }
+
 
 
 

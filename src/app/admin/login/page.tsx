@@ -57,21 +57,21 @@ export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
               name="password"
               type="password"
               required
-              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-600"
               placeholder="Enter admin password"
             />
           </div>
           <button
             type="submit"
             disabled={!isConfigured}
-            className="w-full rounded-lg bg-blue-600 text-white py-2 font-semibold hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full rounded-lg bg-cyan-600 text-white py-2 font-semibold hover:bg-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Sign In
           </button>
         </form>
 
         <div className="mt-6 text-sm">
-          <Link href="/" className="text-blue-600 hover:underline">
+          <Link href="/" className="text-cyan-600 hover:underline">
             Back to portfolio
           </Link>
         </div>
@@ -79,6 +79,7 @@ export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
     </div>
   );
 }
+
 
 
 

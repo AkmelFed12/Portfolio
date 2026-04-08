@@ -7,7 +7,7 @@ interface TestimonialsProps {
 export default function Testimonials({ items }: TestimonialsProps) {
 
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 py-20">
+    <section className="bg-gradient-to-br from-gray-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800 py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold mb-12 text-center animate-fade-in">
           What Clients Say
@@ -43,4 +43,5 @@ export default function Testimonials({ items }: TestimonialsProps) {
     </section>
   );
 }
+
 

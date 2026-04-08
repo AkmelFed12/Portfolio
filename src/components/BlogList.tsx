@@ -45,7 +45,7 @@ export default function BlogList({ posts }: BlogListProps) {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search posts..."
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600"
           />
         </div>
         <div>
@@ -56,7 +56,7 @@ export default function BlogList({ posts }: BlogListProps) {
             id="category"
             value={category}
             onChange={(event) => setCategory(event.target.value)}
-            className="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600"
           >
             {categories.map((item) => (
               <option key={item} value={item}>
@@ -86,12 +86,12 @@ export default function BlogList({ posts }: BlogListProps) {
               )}
               <div className="p-6">
                 <div className="mb-4 flex items-center justify-between">
-                  <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
+                  <span className="text-sm font-semibold text-cyan-600 dark:text-cyan-400 bg-cyan-100 dark:bg-cyan-900 px-3 py-1 rounded-full">
                     {post.category}
                   </span>
                   <span className="text-sm text-gray-600 dark:text-slate-300">{post.readTime}</span>
                 </div>
-                <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition">
+                <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition">
                   {post.title}
                 </h2>
                 <p className="text-gray-700 dark:text-slate-200 mb-4">{post.excerpt}</p>
@@ -103,7 +103,7 @@ export default function BlogList({ posts }: BlogListProps) {
                       day: 'numeric',
                     })}
                   </time>
-                  <span className="text-blue-600 dark:text-blue-400 font-semibold transition">Read More →</span>
+                  <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition">Read More →</span>
                 </div>
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <SocialShareButtons
@@ -126,4 +126,5 @@ export default function BlogList({ posts }: BlogListProps) {
     </section>
   );
 }
+
 

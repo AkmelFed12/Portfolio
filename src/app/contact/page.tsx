@@ -64,7 +64,7 @@ export default function Contact() {
           <p className="text-xl text-gray-700 dark:text-slate-200 mb-8">
             Have a project in mind? Let&apos;s discuss it.
           </p>
-          <p className="text-sm text-blue-700 dark:text-blue-300 mb-8 font-semibold">
+          <p className="text-sm text-cyan-700 dark:text-cyan-300 mb-8 font-semibold">
             Preferred channel: WhatsApp. Typical reply within 24h.
           </p>
           <ResumeDownload />
@@ -81,13 +81,13 @@ export default function Contact() {
                 <div className="space-y-1">
                   <a
                     href="mailto:ouattaralm12@gmail.com"
-                    className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline block transition"
+                    className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 hover:underline block transition"
                   >
                     ouattaralm12@gmail.com
                   </a>
                   <a
                     href="mailto:ouattaral2@student.iugb.edu.ci"
-                    className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline block transition"
+                    className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 hover:underline block transition"
                   >
                     ouattaral2@student.iugb.edu.ci
                   </a>
@@ -96,13 +96,13 @@ export default function Contact() {
               <div className="stagger-item-2">
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Phone Numbers</h3>
                 <div className="space-y-1">
-                  <a href="tel:+2250150070083" className="text-blue-600 dark:text-blue-400 hover:underline block transition">
+                  <a href="tel:+2250150070083" className="text-cyan-600 dark:text-cyan-400 hover:underline block transition">
                     +225 01 500 700 83
                   </a>
-                  <a href="tel:+2250574724233" className="text-blue-600 dark:text-blue-400 hover:underline block transition">
+                  <a href="tel:+2250574724233" className="text-cyan-600 dark:text-cyan-400 hover:underline block transition">
                     +225 05 747 242 33
                   </a>
-                  <a href="tel:+2250705583082" className="text-blue-600 dark:text-blue-400 hover:underline block transition">
+                  <a href="tel:+2250705583082" className="text-cyan-600 dark:text-cyan-400 hover:underline block transition">
                     +225 07 055 830 82
                   </a>
                 </div>
@@ -122,7 +122,7 @@ export default function Contact() {
                     href="https://github.com/AkmelFed12"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition transform hover:scale-110"
+                    className="text-gray-700 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition transform hover:scale-110"
                   >
                     GitHub
                   </a>
@@ -130,7 +130,7 @@ export default function Contact() {
                     href="https://www.linkedin.com/in/ladji-moussa-ouattara-8b5778298"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition transform hover:scale-110"
+                    className="text-gray-700 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition transform hover:scale-110"
                   >
                     LinkedIn
                   </a>
@@ -148,7 +148,7 @@ export default function Contact() {
               If WhatsApp does not open, use the fallback email button below.
             </p>
             {submitted && (
-              <div className="mb-6 p-4 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-lg animate-scale-in border border-blue-400 dark:border-blue-700">
+              <div className="mb-6 p-4 bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 rounded-lg animate-scale-in border border-cyan-400 dark:border-cyan-700">
                 Redirected to WhatsApp successfully. Thank you for your message.
               </div>
             )}
@@ -164,7 +164,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent transition"
                   placeholder="John Doe"
                 />
               </div>
@@ -178,7 +178,7 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent transition"
                   placeholder="john@example.com"
                 />
               </div>
@@ -193,20 +193,20 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition resize-none"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent transition resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 font-semibold rounded-lg transition transform shadow-lg bg-blue-700 hover:bg-blue-800 hover:scale-105 text-white"
+                className="w-full px-6 py-3 font-semibold rounded-lg transition transform shadow-lg bg-cyan-700 hover:bg-cyan-800 hover:scale-105 text-white"
               >
                 Send on WhatsApp
               </button>
               <button
                 type="button"
                 onClick={() => openEmailFallback(formData.name, formData.email, formData.message)}
-                className="w-full px-6 py-3 font-semibold rounded-lg border border-blue-600 text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 transition"
+                className="w-full px-6 py-3 font-semibold rounded-lg border border-cyan-600 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 transition"
               >
                 Fallback: Send by Email
               </button>
@@ -217,6 +217,7 @@ export default function Contact() {
     </div>
   );
 }
+
 
 
 

@@ -72,7 +72,7 @@ export default async function About({ searchParams }: AboutPageProps) {
 
           <h2 className="text-3xl font-bold mb-6 mt-12">{t.experience}</h2>
           <div className="space-y-8">
-            <div className="border-l-4 border-blue-600 pl-6">
+            <div className="border-l-4 border-cyan-600 pl-6">
               <h3 className="text-2xl font-bold mb-2">{t.expTitle}</h3>
               <p className="text-gray-600 dark:text-slate-300 mb-3">{t.expSub}</p>
               <ul className="space-y-2 text-gray-700 dark:text-slate-200">
@@ -82,7 +82,7 @@ export default async function About({ searchParams }: AboutPageProps) {
                 <li>Tech stack: Next.js, React, TypeScript, Tailwind CSS, Firebase, Vercel.</li>
               </ul>
             </div>
-            <div className="border-l-4 border-blue-600 pl-6">
+            <div className="border-l-4 border-cyan-600 pl-6">
               <h3 className="text-2xl font-bold mb-2">Learning & Development</h3>
               <p className="text-gray-600 dark:text-slate-300 mb-3">Computer Science Student | Ongoing</p>
               <ul className="space-y-2 text-gray-700 dark:text-slate-200">
@@ -113,6 +113,7 @@ export default async function About({ searchParams }: AboutPageProps) {
     </div>
   );
 }
+
 
 
 

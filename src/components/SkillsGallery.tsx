@@ -46,13 +46,13 @@ export default function SkillsGallery() {
                       <span className="text-gray-700 dark:text-slate-200 font-semibold">
                         {skill.name}
                       </span>
-                      <span className="text-blue-600 dark:text-blue-400 font-semibold">
+                      <span className="text-cyan-600 dark:text-cyan-400 font-semibold">
                         {skill.level}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
                       <div
-                        className="bg-gradient-to-r from-blue-700 to-blue-500 h-full rounded-full transition-all duration-1000 ease-out"
+                        className="bg-gradient-to-r from-cyan-700 to-cyan-500 h-full rounded-full transition-all duration-1000 ease-out"
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
@@ -66,6 +66,7 @@ export default function SkillsGallery() {
     </section>
   );
 }
+
 
 
 

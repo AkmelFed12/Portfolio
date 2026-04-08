@@ -7,7 +7,7 @@
   --surface: #ffffff;
   --surface-soft: #f1f5f9;
   --muted: #64748b;
-  --ring: #2563eb;
+  --ring: #0891b2;
 }
 
 @theme inline {
@@ -23,7 +23,7 @@
   --surface: #0f172a;
   --surface-soft: #1e293b;
   --muted: #94a3b8;
-  --ring: #60a5fa;
+  --ring: #22d3ee;
 }
 
 body {
@@ -36,12 +36,12 @@ body {
 }
 
 ::selection {
-  background: #bfdbfe;
+  background: #a5f3fc;
   color: #0f172a;
 }
 
 .dark ::selection {
-  background: #1d4ed8;
+  background: #0e7490;
   color: #e2e8f0;
 }
 
@@ -205,7 +205,7 @@ body {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-blue-700 text-white hover:bg-blue-800 shadow-sm hover:shadow-md transition-all duration-200;
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-cyan-700 text-white hover:bg-cyan-800 shadow-sm hover:shadow-md transition-all duration-200;
 }
 
 .btn-secondary {
@@ -217,7 +217,7 @@ body {
 }
 
 .focus-ring {
-  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900;
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500 dark:focus-visible:ring-cyan-400 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -228,3 +228,4 @@ body {
     scroll-behavior: auto !important;
   }
 }
+

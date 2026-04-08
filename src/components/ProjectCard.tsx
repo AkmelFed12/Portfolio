@@ -74,7 +74,7 @@ export default function ProjectCard({
             {tech.map((t) => (
               <span
                 key={t}
-                className="px-3 py-1 bg-blue-100/90 dark:bg-blue-900/70 text-blue-800 dark:text-blue-200 rounded-full text-sm"
+                className="px-3 py-1 bg-cyan-100/90 dark:bg-cyan-900/70 text-cyan-800 dark:text-cyan-200 rounded-full text-sm"
               >
                 {t}
               </span>
@@ -122,5 +122,6 @@ export default function ProjectCard({
     </div>
   );
 }
+
 
 

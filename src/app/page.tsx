@@ -257,15 +257,15 @@ export default async function Home({ searchParams }: HomePageProps) {
         <h2 className="text-3xl font-bold mb-6 text-center">{t.achievementsTitle}</h2>
         <div className="grid md:grid-cols-3 gap-4">
           <article className="surface-card p-5">
-            <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement1Date}</p>
+            <p className="text-sm font-semibold text-cyan-600 dark:text-cyan-400 mb-2">{t.achievement1Date}</p>
             <p className="text-gray-700 dark:text-slate-200">{t.achievement1}</p>
           </article>
           <article className="surface-card p-5">
-            <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement2Date}</p>
+            <p className="text-sm font-semibold text-cyan-600 dark:text-cyan-400 mb-2">{t.achievement2Date}</p>
             <p className="text-gray-700 dark:text-slate-200">{t.achievement2}</p>
           </article>
           <article className="surface-card p-5">
-            <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement3Date}</p>
+            <p className="text-sm font-semibold text-cyan-600 dark:text-cyan-400 mb-2">{t.achievement3Date}</p>
             <p className="text-gray-700 dark:text-slate-200">{t.achievement3}</p>
           </article>
         </div>
@@ -289,6 +289,7 @@ export default async function Home({ searchParams }: HomePageProps) {
     </div>
   );
 }
+
 
 
 

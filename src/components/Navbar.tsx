@@ -29,25 +29,25 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden lg:flex items-center space-x-6">
-            <Link href={withLang('/')} className="text-gray-700 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-300 transition">
+            <Link href={withLang('/')} className="text-gray-700 dark:text-slate-100 hover:text-cyan-600 dark:hover:text-cyan-300 transition">
               Home
             </Link>
-            <Link href={withLang('/projects')} className="text-gray-700 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-300 transition">
+            <Link href={withLang('/projects')} className="text-gray-700 dark:text-slate-100 hover:text-cyan-600 dark:hover:text-cyan-300 transition">
               Projects
             </Link>
-            <Link href={withLang('/services')} className="text-gray-700 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-300 transition">
+            <Link href={withLang('/services')} className="text-gray-700 dark:text-slate-100 hover:text-cyan-600 dark:hover:text-cyan-300 transition">
               Services
             </Link>
-            <Link href={withLang('/about')} className="text-gray-700 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-300 transition">
+            <Link href={withLang('/about')} className="text-gray-700 dark:text-slate-100 hover:text-cyan-600 dark:hover:text-cyan-300 transition">
               About
             </Link>
-            <Link href={withLang('/blog')} className="text-gray-700 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-300 transition">
+            <Link href={withLang('/blog')} className="text-gray-700 dark:text-slate-100 hover:text-cyan-600 dark:hover:text-cyan-300 transition">
               Blog
             </Link>
-            <Link href={withLang('/resume')} className="text-gray-700 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-300 transition">
+            <Link href={withLang('/resume')} className="text-gray-700 dark:text-slate-100 hover:text-cyan-600 dark:hover:text-cyan-300 transition">
               Resume
             </Link>
-            <Link href={withLang('/contact')} className="text-gray-700 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-300 transition">
+            <Link href={withLang('/contact')} className="text-gray-700 dark:text-slate-100 hover:text-cyan-600 dark:hover:text-cyan-300 transition">
               Contact
             </Link>
             <a
@@ -117,6 +117,7 @@ export default function Navbar() {
     </nav>
   );
 }
+
 
 
 

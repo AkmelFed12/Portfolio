@@ -88,7 +88,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
       />
       <article className="min-h-screen bg-white dark:bg-slate-950">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline mb-8 inline-block">
+          <Link href="/blog" className="text-cyan-600 dark:text-cyan-400 hover:underline mb-8 inline-block">
             ← Back to Blog
           </Link>
 
@@ -104,7 +104,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
             </h1>
 
             <div className="flex flex-wrap gap-4 items-center text-gray-600 dark:text-slate-300">
-              <span className="text-blue-600 dark:text-blue-400 font-semibold bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
+              <span className="text-cyan-600 dark:text-cyan-400 font-semibold bg-cyan-100 dark:bg-cyan-900 px-3 py-1 rounded-full">
                 {post.category}
               </span>
               <span>
@@ -171,7 +171,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
               <Link
                 key={item.slug}
                 href={`/blog/${item.slug}`}
-                className="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 transition"
+                className="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-cyan-500 transition"
               >
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{item.title}</h3>
                 <p className="text-gray-600 dark:text-slate-300">{item.excerpt}</p>
@@ -183,6 +183,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
     </div>
   );
 }
+
 
 
 

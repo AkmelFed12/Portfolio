@@ -19,13 +19,13 @@ export default function Resume() {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6">
-            <h3 className="text-2xl font-bold mb-2 text-blue-600 dark:text-blue-400">Download</h3>
+            <h3 className="text-2xl font-bold mb-2 text-cyan-600 dark:text-cyan-400">Download</h3>
             <p className="text-gray-700 dark:text-slate-200 mb-4">Get my resume as a PDF</p>
             <DownloadResumeButton />
           </div>
 
           <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6">
-            <h3 className="text-2xl font-bold mb-2 text-blue-600 dark:text-blue-400">View</h3>
+            <h3 className="text-2xl font-bold mb-2 text-cyan-600 dark:text-cyan-400">View</h3>
             <p className="text-gray-700 dark:text-slate-200 mb-4">Read my resume here</p>
             <a
               href="#resume-content"
@@ -39,7 +39,7 @@ export default function Resume() {
           </div>
 
           <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6">
-            <h3 className="text-2xl font-bold mb-2 text-blue-600 dark:text-blue-400">Print</h3>
+            <h3 className="text-2xl font-bold mb-2 text-cyan-600 dark:text-cyan-400">Print</h3>
             <p className="text-gray-700 dark:text-slate-200 mb-4">Print this page</p>
             <PrintResumeButton />
           </div>
@@ -52,7 +52,7 @@ export default function Resume() {
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
               LADJI MOUSSA OUATTARA
             </h1>
-            <p className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+            <p className="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mb-4">
               BS Computer Science Student | Full-Stack Learner
             </p>
             <div className="grid grid-cols-2 gap-4 text-sm text-gray-700 dark:text-slate-200">
@@ -92,7 +92,7 @@ export default function Resume() {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">ASAA Portal Project - Student Developer</h3>
                 <span className="text-gray-600 dark:text-slate-300">2025 - Present</span>
               </div>
-              <p className="text-blue-600 dark:text-blue-400 font-semibold mb-3">Islamic Quiz 2026 Management Platform</p>
+              <p className="text-cyan-600 dark:text-cyan-400 font-semibold mb-3">Islamic Quiz 2026 Management Platform</p>
               <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-slate-200">
                 <li>Designed and built a comprehensive membership and event management platform from scratch</li>
                 <li>Implemented user authentication, pre-selection management, and member portal features</li>
@@ -106,7 +106,7 @@ export default function Resume() {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">Learning & Development</h3>
                 <span className="text-gray-600 dark:text-slate-300">Ongoing</span>
               </div>
-              <p className="text-blue-600 dark:text-blue-400 font-semibold mb-3">Computer Science Student</p>
+              <p className="text-cyan-600 dark:text-cyan-400 font-semibold mb-3">Computer Science Student</p>
               <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-slate-200">
                 <li>Pursuing Bachelor of Science in Computer Science at University of the People</li>
                 <li>Building multiple portfolio projects to solidify learning</li>
@@ -168,12 +168,12 @@ export default function Resume() {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">Bachelor of Science in Computer Science</h3>
                 <span className="text-gray-600 dark:text-slate-300">Expected 2028</span>
               </div>
-              <p className="text-blue-600 dark:text-blue-400">University of the People</p>
+              <p className="text-cyan-600 dark:text-cyan-400">University of the People</p>
             </div>
 
             <div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">Previous Studies</h3>
-              <p className="text-blue-600 dark:text-blue-400">International University of Grand-Bassam</p>
+              <p className="text-cyan-600 dark:text-cyan-400">International University of Grand-Bassam</p>
               <p className="text-gray-700 dark:text-slate-200 mt-2">
                 Started computer science studies before stopping and applying to University of the People.
               </p>
@@ -230,6 +230,7 @@ export default function Resume() {
     </div>
   );
 }
+
 
 
 

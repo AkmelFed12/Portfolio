@@ -41,7 +41,7 @@ export default function SocialShareButtons({
         href={shareLinks.twitter}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 rounded-full bg-blue-400 hover:bg-blue-500 text-white transition transform hover:scale-110"
+        className="p-2 rounded-full bg-cyan-400 hover:bg-cyan-500 text-white transition transform hover:scale-110"
         title="Share on Twitter"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -54,7 +54,7 @@ export default function SocialShareButtons({
         href={shareLinks.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 rounded-full bg-blue-700 hover:bg-blue-800 text-white transition transform hover:scale-110"
+        className="p-2 rounded-full bg-cyan-700 hover:bg-cyan-800 text-white transition transform hover:scale-110"
         title="Share on LinkedIn"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@ export default function SocialShareButtons({
         href={shareLinks.facebook}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition transform hover:scale-110"
+        className="p-2 rounded-full bg-cyan-600 hover:bg-cyan-700 text-white transition transform hover:scale-110"
         title="Share on Facebook"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -122,4 +122,5 @@ export default function SocialShareButtons({
     </div>
   );
 }
+
 

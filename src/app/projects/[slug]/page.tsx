@@ -107,7 +107,7 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <Link href="/projects" className="text-blue-600 dark:text-blue-400 hover:underline mb-8 inline-block">
+      <Link href="/projects" className="text-cyan-600 dark:text-cyan-400 hover:underline mb-8 inline-block">
         ← Back to Projects
       </Link>
 
@@ -159,7 +159,7 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition"
+            className="px-5 py-2.5 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition"
           >
             View Live
           </a>
@@ -184,11 +184,11 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
               <Link
                 key={item.slug}
                 href={`/projects/${item.slug}`}
-                className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 hover:border-blue-500 transition"
+                className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 hover:border-cyan-500 transition"
               >
                 <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{item.title}</h3>
                 <p className="text-sm text-gray-700 dark:text-slate-200">{item.description}</p>
-                <p className="mt-3 text-sm font-semibold text-blue-600 dark:text-blue-400">Read Case Study →</p>
+                <p className="mt-3 text-sm font-semibold text-cyan-600 dark:text-cyan-400">Read Case Study →</p>
               </Link>
             ))}
           </div>
@@ -197,4 +197,5 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
     </div>
   );
 }
+
 

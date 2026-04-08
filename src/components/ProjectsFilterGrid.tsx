@@ -73,7 +73,7 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
             onClick={() => setFilter(btn.key)}
             className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
               filter === btn.key
-                ? 'bg-blue-600 text-white'
+                ? 'bg-cyan-600 text-white'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-slate-200 hover:bg-gray-200 dark:hover:bg-gray-700'
             }`}
           >
@@ -91,11 +91,11 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
             {buttons.find((btn) => btn.key === filter)?.label}
           </span>
         </div>
-        <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 dark:bg-blue-950/40 px-4 py-2 border border-blue-200 dark:border-blue-900 animate-fade-in">
-          <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">
+        <div className="inline-flex items-center gap-2 rounded-full bg-cyan-50 dark:bg-cyan-950/40 px-4 py-2 border border-cyan-200 dark:border-cyan-900 animate-fade-in">
+          <span className="text-sm font-semibold text-cyan-700 dark:text-cyan-300">
             {labels.showing}
           </span>
-          <span className="inline-flex min-w-8 justify-center rounded-full bg-blue-600 px-2 py-0.5 text-xs font-bold text-white">
+          <span className="inline-flex min-w-8 justify-center rounded-full bg-cyan-600 px-2 py-0.5 text-xs font-bold text-white">
             {filteredProjects.length}
           </span>
         </div>
@@ -120,4 +120,5 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
     </div>
   );
 }
+
 

@@ -76,7 +76,7 @@ export default function NewsletterSignup() {
               className={`px-8 py-3 rounded-lg font-semibold transition ${
                 loading
                   ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-blue-700 text-white hover:bg-blue-800 focus-ring'
+                  : 'bg-cyan-700 text-white hover:bg-cyan-800 focus-ring'
               }`}
             >
               {loading ? 'Subscribing...' : 'Subscribe'}
@@ -98,4 +98,5 @@ export default function NewsletterSignup() {
     </section>
   );
 }
+
 
