@@ -165,20 +165,20 @@ export default async function Home({ searchParams }: HomePageProps) {
           <div className="flex gap-4 justify-center flex-wrap stagger-item-1">
             <Link
               href={lang === 'fr' ? '/projects?lang=fr' : '/projects'}
-              className="px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition transform hover:scale-105 shadow-lg"
+              className="btn-primary focus-ring"
             >
               {t.ctaWork}
             </Link>
             <Link
               href={lang === 'fr' ? '/contact?lang=fr' : '/contact'}
-              className="px-8 py-3 border-2 border-gray-800 dark:border-gray-300 text-gray-800 dark:text-white hover:bg-gray-800 hover:text-white dark:hover:bg-white dark:hover:text-black rounded-lg font-semibold transition transform hover:scale-105"
+              className="btn-secondary focus-ring"
             >
               {t.ctaContact}
             </Link>
             <TrackedWhatsAppButton
               label={t.ctaWhatsApp}
               source="hero_primary_cta"
-              className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition transform hover:scale-105"
+              className="btn-accent focus-ring"
             />
           </div>
         </div>
@@ -233,21 +233,21 @@ export default async function Home({ searchParams }: HomePageProps) {
           <div className="flex flex-wrap gap-3">
             <Link
               href={lang === 'fr' ? '/contact?lang=fr' : '/contact'}
-              className="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition"
+              className="btn-primary focus-ring px-5 py-2.5"
             >
               {t.internshipCta1}
             </Link>
             <a
               href="/CV_LADJI_MOUSSA_OUATTARA.pdf"
               download
-              className="px-5 py-2.5 rounded-lg border border-blue-600 text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 font-semibold transition"
+              className="btn-secondary focus-ring px-5 py-2.5"
             >
               {t.internshipCta2}
             </a>
             <TrackedWhatsAppButton
               label={t.internshipCta3}
               source="internship_section_cta"
-              className="px-5 py-2.5 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold transition"
+              className="btn-accent focus-ring px-5 py-2.5"
             />
           </div>
         </div>
@@ -256,15 +256,15 @@ export default async function Home({ searchParams }: HomePageProps) {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h2 className="text-3xl font-bold mb-6 text-center">{t.achievementsTitle}</h2>
         <div className="grid md:grid-cols-3 gap-4">
-          <article className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5">
+          <article className="surface-card p-5">
             <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement1Date}</p>
             <p className="text-gray-700 dark:text-slate-200">{t.achievement1}</p>
           </article>
-          <article className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5">
+          <article className="surface-card p-5">
             <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement2Date}</p>
             <p className="text-gray-700 dark:text-slate-200">{t.achievement2}</p>
           </article>
-          <article className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5">
+          <article className="surface-card p-5">
             <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement3Date}</p>
             <p className="text-gray-700 dark:text-slate-200">{t.achievement3}</p>
           </article>
@@ -276,7 +276,7 @@ export default async function Home({ searchParams }: HomePageProps) {
         <p className="text-center text-gray-600 dark:text-slate-300 mb-10">{t.techSubtitle}</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {['Next.js', 'React', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Firebase', 'PostgreSQL', 'Vercel'].map((tech) => (
-            <div key={tech} className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-sm">
+            <div key={tech} className="surface-card-soft p-4">
               <p className="font-semibold text-gray-900 dark:text-white">{tech}</p>
             </div>
           ))}

@@ -5,7 +5,9 @@
   --background: #f8fafc;
   --foreground: #0f172a;
   --surface: #ffffff;
+  --surface-soft: #f1f5f9;
   --muted: #64748b;
+  --ring: #2563eb;
 }
 
 @theme inline {
@@ -19,7 +21,9 @@
   --background: #020617;
   --foreground: #e2e8f0;
   --surface: #0f172a;
+  --surface-soft: #1e293b;
   --muted: #94a3b8;
+  --ring: #60a5fa;
 }
 
 body {
@@ -28,6 +32,7 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Animations */
@@ -147,7 +152,7 @@ body {
 }
 
 /* Smooth transitions */
-* {
+:where(a, button, input, textarea, select) {
   @apply transition-colors duration-200;
 }
 
@@ -174,4 +179,28 @@ body {
 
 .stagger-item-6 {
   animation: slideUp 0.6s ease-out 0.6s both;
+}
+
+.surface-card {
+  @apply rounded-2xl border border-slate-200/80 dark:border-slate-700/80 bg-white dark:bg-slate-900 shadow-sm;
+}
+
+.surface-card-soft {
+  @apply rounded-2xl border border-slate-200/70 dark:border-slate-700/70 bg-slate-50 dark:bg-slate-800/60 shadow-sm;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-blue-700 text-white hover:bg-blue-800 shadow-sm hover:shadow-md;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-100 bg-white/70 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-700/80;
+}
+
+.btn-accent {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-green-600 text-white hover:bg-green-700 shadow-sm hover:shadow-md;
+}
+
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900;
 }

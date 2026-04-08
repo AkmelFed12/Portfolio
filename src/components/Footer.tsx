@@ -8,9 +8,9 @@ export default function Footer() {
           DESIGN & CREATED BY LMO WEB SERVICES
         </p>
       </div>
-      <div className="bg-gray-900 dark:bg-slate-950 text-white text-center py-8">
+      <div className="bg-slate-900 dark:bg-slate-950 text-white text-center py-8 border-t border-slate-800">
         <div className="max-w-4xl mx-auto px-4">
-        <p className="text-gray-400 mb-4">
+        <p className="text-slate-400 mb-4">
           © {currentYear} Ladji Moussa OUATTARA. All rights reserved.
         </p>
         <div className="flex justify-center space-x-6">
@@ -18,7 +18,7 @@ export default function Footer() {
             href="https://github.com/AkmelFed12"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition"
+            className="text-slate-300 hover:text-white transition"
           >
             GitHub
           </a>
@@ -26,7 +26,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/ladji-moussa-ouattara-8b5778298"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition"
+            className="text-slate-300 hover:text-white transition"
           >
             LinkedIn
           </a>

@@ -36,7 +36,7 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <section className="bg-gradient-to-r from-slate-900 to-blue-700 py-16">
+    <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-blue-900 py-16">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-bold text-white mb-4">
           Subscribe to My Newsletter
@@ -46,7 +46,7 @@ export default function NewsletterSignup() {
         </p>
 
         {subscribed ? (
-          <div className="bg-white bg-opacity-20 border border-white rounded-lg p-6 text-white animate-scale-in">
+          <div className="bg-white/15 border border-white/40 rounded-xl p-6 text-white animate-scale-in">
             <div className="flex items-center justify-center gap-3 mb-2">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -65,17 +65,17 @@ export default function NewsletterSignup() {
                 setError('');
               }}
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus-ring"
               required
               disabled={loading}
             />
             <button
               type="submit"
               disabled={loading}
-              className={`px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105 ${
+              className={`px-8 py-3 rounded-lg font-semibold transition ${
                 loading
                   ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-white text-blue-700 hover:bg-blue-50'
+                  : 'bg-white text-blue-700 hover:bg-blue-50 focus-ring'
               }`}
             >
               {loading ? 'Subscribing...' : 'Subscribe'}
@@ -84,7 +84,7 @@ export default function NewsletterSignup() {
         )}
 
         {error && (
-          <div className="mt-4 text-red-100 text-sm">
+          <div className="mt-4 text-red-200 text-sm">
             {error}
           </div>
         )}

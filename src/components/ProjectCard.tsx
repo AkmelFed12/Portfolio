@@ -25,9 +25,9 @@ export default function ProjectCard({
   const shareUrl = link || github;
 
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+    <div className="surface-card overflow-hidden hover:shadow-md transition-shadow">
       {(image || mobileImage) && (
-        <div className="p-4 bg-gray-100 dark:bg-gray-800">
+        <div className="p-4 bg-slate-100 dark:bg-slate-800/70">
           <div className="grid grid-cols-3 gap-3">
             {image && (
               <div className="relative col-span-2 h-36 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
@@ -74,18 +74,18 @@ export default function ProjectCard({
             {tech.map((t) => (
               <span
                 key={t}
-                className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm"
+                className="px-3 py-1 bg-blue-100/90 dark:bg-blue-900/70 text-blue-800 dark:text-blue-200 rounded-full text-sm"
               >
                 {t}
               </span>
             ))}
           </div>
         </div>
-        <div className="flex space-x-4 mb-4">
+        <div className="flex flex-wrap gap-3 mb-4">
           {caseStudyLink && (
             <a
               href={caseStudyLink}
-              className="inline-block px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded transition"
+              className="btn-secondary focus-ring px-4 py-2"
             >
               Case Study
             </a>
@@ -95,7 +95,7 @@ export default function ProjectCard({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition"
+              className="btn-primary focus-ring px-4 py-2"
             >
               View Live
             </a>
@@ -105,7 +105,7 @@ export default function ProjectCard({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-4 py-2 bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded transition"
+              className="btn-secondary focus-ring px-4 py-2"
             >
               GitHub
             </a>
