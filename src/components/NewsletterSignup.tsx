@@ -36,24 +36,25 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-blue-900 py-16">
+    <section className="py-16">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl font-bold text-white mb-4">
+        <div className="surface-card p-8 sm:p-10">
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">
           Subscribe to My Newsletter
         </h2>
-        <p className="text-blue-100 mb-8 text-lg">
+        <p className="text-slate-600 dark:text-slate-300 mb-8 text-lg">
           Get insights about web development, my projects, and learning updates delivered to your inbox
         </p>
 
         {subscribed ? (
-          <div className="bg-white/15 border border-white/40 rounded-xl p-6 text-white animate-scale-in">
+          <div className="surface-card-soft p-6 animate-scale-in">
             <div className="flex items-center justify-center gap-3 mb-2">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span className="text-xl font-semibold">Thanks for subscribing!</span>
+              <span className="text-xl font-semibold text-slate-900 dark:text-slate-100">Thanks for subscribing!</span>
             </div>
-            <p className="text-blue-100">Check your email for confirmation</p>
+            <p className="text-slate-600 dark:text-slate-300">Check your email for confirmation</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
@@ -75,7 +76,7 @@ export default function NewsletterSignup() {
               className={`px-8 py-3 rounded-lg font-semibold transition ${
                 loading
                   ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-white text-blue-700 hover:bg-blue-50 focus-ring'
+                  : 'bg-blue-700 text-white hover:bg-blue-800 focus-ring'
               }`}
             >
               {loading ? 'Subscribing...' : 'Subscribe'}
@@ -84,14 +85,15 @@ export default function NewsletterSignup() {
         )}
 
         {error && (
-          <div className="mt-4 text-red-200 text-sm">
+          <div className="mt-4 text-red-600 dark:text-red-300 text-sm">
             {error}
           </div>
         )}
 
-        <p className="text-blue-100 text-sm mt-4">
+        <p className="text-slate-500 dark:text-slate-400 text-sm mt-4">
           No spam, unsubscribe anytime. I share updates about 2-3 times per month.
         </p>
+        </div>
       </div>
     </section>
   );

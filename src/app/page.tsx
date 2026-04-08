@@ -142,17 +142,17 @@ export default async function Home({ searchParams }: HomePageProps) {
           __html: JSON.stringify(websiteJsonLd).replace(/</g, '\\u003c'),
         }}
       />
-      <section className="min-h-[60vh] bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-          <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 dark:text-slate-100 mb-6 animate-slide-down">
+      <section className="min-h-[60vh] bg-slate-50 dark:bg-slate-950 border-b border-slate-200/70 dark:border-slate-800 flex items-center justify-center py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
+          <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 mb-6 animate-slide-down">
             Ladji Moussa OUATTARA
           </h1>
           <p className="text-2xl text-gray-700 dark:text-slate-200 mb-6 animate-slide-up">{t.role}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
+            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
               {t.badge1}
             </span>
-            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
+            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
               {t.badge2}
             </span>
             <span className="px-3 py-1 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
@@ -184,7 +184,7 @@ export default async function Home({ searchParams }: HomePageProps) {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <h2 className="text-4xl font-bold mb-12 text-center animate-fade-in">{t.featured}</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {featuredProjects.map((project, index) => (
@@ -205,31 +205,31 @@ export default async function Home({ searchParams }: HomePageProps) {
         <div className="text-center">
           <Link
             href={lang === 'fr' ? '/projects?lang=fr' : '/projects'}
-            className="inline-block px-6 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:border-blue-600 rounded-lg font-semibold transition transform hover:scale-105"
+            className="btn-secondary focus-ring"
           >
             {t.viewAll} →
           </Link>
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="rounded-2xl bg-gradient-to-r from-slate-800 to-blue-800 text-white p-8 shadow-xl">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="surface-card p-8">
           <h2 className="text-3xl font-bold mb-2">{t.goals}</h2>
-          <p className="text-white/90 mb-6">{t.goalsSubtitle}</p>
+          <p className="text-slate-600 dark:text-slate-300 mb-6">{t.goalsSubtitle}</p>
           <ul className="grid md:grid-cols-3 gap-4">
-            <li className="bg-white/15 rounded-lg p-4">{t.goal1}</li>
-            <li className="bg-white/15 rounded-lg p-4">{t.goal2}</li>
-            <li className="bg-white/15 rounded-lg p-4">{t.goal3}</li>
+            <li className="surface-card-soft p-4 text-slate-700 dark:text-slate-200">{t.goal1}</li>
+            <li className="surface-card-soft p-4 text-slate-700 dark:text-slate-200">{t.goal2}</li>
+            <li className="surface-card-soft p-4 text-slate-700 dark:text-slate-200">{t.goal3}</li>
           </ul>
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="rounded-2xl border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-950/40 p-6 sm:p-8">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-blue-800 dark:text-blue-300">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="surface-card-soft p-6 sm:p-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-slate-900 dark:text-slate-100">
             {t.internshipTitle}
           </h2>
-          <p className="text-blue-900 dark:text-blue-200 mb-5">{t.internshipText}</p>
+          <p className="text-slate-700 dark:text-slate-300 mb-5">{t.internshipText}</p>
           <div className="flex flex-wrap gap-3">
             <Link
               href={lang === 'fr' ? '/contact?lang=fr' : '/contact'}
@@ -253,7 +253,7 @@ export default async function Home({ searchParams }: HomePageProps) {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h2 className="text-3xl font-bold mb-6 text-center">{t.achievementsTitle}</h2>
         <div className="grid md:grid-cols-3 gap-4">
           <article className="surface-card p-5">
@@ -271,7 +271,7 @@ export default async function Home({ searchParams }: HomePageProps) {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <h2 className="text-4xl font-bold mb-3 text-center">{t.techTitle}</h2>
         <p className="text-center text-gray-600 dark:text-slate-300 mb-10">{t.techSubtitle}</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -289,6 +289,7 @@ export default async function Home({ searchParams }: HomePageProps) {
     </div>
   );
 }
+
 
 
 
