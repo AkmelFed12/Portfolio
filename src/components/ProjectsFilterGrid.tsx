@@ -74,7 +74,7 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
             className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
               filter === btn.key
                 ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-slate-200 hover:bg-gray-200 dark:hover:bg-gray-700'
             }`}
           >
             {btn.label}
@@ -84,7 +84,7 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
 
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-gray-800 px-4 py-2">
-          <span className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+          <span className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-slate-300">
             Filter
           </span>
           <span className="text-sm font-semibold text-gray-900 dark:text-white">
@@ -120,3 +120,4 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
     </div>
   );
 }
+

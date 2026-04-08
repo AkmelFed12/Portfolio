@@ -142,12 +142,12 @@ export default async function Home({ searchParams }: HomePageProps) {
           __html: JSON.stringify(websiteJsonLd).replace(/</g, '\\u003c'),
         }}
       />
-      <section className="min-h-[60vh] bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 flex items-center justify-center py-20">
+      <section className="min-h-[60vh] bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
           <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 dark:text-slate-100 mb-6 animate-slide-down">
             Ladji Moussa OUATTARA
           </h1>
-          <p className="text-2xl text-gray-700 dark:text-gray-300 mb-6 animate-slide-up">{t.role}</p>
+          <p className="text-2xl text-gray-700 dark:text-slate-200 mb-6 animate-slide-up">{t.role}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
             <span className="px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
               {t.badge1}
@@ -159,13 +159,13 @@ export default async function Home({ searchParams }: HomePageProps) {
               {t.badge3}
             </span>
           </div>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up">
+          <p className="text-xl text-gray-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up">
             {t.summary}
           </p>
           <div className="flex gap-4 justify-center flex-wrap stagger-item-1">
             <Link
               href={lang === 'fr' ? '/projects?lang=fr' : '/projects'}
-              className="px-8 py-3 bg-gradient-to-r from-slate-900 to-blue-700 hover:from-slate-950 hover:to-blue-800 text-white rounded-lg font-semibold transition transform hover:scale-105 shadow-lg"
+              className="px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition transform hover:scale-105 shadow-lg"
             >
               {t.ctaWork}
             </Link>
@@ -256,27 +256,27 @@ export default async function Home({ searchParams }: HomePageProps) {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h2 className="text-3xl font-bold mb-6 text-center">{t.achievementsTitle}</h2>
         <div className="grid md:grid-cols-3 gap-4">
-          <article className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5">
+          <article className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5">
             <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement1Date}</p>
-            <p className="text-gray-700 dark:text-gray-300">{t.achievement1}</p>
+            <p className="text-gray-700 dark:text-slate-200">{t.achievement1}</p>
           </article>
-          <article className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5">
+          <article className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5">
             <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement2Date}</p>
-            <p className="text-gray-700 dark:text-gray-300">{t.achievement2}</p>
+            <p className="text-gray-700 dark:text-slate-200">{t.achievement2}</p>
           </article>
-          <article className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5">
+          <article className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5">
             <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{t.achievement3Date}</p>
-            <p className="text-gray-700 dark:text-gray-300">{t.achievement3}</p>
+            <p className="text-gray-700 dark:text-slate-200">{t.achievement3}</p>
           </article>
         </div>
       </section>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <h2 className="text-4xl font-bold mb-3 text-center">{t.techTitle}</h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-10">{t.techSubtitle}</p>
+        <p className="text-center text-gray-600 dark:text-slate-300 mb-10">{t.techSubtitle}</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {['Next.js', 'React', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Firebase', 'PostgreSQL', 'Vercel'].map((tech) => (
-            <div key={tech} className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 shadow-sm">
+            <div key={tech} className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-sm">
               <p className="font-semibold text-gray-900 dark:text-white">{tech}</p>
             </div>
           ))}
@@ -289,5 +289,6 @@ export default async function Home({ searchParams }: HomePageProps) {
     </div>
   );
 }
+
 
 

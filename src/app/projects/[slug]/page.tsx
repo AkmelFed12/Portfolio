@@ -112,44 +112,44 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
       </Link>
 
       <h1 className="text-4xl sm:text-5xl font-bold mb-4">{project.title}</h1>
-      <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">{project.description}</p>
+      <p className="text-lg text-gray-700 dark:text-slate-200 mb-8">{project.description}</p>
 
       <div className="grid sm:grid-cols-2 gap-4 mb-10">
-        <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5">
+        <div className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5">
           <h2 className="text-xl font-bold mb-2">Role</h2>
-          <p className="text-gray-700 dark:text-gray-300">{details.role}</p>
+          <p className="text-gray-700 dark:text-slate-200">{details.role}</p>
         </div>
-        <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5">
+        <div className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5">
           <h2 className="text-xl font-bold mb-2">Tech Stack</h2>
-          <p className="text-gray-700 dark:text-gray-300">{project.tech.join(', ')}</p>
+          <p className="text-gray-700 dark:text-slate-200">{project.tech.join(', ')}</p>
         </div>
       </div>
 
       <div className="space-y-6">
-        <section className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
+        <section className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6">
           <h2 className="text-2xl font-bold mb-2">Challenge</h2>
-          <p className="text-gray-700 dark:text-gray-300">{details.challenge}</p>
+          <p className="text-gray-700 dark:text-slate-200">{details.challenge}</p>
         </section>
 
-        <section className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
+        <section className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6">
           <h2 className="text-2xl font-bold mb-2">Solution</h2>
-          <p className="text-gray-700 dark:text-gray-300">{details.solution}</p>
+          <p className="text-gray-700 dark:text-slate-200">{details.solution}</p>
         </section>
 
-        <section className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
+        <section className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6">
           <h2 className="text-2xl font-bold mb-3">Impact</h2>
           <ul className="space-y-2">
             {details.impact.map((item) => (
-              <li key={item} className="text-gray-700 dark:text-gray-300">
+              <li key={item} className="text-gray-700 dark:text-slate-200">
                 • {item}
               </li>
             ))}
           </ul>
         </section>
 
-        <section className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
+        <section className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6">
           <h2 className="text-2xl font-bold mb-2">Next Iteration</h2>
-          <p className="text-gray-700 dark:text-gray-300">{details.next}</p>
+          <p className="text-gray-700 dark:text-slate-200">{details.next}</p>
         </section>
       </div>
 
@@ -184,10 +184,10 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
               <Link
                 key={item.slug}
                 href={`/projects/${item.slug}`}
-                className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 hover:border-blue-500 transition"
+                className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 hover:border-blue-500 transition"
               >
                 <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{item.title}</h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300">{item.description}</p>
+                <p className="text-sm text-gray-700 dark:text-slate-200">{item.description}</p>
                 <p className="mt-3 text-sm font-semibold text-blue-600 dark:text-blue-400">Read Case Study →</p>
               </Link>
             ))}
@@ -197,3 +197,4 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
     </div>
   );
 }
+

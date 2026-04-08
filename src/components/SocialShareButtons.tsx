@@ -34,7 +34,7 @@ export default function SocialShareButtons({
 
   return (
     <div className="flex items-center gap-3">
-      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Share:</span>
+      <span className="text-sm font-medium text-gray-700 dark:text-slate-200">Share:</span>
 
       {/* Twitter */}
       <a
@@ -122,3 +122,4 @@ export default function SocialShareButtons({
     </div>
   );
 }
+

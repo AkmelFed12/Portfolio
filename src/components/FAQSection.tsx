@@ -55,15 +55,16 @@ export default function FAQSection({ lang = 'en' }: FAQSectionProps) {
         {content.items.map((item) => (
           <details
             key={item.q}
-            className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5"
+            className="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5"
           >
             <summary className="font-semibold cursor-pointer text-gray-900 dark:text-white">
               {item.q}
             </summary>
-            <p className="mt-3 text-gray-700 dark:text-gray-300">{item.a}</p>
+            <p className="mt-3 text-gray-700 dark:text-slate-200">{item.a}</p>
           </details>
         ))}
       </div>
     </section>
   );
 }
+

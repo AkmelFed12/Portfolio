@@ -22,13 +22,13 @@ export default function Testimonials({ items }: TestimonialsProps) {
                 <div className="text-4xl mr-4">👤</div>
                 <div>
                   <p className="font-bold text-gray-900 dark:text-white">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm text-gray-600 dark:text-slate-300">
                     {testimonial.title}
                     {testimonial.company ? ` at ${testimonial.company}` : ''}
                   </p>
                 </div>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 italic">
+              <p className="text-gray-700 dark:text-slate-200 italic">
                 "{testimonial.testimonial}"
               </p>
               <div className="mt-4 flex text-yellow-400">
@@ -43,3 +43,4 @@ export default function Testimonials({ items }: TestimonialsProps) {
     </section>
   );
 }
+

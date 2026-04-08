@@ -58,31 +58,31 @@ export default async function Projects({ searchParams }: ProjectsPageProps) {
 
   return (
     <div>
-      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-950 dark:to-slate-900 flex items-center justify-center py-20">
+      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100">
             {t.title}
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300">{t.subtitle}</p>
+          <p className="text-xl text-gray-700 dark:text-slate-200">{t.subtitle}</p>
         </div>
       </section>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="mb-12 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 border border-gray-100 dark:border-gray-800">
+        <div className="mb-12 bg-white dark:bg-slate-900 rounded-xl shadow-lg p-8 border border-gray-100 dark:border-slate-700">
           <h2 className="text-3xl font-bold mb-4">{t.caseStudy}</h2>
-          <p className="text-gray-700 dark:text-gray-300 mb-6">{t.caseDesc}</p>
+          <p className="text-gray-700 dark:text-slate-200 mb-6">{t.caseDesc}</p>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
               <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2">{t.challenge}</h3>
-              <p className="text-gray-700 dark:text-gray-300">{t.challengeText}</p>
+              <p className="text-gray-700 dark:text-slate-200">{t.challengeText}</p>
             </div>
             <div>
               <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2">{t.solution}</h3>
-              <p className="text-gray-700 dark:text-gray-300">{t.solutionText}</p>
+              <p className="text-gray-700 dark:text-slate-200">{t.solutionText}</p>
             </div>
             <div>
               <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2">{t.result}</h3>
-              <p className="text-gray-700 dark:text-gray-300">{t.resultText}</p>
+              <p className="text-gray-700 dark:text-slate-200">{t.resultText}</p>
             </div>
           </div>
         </div>
@@ -92,5 +92,6 @@ export default async function Projects({ searchParams }: ProjectsPageProps) {
     </div>
   );
 }
+
 
 

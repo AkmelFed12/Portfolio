@@ -56,12 +56,12 @@ export default function Contact() {
 
   return (
     <div>
-      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-950 dark:to-slate-900 flex items-center justify-center py-20">
+      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
           <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100 animate-slide-down">
             Get In Touch
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
+          <p className="text-xl text-gray-700 dark:text-slate-200 mb-8">
             Have a project in mind? Let&apos;s discuss it.
           </p>
           <p className="text-sm text-blue-700 dark:text-blue-300 mb-8 font-semibold">
@@ -109,7 +109,7 @@ export default function Contact() {
               </div>
               <div className="stagger-item-3">
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Location</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-gray-700 dark:text-slate-200">
                   Cote d&apos;Ivoire, Abidjan, Treichville
                   <br />
                   Avenue 4 Rue 13
@@ -122,7 +122,7 @@ export default function Contact() {
                     href="https://github.com/AkmelFed12"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition transform hover:scale-110"
+                    className="text-gray-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition transform hover:scale-110"
                   >
                     GitHub
                   </a>
@@ -130,7 +130,7 @@ export default function Contact() {
                     href="https://www.linkedin.com/in/ladji-moussa-ouattara-8b5778298"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition transform hover:scale-110"
+                    className="text-gray-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold transition transform hover:scale-110"
                   >
                     LinkedIn
                   </a>
@@ -141,10 +141,10 @@ export default function Contact() {
 
           <div className="animate-slide-right">
             <h2 className="text-3xl font-bold mb-8">Send Me a Message</h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-sm text-gray-600 dark:text-slate-300 mb-6">
               Fill this form and you will be redirected to WhatsApp with your prefilled message.
             </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
+            <p className="text-xs text-gray-500 dark:text-slate-300 mb-4">
               If WhatsApp does not open, use the fallback email button below.
             </p>
             {submitted && (
@@ -164,7 +164,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
                   placeholder="John Doe"
                 />
               </div>
@@ -178,7 +178,7 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition"
                   placeholder="john@example.com"
                 />
               </div>
@@ -193,13 +193,13 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition resize-none"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 font-semibold rounded-lg transition transform shadow-lg bg-gradient-to-r from-slate-900 to-blue-700 hover:from-slate-950 hover:to-blue-800 hover:scale-105 text-white"
+                className="w-full px-6 py-3 font-semibold rounded-lg transition transform shadow-lg bg-blue-700 hover:bg-blue-800 hover:scale-105 text-white"
               >
                 Send on WhatsApp
               </button>
@@ -217,5 +217,6 @@ export default function Contact() {
     </div>
   );
 }
+
 
 

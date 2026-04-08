@@ -22,9 +22,9 @@ export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950 flex items-center justify-center px-4 py-16">
-      <div className="w-full max-w-md bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8">
+      <div className="w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-8">
         <h1 className="text-3xl font-bold mb-2">Admin Login</h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-6">
+        <p className="text-gray-600 dark:text-slate-300 mb-6">
           Enter your admin password to access dashboard controls.
         </p>
 
@@ -79,5 +79,6 @@ export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
     </div>
   );
 }
+
 
 

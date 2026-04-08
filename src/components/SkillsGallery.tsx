@@ -43,7 +43,7 @@ export default function SkillsGallery() {
                 {category.skills.map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-1">
-                      <span className="text-gray-700 dark:text-gray-300 font-semibold">
+                      <span className="text-gray-700 dark:text-slate-200 font-semibold">
                         {skill.name}
                       </span>
                       <span className="text-blue-600 dark:text-blue-400 font-semibold">
@@ -66,5 +66,6 @@ export default function SkillsGallery() {
     </section>
   );
 }
+
 
 

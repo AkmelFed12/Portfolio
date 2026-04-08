@@ -62,14 +62,14 @@ export default function JourneyTimeline() {
                     <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
                       {item.title}
                     </h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    <p className="text-gray-700 dark:text-slate-200 mb-4">
                       {item.description}
                     </p>
                     <div className="space-y-2">
                       {item.achievements.map((achievement) => (
                         <div
                           key={achievement}
-                          className="flex items-center gap-2 text-gray-700 dark:text-gray-300"
+                          className="flex items-center gap-2 text-gray-700 dark:text-slate-200"
                         >
                           <span className="text-blue-600 dark:text-blue-400">✓</span>
                           {achievement}
@@ -94,5 +94,6 @@ export default function JourneyTimeline() {
     </section>
   );
 }
+
 
 

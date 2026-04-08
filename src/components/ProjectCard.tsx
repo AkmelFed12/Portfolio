@@ -25,7 +25,7 @@ export default function ProjectCard({
   const shareUrl = link || github;
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+    <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
       {(image || mobileImage) && (
         <div className="p-4 bg-gray-100 dark:bg-gray-800">
           <div className="grid grid-cols-3 gap-3">
@@ -65,9 +65,9 @@ export default function ProjectCard({
             </span>
           </div>
         )}
-        <p className="text-gray-700 dark:text-gray-300 mb-4">{description}</p>
+        <p className="text-gray-700 dark:text-slate-200 mb-4">{description}</p>
         <div className="mb-4">
-          <p className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">
+          <p className="text-sm font-semibold text-gray-600 dark:text-slate-300 mb-2">
             Tech Stack:
           </p>
           <div className="flex flex-wrap gap-2">
@@ -122,4 +122,5 @@ export default function ProjectCard({
     </div>
   );
 }
+
 

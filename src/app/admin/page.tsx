@@ -31,7 +31,7 @@ export default async function AdminPage() {
         <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <h1 className="text-4xl font-bold mb-2">Admin Dashboard</h1>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-600 dark:text-slate-300">
               Manage blog posts, projects, and testimonials without editing code.
             </p>
           </div>
@@ -46,7 +46,7 @@ export default async function AdminPage() {
         </div>
 
         {!isDbEnabled && (
-          <div className="mb-10 rounded-lg border border-dashed border-gray-300 dark:border-gray-700 p-6 text-gray-700 dark:text-gray-300">
+          <div className="mb-10 rounded-lg border border-dashed border-gray-300 dark:border-gray-700 p-6 text-gray-700 dark:text-slate-200">
             <p className="font-semibold mb-2">Database not configured yet.</p>
             <p>
               Add your Neon connection string to <code className="px-1">DATABASE_URL</code> in
@@ -62,7 +62,7 @@ export default async function AdminPage() {
               <form
                 key={post.id}
                 action={updatePostAction}
-                className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 space-y-4"
+                className="bg-white dark:bg-slate-900 rounded-lg shadow p-6 space-y-4"
               >
                 <input type="hidden" name="id" value={post.id} />
                 <div className="grid md:grid-cols-2 gap-4">
@@ -140,7 +140,7 @@ export default async function AdminPage() {
 
           <form
             action={createPostAction}
-            className="mt-8 bg-white dark:bg-gray-900 rounded-lg shadow p-6 space-y-4"
+            className="mt-8 bg-white dark:bg-slate-900 rounded-lg shadow p-6 space-y-4"
           >
             <h3 className="text-xl font-semibold">Add New Post</h3>
             <div className="grid md:grid-cols-2 gap-4">
@@ -204,7 +204,7 @@ export default async function AdminPage() {
               <form
                 key={project.id}
                 action={updateProjectAction}
-                className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 space-y-4"
+                className="bg-white dark:bg-slate-900 rounded-lg shadow p-6 space-y-4"
               >
                 <input type="hidden" name="id" value={project.id} />
                 <input
@@ -265,7 +265,7 @@ export default async function AdminPage() {
 
           <form
             action={createProjectAction}
-            className="mt-8 bg-white dark:bg-gray-900 rounded-lg shadow p-6 space-y-4"
+            className="mt-8 bg-white dark:bg-slate-900 rounded-lg shadow p-6 space-y-4"
           >
             <h3 className="text-xl font-semibold">Add New Project</h3>
             <input
@@ -316,7 +316,7 @@ export default async function AdminPage() {
               <form
                 key={testimonial.id}
                 action={updateTestimonialAction}
-                className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 space-y-4"
+                className="bg-white dark:bg-slate-900 rounded-lg shadow p-6 space-y-4"
               >
                 <input type="hidden" name="id" value={testimonial.id} />
                 <div className="grid md:grid-cols-3 gap-4">
@@ -374,7 +374,7 @@ export default async function AdminPage() {
 
           <form
             action={createTestimonialAction}
-            className="mt-8 bg-white dark:bg-gray-900 rounded-lg shadow p-6 space-y-4"
+            className="mt-8 bg-white dark:bg-slate-900 rounded-lg shadow p-6 space-y-4"
           >
             <h3 className="text-xl font-semibold">Add New Testimonial</h3>
             <div className="grid md:grid-cols-3 gap-4">
@@ -419,4 +419,5 @@ export default async function AdminPage() {
     </div>
   );
 }
+
 

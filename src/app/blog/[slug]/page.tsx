@@ -103,7 +103,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap gap-4 items-center text-gray-600 dark:text-gray-400">
+            <div className="flex flex-wrap gap-4 items-center text-gray-600 dark:text-slate-300">
               <span className="text-blue-600 dark:text-blue-400 font-semibold bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
                 {post.category}
               </span>
@@ -143,7 +143,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
                 );
               }
               return (
-                <p key={index} className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                <p key={index} className="text-gray-700 dark:text-slate-200 text-lg leading-relaxed">
                   {block}
                 </p>
               );
@@ -156,7 +156,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
         </div>
       </article>
 
-      <section className="bg-gray-50 dark:bg-gray-900 py-12">
+      <section className="bg-gray-50 dark:bg-slate-900 py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold mb-6">Comments</h2>
           <GiscusComments />
@@ -174,7 +174,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
                 className="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 transition"
               >
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{item.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{item.excerpt}</p>
+                <p className="text-gray-600 dark:text-slate-300">{item.excerpt}</p>
               </Link>
             ))}
           </div>
@@ -183,5 +183,6 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
     </div>
   );
 }
+
 
 

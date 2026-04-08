@@ -32,12 +32,12 @@ export default function ServicesPage() {
 
   return (
     <div>
-      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-950 dark:to-slate-900 flex items-center justify-center py-20">
+      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100">
             Services
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300">
+          <p className="text-xl text-gray-700 dark:text-slate-200">
             Practical web solutions for organizations, creators, and growing projects.
           </p>
         </div>
@@ -46,9 +46,9 @@ export default function ServicesPage() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((service) => (
-            <article key={service.title} className="rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm p-6">
+            <article key={service.title} className="rounded-xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 shadow-sm p-6">
               <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">{service.title}</h2>
-              <p className="text-gray-700 dark:text-gray-300">{service.description}</p>
+              <p className="text-gray-700 dark:text-slate-200">{service.description}</p>
             </article>
           ))}
         </div>
@@ -56,5 +56,6 @@ export default function ServicesPage() {
     </div>
   );
 }
+
 
 

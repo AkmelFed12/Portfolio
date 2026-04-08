@@ -172,6 +172,22 @@ Suggested early targets:
 - `resume_download`: >= 2% of sessions.
 - `resume_print`: at least a few actions per month.
 
+## Design System (P1 Corporate Soft)
+
+Use this palette to keep the UI professional and consistent:
+
+- Primary background: `slate` range (`slate-100` light, `slate-900/950` dark)
+- Primary action color: `blue-700` (hover `blue-800`)
+- Accent color: `blue-600` for links/badges
+- WhatsApp brand color: `green-500/600` only for WhatsApp-related CTAs
+
+Typography and spacing rules:
+
+- Headings: bold with strong contrast (`slate-900` / `slate-100`)
+- Body text: `gray-700` light mode, `slate-200` dark mode
+- Secondary text: `gray-600` light mode, `slate-300` dark mode
+- Cards: `bg-white` light mode, `dark:bg-slate-900`, with subtle borders
+
 ---
 
 **Built with ❤️ using Next.js**

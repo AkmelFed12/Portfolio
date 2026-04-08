@@ -49,7 +49,7 @@ export default function GiscusComments({ mapping = 'pathname' }: GiscusCommentsP
 
   if (!isEnabled) {
     return (
-      <div className="rounded-lg border border-gray-200 dark:border-gray-800 p-6 text-center text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900">
+      <div className="rounded-lg border border-gray-200 dark:border-slate-700 p-6 text-center text-gray-600 dark:text-slate-300 bg-gray-50 dark:bg-slate-900">
         Discussion is currently disabled. You can still share feedback via WhatsApp or Contact page.
       </div>
     );
@@ -57,7 +57,7 @@ export default function GiscusComments({ mapping = 'pathname' }: GiscusCommentsP
 
   if (!configured) {
     return (
-      <div className="rounded-lg border border-dashed border-gray-300 dark:border-gray-700 p-6 text-center text-gray-600 dark:text-gray-400">
+      <div className="rounded-lg border border-dashed border-gray-300 dark:border-gray-700 p-6 text-center text-gray-600 dark:text-slate-300">
         Comments are not configured yet. Add your Giscus settings in `.env.local`.
       </div>
     );
@@ -65,3 +65,4 @@ export default function GiscusComments({ mapping = 'pathname' }: GiscusCommentsP
 
   return <div ref={containerRef} />;
 }
+

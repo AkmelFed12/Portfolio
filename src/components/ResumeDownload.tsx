@@ -85,7 +85,7 @@ Artificial intelligence and automation`;
   return (
     <button
       onClick={handleDownload}
-      className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-900 to-blue-700 hover:from-slate-950 hover:to-blue-800 text-white rounded-lg font-semibold transition transform hover:scale-105 shadow-lg"
+      className="inline-flex items-center gap-2 px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition transform hover:scale-105 shadow-lg"
     >
       <svg
         className="w-5 h-5"
@@ -104,4 +104,5 @@ Artificial intelligence and automation`;
     </button>
   );
 }
+
 

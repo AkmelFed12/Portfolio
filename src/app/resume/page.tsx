@@ -5,12 +5,12 @@ import ResumeInternshipCTA from '@/components/ResumeInternshipCTA';
 export default function Resume() {
   return (
     <div>
-      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-950 dark:to-slate-900 flex items-center justify-center py-20">
+      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
           <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100 animate-slide-down">
             My Resume
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300">
+          <p className="text-xl text-gray-700 dark:text-slate-200">
             Download or view my complete resume below
           </p>
         </div>
@@ -18,15 +18,15 @@ export default function Resume() {
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
+          <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6">
             <h3 className="text-2xl font-bold mb-2 text-blue-600 dark:text-blue-400">Download</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">Get my resume as a PDF</p>
+            <p className="text-gray-700 dark:text-slate-200 mb-4">Get my resume as a PDF</p>
             <DownloadResumeButton />
           </div>
 
-          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
+          <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6">
             <h3 className="text-2xl font-bold mb-2 text-blue-600 dark:text-blue-400">View</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">Read my resume here</p>
+            <p className="text-gray-700 dark:text-slate-200 mb-4">Read my resume here</p>
             <a
               href="#resume-content"
               className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded transition"
@@ -38,15 +38,15 @@ export default function Resume() {
             </a>
           </div>
 
-          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
+          <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6">
             <h3 className="text-2xl font-bold mb-2 text-blue-600 dark:text-blue-400">Print</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">Print this page</p>
+            <p className="text-gray-700 dark:text-slate-200 mb-4">Print this page</p>
             <PrintResumeButton />
           </div>
         </div>
         <ResumeInternshipCTA />
 
-        <div id="resume-content" className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-12 print:shadow-none print:p-0">
+        <div id="resume-content" className="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-12 print:shadow-none print:p-0">
           {/* Header */}
           <div className="border-b-2 border-gray-300 dark:border-gray-700 pb-6 mb-8">
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
@@ -55,7 +55,7 @@ export default function Resume() {
             <p className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
               BS Computer Science Student | Full-Stack Learner
             </p>
-            <div className="grid grid-cols-2 gap-4 text-sm text-gray-700 dark:text-gray-300">
+            <div className="grid grid-cols-2 gap-4 text-sm text-gray-700 dark:text-slate-200">
               <div>
                 <strong>Email:</strong> ouattaralm12@gmail.com
               </div>
@@ -76,7 +76,7 @@ export default function Resume() {
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 border-b border-gray-300 dark:border-gray-700 pb-2">
               Professional Summary
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-gray-700 dark:text-slate-200 leading-relaxed">
               BS Computer Science student and full-stack learner with hands-on experience building production-grade web applications using modern technologies. Passionate about creating practical solutions for real-world problems. Strong proficiency in React, Next.js, TypeScript, and Tailwind CSS. In 2026, still actively learning backend development and databases while leveraging AI tools to enhance productivity and code quality.
             </p>
           </section>
@@ -90,10 +90,10 @@ export default function Resume() {
             <div className="mb-6">
               <div className="flex justify-between items-start mb-2">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">ASAA Portal Project - Student Developer</h3>
-                <span className="text-gray-600 dark:text-gray-400">2025 - Present</span>
+                <span className="text-gray-600 dark:text-slate-300">2025 - Present</span>
               </div>
               <p className="text-blue-600 dark:text-blue-400 font-semibold mb-3">Islamic Quiz 2026 Management Platform</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+              <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-slate-200">
                 <li>Designed and built a comprehensive membership and event management platform from scratch</li>
                 <li>Implemented user authentication, pre-selection management, and member portal features</li>
                 <li>Deployed to production on Vercel with 99.9% uptime</li>
@@ -104,10 +104,10 @@ export default function Resume() {
             <div>
               <div className="flex justify-between items-start mb-2">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">Learning & Development</h3>
-                <span className="text-gray-600 dark:text-gray-400">Ongoing</span>
+                <span className="text-gray-600 dark:text-slate-300">Ongoing</span>
               </div>
               <p className="text-blue-600 dark:text-blue-400 font-semibold mb-3">Computer Science Student</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+              <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-slate-200">
                 <li>Pursuing Bachelor of Science in Computer Science at University of the People</li>
                 <li>Building multiple portfolio projects to solidify learning</li>
                 <li>Exploring backend development, databases, and system design</li>
@@ -124,7 +124,7 @@ export default function Resume() {
             <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <h4 className="font-bold text-gray-900 dark:text-white mb-2">Frontend</h4>
-                <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                <ul className="text-sm text-gray-700 dark:text-slate-200 space-y-1">
                   <li>• React & Next.js</li>
                   <li>• TypeScript</li>
                   <li>• Tailwind CSS</li>
@@ -135,7 +135,7 @@ export default function Resume() {
 
               <div>
                 <h4 className="font-bold text-gray-900 dark:text-white mb-2">Backend</h4>
-                <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                <ul className="text-sm text-gray-700 dark:text-slate-200 space-y-1">
                   <li>• Node.js & Express</li>
                   <li>• Firebase</li>
                   <li>• MongoDB</li>
@@ -146,7 +146,7 @@ export default function Resume() {
 
               <div>
                 <h4 className="font-bold text-gray-900 dark:text-white mb-2">Tools & Platforms</h4>
-                <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                <ul className="text-sm text-gray-700 dark:text-slate-200 space-y-1">
                   <li>• Git/GitHub</li>
                   <li>• Vercel</li>
                   <li>• VS Code</li>
@@ -166,7 +166,7 @@ export default function Resume() {
             <div className="mb-6">
               <div className="flex justify-between items-start">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">Bachelor of Science in Computer Science</h3>
-                <span className="text-gray-600 dark:text-gray-400">Expected 2028</span>
+                <span className="text-gray-600 dark:text-slate-300">Expected 2028</span>
               </div>
               <p className="text-blue-600 dark:text-blue-400">University of the People</p>
             </div>
@@ -174,7 +174,7 @@ export default function Resume() {
             <div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">Previous Studies</h3>
               <p className="text-blue-600 dark:text-blue-400">International University of Grand-Bassam</p>
-              <p className="text-gray-700 dark:text-gray-300 mt-2">
+              <p className="text-gray-700 dark:text-slate-200 mt-2">
                 Started computer science studies before stopping and applying to University of the People.
               </p>
             </div>
@@ -188,24 +188,24 @@ export default function Resume() {
 
             <div className="mb-6">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">ASAA Portal - Islamic Quiz 2026</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-2">Comprehensive membership and event management platform</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-gray-700 dark:text-slate-200 mb-2">Comprehensive membership and event management platform</p>
+              <p className="text-sm text-gray-600 dark:text-slate-300">
                 <strong>Stack:</strong> Next.js, React, TypeScript, Tailwind CSS, Firebase
               </p>
             </div>
 
             <div className="mb-6">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">MyFinance LMO</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-2">Personal finance tracking and management application</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-gray-700 dark:text-slate-200 mb-2">Personal finance tracking and management application</p>
+              <p className="text-sm text-gray-600 dark:text-slate-300">
                 <strong>Stack:</strong> React, TypeScript, Tailwind CSS, Firebase
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Barakatrack by LMO</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-2">Tracking and workflow management system</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-gray-700 dark:text-slate-200 mb-2">Tracking and workflow management system</p>
+              <p className="text-sm text-gray-600 dark:text-slate-300">
                 <strong>Stack:</strong> Next.js, Node.js, MongoDB, TypeScript
               </p>
             </div>
@@ -216,7 +216,7 @@ export default function Resume() {
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 border-b border-gray-300 dark:border-gray-700 pb-2">
               Goals & Interests
             </h2>
-            <ul className="grid md:grid-cols-2 gap-3 text-gray-700 dark:text-gray-300">
+            <ul className="grid md:grid-cols-2 gap-3 text-gray-700 dark:text-slate-200">
               <li>✓ Build scalable full-stack applications</li>
               <li>✓ Develop expertise in system design</li>
               <li>✓ Create platforms serving real communities</li>
@@ -230,5 +230,6 @@ export default function Resume() {
     </div>
   );
 }
+
 
 

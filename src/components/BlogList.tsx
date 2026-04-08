@@ -45,7 +45,7 @@ export default function BlogList({ posts }: BlogListProps) {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search posts..."
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
         </div>
         <div>
@@ -56,7 +56,7 @@ export default function BlogList({ posts }: BlogListProps) {
             id="category"
             value={category}
             onChange={(event) => setCategory(event.target.value)}
-            className="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
           >
             {categories.map((item) => (
               <option key={item} value={item}>
@@ -89,14 +89,14 @@ export default function BlogList({ posts }: BlogListProps) {
                   <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
                     {post.category}
                   </span>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">{post.readTime}</span>
+                  <span className="text-sm text-gray-600 dark:text-slate-300">{post.readTime}</span>
                 </div>
                 <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition">
                   {post.title}
                 </h2>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">{post.excerpt}</p>
+                <p className="text-gray-700 dark:text-slate-200 mb-4">{post.excerpt}</p>
                 <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700 mb-4">
-                  <time className="text-sm text-gray-600 dark:text-gray-400">
+                  <time className="text-sm text-gray-600 dark:text-slate-300">
                     {new Date(post.date).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'long',
@@ -119,10 +119,11 @@ export default function BlogList({ posts }: BlogListProps) {
       </div>
 
       {filtered.length === 0 && (
-        <div className="mt-10 text-center text-gray-600 dark:text-gray-400">
+        <div className="mt-10 text-center text-gray-600 dark:text-slate-300">
           No posts match your search yet.
         </div>
       )}
     </section>
   );
 }
+
