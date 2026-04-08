@@ -166,6 +166,11 @@ body {
   @apply transition-colors duration-200;
 }
 
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
 /* Stagger animations for multiple elements */
 .stagger-item-1 {
   animation: slideUp 0.6s ease-out 0.1s both;
@@ -213,4 +218,13 @@ body {
 
 .focus-ring {
   @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
