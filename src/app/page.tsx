@@ -142,12 +142,12 @@ export default async function Home({ searchParams }: HomePageProps) {
           __html: JSON.stringify(websiteJsonLd).replace(/</g, '\\u003c'),
         }}
       />
-      <section className="min-h-[60vh] bg-slate-50 dark:bg-slate-950 border-b border-slate-200/70 dark:border-slate-800 flex items-center justify-center py-20">
+      <section className="min-h-[60vh] bg-slate-50 dark:bg-slate-950 border-b border-slate-200/70 dark:border-slate-800 flex items-center justify-center py-14 sm:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-          <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 mb-6 animate-slide-down">
+          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 mb-5 sm:mb-6 animate-slide-down">
             Ladji Moussa OUATTARA
           </h1>
-          <p className="text-2xl text-gray-700 dark:text-slate-200 mb-6 animate-slide-up">{t.role}</p>
+          <p className="text-xl sm:text-2xl text-gray-700 dark:text-slate-200 mb-6 animate-slide-up">{t.role}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
             <span className="px-3 py-1 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
               {t.badge1}
@@ -159,32 +159,32 @@ export default async function Home({ searchParams }: HomePageProps) {
               {t.badge3}
             </span>
           </div>
-          <p className="text-xl text-gray-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up">
             {t.summary}
           </p>
-          <div className="flex gap-4 justify-center flex-wrap stagger-item-1">
+          <div className="flex gap-3 sm:gap-4 justify-center flex-wrap stagger-item-1">
             <Link
               href={lang === 'fr' ? '/projects?lang=fr' : '/projects'}
-              className="btn-primary focus-ring"
+              className="btn-primary focus-ring w-full sm:w-auto"
             >
               {t.ctaWork}
             </Link>
             <Link
               href={lang === 'fr' ? '/contact?lang=fr' : '/contact'}
-              className="btn-secondary focus-ring"
+              className="btn-secondary focus-ring w-full sm:w-auto"
             >
               {t.ctaContact}
             </Link>
             <TrackedWhatsAppButton
               label={t.ctaWhatsApp}
               source="hero_primary_cta"
-              className="btn-accent focus-ring"
+              className="btn-accent focus-ring w-full sm:w-auto"
             />
           </div>
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
         <h2 className="text-4xl font-bold mb-12 text-center animate-fade-in">{t.featured}</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {featuredProjects.map((project, index) => (
@@ -205,15 +205,15 @@ export default async function Home({ searchParams }: HomePageProps) {
         <div className="text-center">
           <Link
             href={lang === 'fr' ? '/projects?lang=fr' : '/projects'}
-            className="btn-secondary focus-ring"
+            className="btn-secondary focus-ring w-full sm:w-auto"
           >
             {t.viewAll} →
           </Link>
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="surface-card p-8">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+        <div className="surface-card p-5 sm:p-8">
           <h2 className="text-3xl font-bold mb-2">{t.goals}</h2>
           <p className="text-slate-600 dark:text-slate-300 mb-6">{t.goalsSubtitle}</p>
           <ul className="grid md:grid-cols-3 gap-4">
@@ -224,7 +224,7 @@ export default async function Home({ searchParams }: HomePageProps) {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <div className="surface-card-soft p-6 sm:p-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-slate-900 dark:text-slate-100">
             {t.internshipTitle}
@@ -253,7 +253,7 @@ export default async function Home({ searchParams }: HomePageProps) {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
         <h2 className="text-3xl font-bold mb-6 text-center">{t.achievementsTitle}</h2>
         <div className="grid md:grid-cols-3 gap-4">
           <article className="surface-card p-5">
@@ -271,7 +271,7 @@ export default async function Home({ searchParams }: HomePageProps) {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
         <h2 className="text-4xl font-bold mb-3 text-center">{t.techTitle}</h2>
         <p className="text-center text-gray-600 dark:text-slate-300 mb-10">{t.techSubtitle}</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -289,6 +289,7 @@ export default async function Home({ searchParams }: HomePageProps) {
     </div>
   );
 }
+
 
 
 

@@ -28,9 +28,9 @@ export default function ProjectCard({
     <div className="surface-card overflow-hidden hover:shadow-md transition-shadow">
       {(image || mobileImage) && (
         <div className="p-4 bg-slate-100 dark:bg-slate-800/70">
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
             {image && (
-              <div className="relative col-span-2 h-36 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+              <div className="relative col-span-2 h-28 sm:h-36 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
                 <Image
                   src={image}
                   alt={`${title} desktop preview`}
@@ -41,7 +41,7 @@ export default function ProjectCard({
               </div>
             )}
             {mobileImage && (
-              <div className="relative col-span-1 h-36 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+              <div className="relative col-span-1 h-28 sm:h-36 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
                 <Image
                   src={mobileImage}
                   alt={`${title} mobile preview`}
@@ -81,11 +81,11 @@ export default function ProjectCard({
             ))}
           </div>
         </div>
-        <div className="flex flex-wrap gap-3 mb-4">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-4">
           {caseStudyLink && (
             <a
               href={caseStudyLink}
-              className="btn-secondary focus-ring px-4 py-2"
+              className="btn-secondary focus-ring px-4 py-2 w-full sm:w-auto"
             >
               Case Study
             </a>
@@ -95,7 +95,7 @@ export default function ProjectCard({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary focus-ring px-4 py-2"
+              className="btn-primary focus-ring px-4 py-2 w-full sm:w-auto"
             >
               View Live
             </a>
@@ -105,7 +105,7 @@ export default function ProjectCard({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary focus-ring px-4 py-2"
+              className="btn-secondary focus-ring px-4 py-2 w-full sm:w-auto"
             >
               GitHub
             </a>

@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="mt-20">
       <div className="bg-[#f4f0e8] border-y border-[#e6dcc8] text-center py-3">
-        <p className="tracking-[0.24em] text-[#b08a3e] text-sm sm:text-lg font-semibold">
+        <p className="tracking-[0.12em] sm:tracking-[0.24em] text-[#b08a3e] text-xs sm:text-lg font-semibold px-2">
           DESIGN & CREATED BY LMO WEB SERVICES
         </p>
       </div>
