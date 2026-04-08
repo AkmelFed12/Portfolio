@@ -54,7 +54,7 @@ export default function Navbar() {
               href="/CV_LADJI_MOUSSA_OUATTARA.pdf"
               download
               onClick={() => trackEvent('resume_download', { source: 'navbar_desktop' })}
-              className="px-3 py-2 rounded-md text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition"
+              className="btn-primary focus-ring px-3 py-2 text-sm"
             >
               Download CV
             </a>
@@ -63,14 +63,14 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               href={switchHref}
-              className="px-3 py-1 rounded-full text-xs font-semibold border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+              className="px-3 py-1 rounded-full text-xs font-semibold border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800 transition focus-ring"
             >
               {lang === 'fr' ? 'EN' : 'FR'}
             </Link>
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800"
+              className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800 focus-ring"
               aria-label="Toggle menu"
             >
               <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -107,7 +107,7 @@ export default function Navbar() {
               href="/CV_LADJI_MOUSSA_OUATTARA.pdf"
               download
               onClick={() => trackEvent('resume_download', { source: 'navbar_mobile' })}
-              className="block px-3 py-2 rounded text-center text-white bg-blue-600 hover:bg-blue-700 transition"
+              className="btn-primary focus-ring w-full px-3 py-2 text-center"
             >
               Download CV
             </a>

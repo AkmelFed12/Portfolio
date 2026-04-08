@@ -13,8 +13,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Segoe UI", "Trebuchet MS", sans-serif;
-  --font-mono: "Consolas", "Courier New", monospace;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 .dark {
@@ -33,6 +33,16 @@ body {
   line-height: 1.6;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #bfdbfe;
+  color: #0f172a;
+}
+
+.dark ::selection {
+  background: #1d4ed8;
+  color: #e2e8f0;
 }
 
 /* Animations */
@@ -190,15 +200,15 @@ body {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-blue-700 text-white hover:bg-blue-800 shadow-sm hover:shadow-md;
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-blue-700 text-white hover:bg-blue-800 shadow-sm hover:shadow-md transition-all duration-200;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-100 bg-white/70 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-700/80;
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-100 bg-white/70 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-700/80 transition-all duration-200;
 }
 
 .btn-accent {
-  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-green-600 text-white hover:bg-green-700 shadow-sm hover:shadow-md;
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-green-600 text-white hover:bg-green-700 shadow-sm hover:shadow-md transition-all duration-200;
 }
 
 .focus-ring {
