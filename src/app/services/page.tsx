@@ -43,6 +43,7 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
           title: 'Services',
           subtitle: 'Solutions web pratiques pour organisations, createurs et projets en croissance.',
           reply: 'Reponse habituelle en moins de 24h via WhatsApp.',
+          availabilityNote: 'Disponible actuellement pour 2 nouveaux projets ce mois-ci.',
           blockTitle: 'Ce Que Je Peux Construire Pour Vous',
           pricingTitle: 'Offres & Tarifs',
           starterFor: 'Landing page simple ou portfolio',
@@ -84,6 +85,7 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
           title: 'Services',
           subtitle: 'Practical web solutions for organizations, creators, and growing projects.',
           reply: 'Typical first reply in under 24h via WhatsApp.',
+          availabilityNote: 'Currently available for 2 new projects this month.',
           blockTitle: 'What I Can Build For You',
           pricingTitle: 'Packages & Pricing',
           starterFor: 'Simple landing pages or portfolio setup',
@@ -151,6 +153,9 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
           </p>
           <p className="text-sm text-cyan-700 dark:text-cyan-300 mt-3 font-semibold">
             {t.reply}
+          </p>
+          <p className="mt-3 inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold bg-cyan-100 dark:bg-cyan-900/50 text-cyan-800 dark:text-cyan-200">
+            {t.availabilityNote}
           </p>
         </div>
       </section>

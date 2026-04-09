@@ -71,6 +71,7 @@ export default async function Home({ searchParams }: HomePageProps) {
           badge1: 'Diplome prevu: 2028',
           badge2: 'Disponible pour stage',
           badge3: 'Ouvert aux collaborations',
+          availabilityNote: 'Actuellement disponible pour 2 nouveaux projets ce mois-ci',
         }
       : {
           role: 'BS Computer Science Student | Full-Stack Learner',
@@ -105,6 +106,7 @@ export default async function Home({ searchParams }: HomePageProps) {
           badge1: 'Expected Graduation: 2028',
           badge2: 'Available for Internship',
           badge3: 'Open to Collaboration',
+          availabilityNote: 'Currently available for 2 new projects this month',
         };
 
   const personJsonLd = {
@@ -162,6 +164,9 @@ export default async function Home({ searchParams }: HomePageProps) {
           </div>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up">
             {t.summary}
+          </p>
+          <p className="mb-6 inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold bg-cyan-100 dark:bg-cyan-900/50 text-cyan-800 dark:text-cyan-200">
+            {t.availabilityNote}
           </p>
           <div className="flex gap-3 sm:gap-4 justify-center flex-wrap stagger-item-1">
             <Link
