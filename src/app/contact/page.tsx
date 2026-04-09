@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from 'react';
 import ResumeDownload from '@/components/ResumeDownload';
+import AvailabilityQuickSlots from '@/components/AvailabilityQuickSlots';
 import { trackEvent } from '@/lib/analytics';
 
 
@@ -91,6 +92,7 @@ export default function Contact() {
       </section>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <AvailabilityQuickSlots lang="en" />
         <div className="grid md:grid-cols-2 gap-12">
           <div className="animate-slide-left">
             <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
