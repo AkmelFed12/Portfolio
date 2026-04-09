@@ -11,8 +11,10 @@ export default function Contact() {
     name: '',
     email: '',
     service: 'Web Application',
+    stage: 'New project idea',
     budget: 'To be discussed',
     timeline: '2-4 weeks',
+    contactPreference: 'WhatsApp',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -43,8 +45,10 @@ export default function Contact() {
       `Name: ${formData.name}`,
       `Email: ${emailValue}`,
       `Service Needed: ${formData.service}`,
+      `Project Stage: ${formData.stage}`,
       `Estimated Budget: ${formData.budget}`,
       `Preferred Timeline: ${formData.timeline}`,
+      `Preferred Contact Method: ${formData.contactPreference}`,
       '',
       `Project Details: ${formData.message}`,
     ].join('\n');
@@ -55,8 +59,10 @@ export default function Contact() {
       source: 'contact_page',
       has_email: Boolean(formData.email),
       service: formData.service,
+      stage: formData.stage,
       budget: formData.budget,
       timeline: formData.timeline,
+      contact_preference: formData.contactPreference,
     });
     const popup = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     if (!popup) {
@@ -68,8 +74,10 @@ export default function Contact() {
       name: '',
       email: '',
       service: 'Web Application',
+      stage: 'New project idea',
       budget: 'To be discussed',
       timeline: '2-4 weeks',
+      contactPreference: 'WhatsApp',
       message: '',
     });
   };
@@ -220,6 +228,23 @@ export default function Contact() {
                   <option>Bug Fix / Optimization</option>
                 </select>
               </div>
+              <div>
+                <label htmlFor="stage" className="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">
+                  Project Stage
+                </label>
+                <select
+                  id="stage"
+                  name="stage"
+                  value={formData.stage}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent transition"
+                >
+                  <option>New project idea</option>
+                  <option>Design ready</option>
+                  <option>Development in progress</option>
+                  <option>Need maintenance/support</option>
+                </select>
+              </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="budget" className="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">
@@ -256,6 +281,22 @@ export default function Contact() {
                     <option>Flexible timeline</option>
                   </select>
                 </div>
+              </div>
+              <div>
+                <label htmlFor="contactPreference" className="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">
+                  Preferred Contact Method
+                </label>
+                <select
+                  id="contactPreference"
+                  name="contactPreference"
+                  value={formData.contactPreference}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent transition"
+                >
+                  <option>WhatsApp</option>
+                  <option>Email</option>
+                  <option>Phone Call</option>
+                </select>
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">
