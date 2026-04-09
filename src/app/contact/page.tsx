@@ -9,6 +9,9 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    service: 'Web Application',
+    budget: 'To be discussed',
+    timeline: '2-4 weeks',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -21,7 +24,7 @@ export default function Contact() {
     window.location.href = `mailto:ouattaralm12@gmail.com?subject=${subject}&body=${body}`;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -33,17 +36,26 @@ export default function Contact() {
     e.preventDefault();
     const whatsappNumber = '2250574724233';
     const emailValue = formData.email.trim() ? formData.email : 'Not provided';
-    const whatsappMessage =
-      `Hello, I am contacting you from your portfolio.%0A%0A` +
-      `Name: ${encodeURIComponent(formData.name)}%0A` +
-      `Email: ${encodeURIComponent(emailValue)}%0A` +
-      `Message: ${encodeURIComponent(formData.message)}`;
+    const whatsappMessage = [
+      'Hello, I am contacting you from your portfolio.',
+      '',
+      `Name: ${formData.name}`,
+      `Email: ${emailValue}`,
+      `Service Needed: ${formData.service}`,
+      `Estimated Budget: ${formData.budget}`,
+      `Preferred Timeline: ${formData.timeline}`,
+      '',
+      `Project Details: ${formData.message}`,
+    ].join('\n');
 
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
     trackEvent('contact_form_submit_whatsapp', {
       source: 'contact_page',
       has_email: Boolean(formData.email),
+      service: formData.service,
+      budget: formData.budget,
+      timeline: formData.timeline,
     });
     const popup = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     if (!popup) {
@@ -51,7 +63,14 @@ export default function Contact() {
     }
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({
+      name: '',
+      email: '',
+      service: 'Web Application',
+      budget: 'To be discussed',
+      timeline: '2-4 weeks',
+      message: '',
+    });
   };
 
   return (
@@ -140,9 +159,9 @@ export default function Contact() {
           </div>
 
           <div className="animate-slide-right">
-            <h2 className="text-3xl font-bold mb-8">Send Me a Message</h2>
+            <h2 className="text-3xl font-bold mb-8">Start Your Project Brief</h2>
             <p className="text-sm text-gray-600 dark:text-slate-300 mb-6">
-              Fill this form and you will be redirected to WhatsApp with your prefilled message.
+              Fill this form and you will be redirected to WhatsApp with a complete, prefilled project brief.
             </p>
             <p className="text-xs text-gray-500 dark:text-slate-300 mb-4">
               If WhatsApp does not open, use the fallback email button below.
@@ -183,8 +202,62 @@ export default function Contact() {
                 />
               </div>
               <div>
+                <label htmlFor="service" className="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">
+                  Service Needed
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent transition"
+                >
+                  <option>Web Application</option>
+                  <option>Portfolio Website</option>
+                  <option>Landing Page</option>
+                  <option>Bug Fix / Optimization</option>
+                </select>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="budget" className="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">
+                    Estimated Budget
+                  </label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent transition"
+                  >
+                    <option>To be discussed</option>
+                    <option>Under $200</option>
+                    <option>$200 - $500</option>
+                    <option>$500 - $1000</option>
+                    <option>Above $1000</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="timeline" className="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">
+                    Preferred Timeline
+                  </label>
+                  <select
+                    id="timeline"
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent transition"
+                  >
+                    <option>2-4 weeks</option>
+                    <option>1 week (urgent)</option>
+                    <option>1-2 months</option>
+                    <option>Flexible timeline</option>
+                  </select>
+                </div>
+              </div>
+              <div>
                 <label htmlFor="message" className="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">
-                  Message
+                  Project Details
                 </label>
                 <textarea
                   id="message"
@@ -194,7 +267,7 @@ export default function Contact() {
                   required
                   rows={5}
                   className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent transition resize-none"
-                  placeholder="Tell me about your project..."
+                  placeholder="Goals, pages/features, references, and constraints..."
                 />
               </div>
               <button

@@ -4,6 +4,7 @@ import ProjectCard from '@/components/ProjectCard';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import FAQSection from '@/components/FAQSection';
 import TrackedWhatsAppButton from '@/components/TrackedWhatsAppButton';
+import ConversionStrip from '@/components/ConversionStrip';
 import { getProjectsPublic } from '@/lib/content';
 
 export const metadata: Metadata = {
@@ -270,6 +271,8 @@ export default async function Home({ searchParams }: HomePageProps) {
           </article>
         </div>
       </section>
+
+      <ConversionStrip lang={lang} />
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
         <h2 className="text-4xl font-bold mb-3 text-center">{t.techTitle}</h2>
