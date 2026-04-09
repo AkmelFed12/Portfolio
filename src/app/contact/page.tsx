@@ -101,6 +101,42 @@ export default function Contact() {
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <AvailabilityQuickSlots lang="en" />
+        <div className="grid gap-4 sm:grid-cols-3 mb-10">
+          <div className="surface-card-soft p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-300 mb-1">Response Time</p>
+            <p className="text-lg font-bold text-slate-900 dark:text-slate-100">Under 24h</p>
+            <p className="text-sm text-slate-600 dark:text-slate-300">Typical first reply on WhatsApp.</p>
+          </div>
+          <div className="surface-card-soft p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-300 mb-1">Delivery Style</p>
+            <p className="text-lg font-bold text-slate-900 dark:text-slate-100">Clear Milestones</p>
+            <p className="text-sm text-slate-600 dark:text-slate-300">Short checkpoints and transparent progress.</p>
+          </div>
+          <div className="surface-card-soft p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-300 mb-1">Collaboration</p>
+            <p className="text-lg font-bold text-slate-900 dark:text-slate-100">Flexible Scope</p>
+            <p className="text-sm text-slate-600 dark:text-slate-300">Internship, freelance, and student-friendly projects.</p>
+          </div>
+        </div>
+
+        <div className="surface-card p-5 sm:p-6 mb-10">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">How We Work (3 Steps)</h2>
+          <ol className="grid gap-3 sm:grid-cols-3">
+            <li className="surface-card-soft p-4 text-sm text-slate-700 dark:text-slate-200">
+              <span className="block text-cyan-700 dark:text-cyan-300 font-semibold mb-1">1. Brief</span>
+              You send your idea, timeline, and budget through this form.
+            </li>
+            <li className="surface-card-soft p-4 text-sm text-slate-700 dark:text-slate-200">
+              <span className="block text-cyan-700 dark:text-cyan-300 font-semibold mb-1">2. Alignment</span>
+              We confirm scope, priorities, and communication channel.
+            </li>
+            <li className="surface-card-soft p-4 text-sm text-slate-700 dark:text-slate-200">
+              <span className="block text-cyan-700 dark:text-cyan-300 font-semibold mb-1">3. Execution</span>
+              Work starts with clear milestones and practical updates.
+            </li>
+          </ol>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12">
           <div className="animate-slide-left">
             <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
@@ -327,6 +363,24 @@ export default function Contact() {
                 Fallback: Send by Email
               </button>
             </form>
+          </div>
+        </div>
+
+        <div className="surface-card p-5 sm:p-6 mt-10">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Quick FAQ</h2>
+          <div className="space-y-3 text-sm">
+            <div className="surface-card-soft p-4">
+              <p className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Do you work with small projects?</p>
+              <p className="text-slate-600 dark:text-slate-300">Yes. Student, startup, and community projects are welcome.</p>
+            </div>
+            <div className="surface-card-soft p-4">
+              <p className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Can we start on WhatsApp first?</p>
+              <p className="text-slate-600 dark:text-slate-300">Absolutely. WhatsApp is the fastest way to begin.</p>
+            </div>
+            <div className="surface-card-soft p-4">
+              <p className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Do you provide updates during work?</p>
+              <p className="text-slate-600 dark:text-slate-300">Yes, with regular milestones and transparent communication.</p>
+            </div>
           </div>
         </div>
       </section>
