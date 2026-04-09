@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { getBlogPosts } from '@/lib/content';
+import { getBlogPosts, getProjectsPublic } from '@/lib/content';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lmoportfolio.vercel.app';
 
@@ -48,15 +48,46 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: `${siteUrl}/?lang=fr`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/services?lang=fr`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${siteUrl}/contact?lang=fr`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${siteUrl}/about?lang=fr`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ];
 
   const posts = await getBlogPosts();
+  const projects = await getProjectsPublic();
   const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${siteUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
+  const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: `${siteUrl}/projects/${project.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.75,
+  }));
 
-  return [...staticRoutes, ...blogRoutes];
+  return [...staticRoutes, ...blogRoutes, ...projectRoutes];
 }

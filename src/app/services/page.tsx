@@ -5,7 +5,22 @@ import TrackedWhatsAppButton from '@/components/TrackedWhatsAppButton';
 export const metadata: Metadata = {
   title: 'Services',
   description: 'Web services offered by Ladji Moussa OUATTARA including websites, dashboards, and maintenance.',
+  keywords: ['Web services', 'Portfolio website', 'Landing page', 'Full-stack app', 'LMO Web Services'],
+  alternates: {
+    canonical: '/services',
+    languages: {
+      'en-US': '/services',
+      'fr-FR': '/services?lang=fr',
+    },
+  },
   openGraph: {
+    title: 'Services | Ladji Moussa OUATTARA',
+    description: 'Portfolio websites, full-stack apps, landing pages, and maintenance services.',
+    url: '/services',
+    images: ['/og-services.svg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: 'Services | Ladji Moussa OUATTARA',
     description: 'Portfolio websites, full-stack apps, landing pages, and maintenance services.',
     images: ['/og-services.svg'],
@@ -20,6 +35,7 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
   const params = await searchParams;
   const lang = params?.lang === 'fr' ? 'fr' : 'en';
   const withLang = (path: string) => (lang === 'fr' ? `${path}?lang=fr` : path);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lmoportfolio.vercel.app';
 
   const t =
     lang === 'fr'
@@ -106,9 +122,25 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
     { name: 'Growth', price: '$300 - $700', for: t.growthFor, includes: t.growthIncludes, featured: true },
     { name: 'Custom', price: lang === 'fr' ? 'A partir de $700' : 'From $700', for: t.customFor, includes: t.customIncludes },
   ];
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Web Development Services',
+    provider: {
+      '@type': 'Person',
+      name: 'Ladji Moussa OUATTARA',
+      url: siteUrl,
+    },
+    areaServed: 'Worldwide',
+    serviceType: ['Portfolio Websites', 'Landing Pages', 'Full-Stack Web Applications'],
+  };
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd).replace(/</g, '\\u003c') }}
+      />
       <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100">

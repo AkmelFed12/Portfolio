@@ -17,8 +17,28 @@ export const metadata: Metadata = {
     default: 'Ladji Moussa OUATTARA | Portfolio',
     template: '%s | Ladji Moussa OUATTARA',
   },
+  applicationName: 'Ladji Moussa Portfolio',
   description:
     'BS Computer Science student and full-stack learner building practical web applications with real-world impact.',
+  keywords: [
+    'Ladji Moussa OUATTARA',
+    'Full Stack Developer',
+    'Next.js portfolio',
+    'React developer',
+    'Web developer Abidjan',
+    'BS Computer Science student',
+    'LMO Web Services',
+  ],
+  authors: [{ name: 'Ladji Moussa OUATTARA' }],
+  creator: 'Ladji Moussa OUATTARA',
+  publisher: 'LMO Web Services',
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/',
+      'fr-FR': '/?lang=fr',
+    },
+  },
   openGraph: {
     title: 'Ladji Moussa OUATTARA | Portfolio',
     description:

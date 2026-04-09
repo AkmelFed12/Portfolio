@@ -67,6 +67,8 @@ export async function generateMetadata({ params }: ProjectCaseStudyProps): Promi
   const { slug } = await params;
   const projects = await getProjectsPublic();
   const project = projects.find((item) => item.slug === slug);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lmoportfolio.vercel.app';
+  const canonicalUrl = `${siteUrl}/projects/${slug}`;
 
   if (!project) {
     return {
@@ -78,7 +80,17 @@ export async function generateMetadata({ params }: ProjectCaseStudyProps): Promi
   return {
     title: `${project.title} Case Study`,
     description: project.description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
+      title: `${project.title} Case Study`,
+      description: project.description,
+      url: canonicalUrl,
+      images: [project.image || '/og-projects.svg'],
+    },
+    twitter: {
+      card: 'summary_large_image',
       title: `${project.title} Case Study`,
       description: project.description,
       images: [project.image || '/og-projects.svg'],

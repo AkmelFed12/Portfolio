@@ -5,7 +5,22 @@ import JourneyTimeline from '@/components/JourneyTimeline';
 export const metadata: Metadata = {
   title: 'About',
   description: 'About Ladji Moussa OUATTARA, BS Computer Science student and project-based full-stack learner.',
+  keywords: ['About Ladji Moussa', 'Computer Science student', 'Full-stack learner', 'ASAA Portal'],
+  alternates: {
+    canonical: '/about',
+    languages: {
+      'en-US': '/about',
+      'fr-FR': '/about?lang=fr',
+    },
+  },
   openGraph: {
+    title: 'About | Ladji Moussa OUATTARA',
+    description: 'Education, timeline, and project-based learning journey of Ladji Moussa OUATTARA.',
+    url: '/about',
+    images: ['/og-about.svg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: 'About | Ladji Moussa OUATTARA',
     description: 'Education, timeline, and project-based learning journey of Ladji Moussa OUATTARA.',
     images: ['/og-about.svg'],

@@ -19,6 +19,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const { slug } = await params;
   const posts = await getBlogPosts();
   const post = posts.find((item) => item.slug === slug);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lmoportfolio.vercel.app';
+  const canonicalUrl = `${siteUrl}/blog/${slug}`;
 
   if (!post) {
     return {
@@ -30,9 +32,16 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url: canonicalUrl,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
       images: [post.coverImage || '/og-blog.svg'],
     },
     twitter: {
