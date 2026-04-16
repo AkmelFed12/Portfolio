@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'Ladji Moussa OUATTARA' }],
   creator: 'Ladji Moussa OUATTARA',
   publisher: 'LMO Web Services',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/apple-touch-icon.svg',
+  },
   alternates: {
     canonical: '/',
     languages: {
@@ -88,6 +93,48 @@ export default function RootLayout({
                 } catch (e) {}
               })();
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Ladji Moussa OUATTARA',
+              url: siteUrl,
+              jobTitle: 'BS Computer Science Student | Full-Stack Developer',
+              description:
+                'BS Computer Science student and full-stack learner building practical web applications with real-world impact.',
+              image: `${siteUrl}/og-portfolio.svg`,
+              sameAs: [
+                'https://github.com/AkmelFed12',
+                'https://www.linkedin.com/in/ladji-moussa-ouattara-8b5778298',
+              ],
+              contactPoint: {
+                '@type': 'ContactPoint',
+                contactType: 'Customer Support',
+                url: `${siteUrl}/contact`,
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              url: siteUrl,
+              name: 'Ladji Moussa Portfolio',
+              description:
+                'BS Computer Science student and full-stack learner building practical web applications with real-world impact.',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: `${siteUrl}/projects?q={search_term_string}`,
+                'query-input': 'required name=search_term_string',
+              },
+            }),
           }}
         />
       </head>

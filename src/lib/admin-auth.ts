@@ -47,7 +47,7 @@ function verifySessionToken(token: string, secret: string) {
   if (parts.length !== 3) return false;
 
   const payload = `${parts[0]}.${parts[1]}`;
-  const signature = parts[2];
+  const signature = parts[2] as string;
   const expected = sign(payload, secret);
   return safeEqual(signature, expected);
 }
