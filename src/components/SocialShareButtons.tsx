@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 interface ShareButtonsProps {
   title: string;
@@ -19,7 +19,7 @@ export default function SocialShareButtons({
     twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-    whatsapp: `https://wa.me/?text=${encodeURIComponent(`${title} ${url}`)}`,
+    whatsapp: `https://wa.me/?text=${encodeURIComponent(`${title} ${description ? description : ''} ${url}`.trim())}`,
   };
 
   const handleCopyLink = async () => {

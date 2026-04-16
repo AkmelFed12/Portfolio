@@ -29,7 +29,7 @@ export default function Testimonials({ items }: TestimonialsProps) {
                 </div>
               </div>
               <p className="text-gray-700 dark:text-slate-200 italic">
-                "{testimonial.testimonial}"
+                &ldquo;{testimonial.testimonial}&rdquo;
               </p>
               <div className="mt-4 flex text-yellow-400">
                 {[...Array(testimonial.rating || 5)].map((_, i) => (

@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import ResumeDownload from '@/components/ResumeDownload';
 import AvailabilityQuickSlots from '@/components/AvailabilityQuickSlots';
 import { trackEvent } from '@/lib/analytics';
@@ -56,7 +56,7 @@ function optionLabel(
 }
 
 export default function Contact() {
-  const [lang, setLang] = useState<Lang>(detectLang);
+  const [lang] = useState<Lang>(() => detectLang());
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -68,10 +68,6 @@ export default function Contact() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
-
-  useEffect(() => {
-    setLang(detectLang());
-  }, []);
 
   const t =
     lang === 'fr'

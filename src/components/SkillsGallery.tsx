@@ -50,10 +50,12 @@ export default function SkillsGallery() {
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+                    <div 
+                      className="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2 overflow-hidden skill-bar-container"
+                      data-skill-level={skill.level}
+                    >
                       <div
-                        className="bg-gradient-to-r from-cyan-700 to-cyan-500 h-full rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
+                        className="bg-gradient-to-r from-cyan-700 to-cyan-500 h-full rounded-full transition-all duration-1000 ease-out skill-level-bar"
                       />
                     </div>
                   </div>

@@ -28,7 +28,8 @@ export default function NewsletterSignup() {
       setSubscribed(true);
       setEmail('');
       setTimeout(() => setSubscribed(false), 5000);
-    } catch (err) {
+    } catch {
+      // Error handled silently
       setError('Something went wrong. Please try again.');
     } finally {
       setLoading(false);
