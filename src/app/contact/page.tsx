@@ -314,7 +314,6 @@ export default function Contact() {
               <div className="stagger-item-4">
                 <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{t.social}</h3>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/AkmelFed12" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition transform hover:scale-110">GitHub</a>
                   <a href="https://www.linkedin.com/in/ladji-moussa-ouattara-8b5778298" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition transform hover:scale-110">LinkedIn</a>
                 </div>
               </div>

@@ -201,7 +201,6 @@ export default async function Home({ searchParams }: HomePageProps) {
                 tech={project.tech}
                 caseStudyLink={`/projects/${project.slug}`}
                 link={project.link}
-                github={project.github}
                 image={project.image}
                 mobileImage={project.mobileImage}
               />

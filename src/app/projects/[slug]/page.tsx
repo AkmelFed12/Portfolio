@@ -30,32 +30,6 @@ const detailsBySlug: Record<
     ],
     next: 'Continue improving reliability, admin UX, and reporting features for upcoming cycles.',
   },
-  'myfinance-lmo': {
-    role: 'Student Developer (Frontend + Product Logic)',
-    challenge:
-      'Users needed a simple, understandable way to track expenses and budgets without complex financial tools.',
-    solution:
-      'Designed a lightweight finance flow with clear categories, easy inputs, and focused dashboard experience.',
-    impact: [
-      'Made daily spending tracking easier and more consistent',
-      'Improved user awareness of category-based expenses',
-      'Created a base for future analytics and forecasting features',
-    ],
-    next: 'Add richer insights and monthly reporting for better decision support.',
-  },
-  'barakatrack-by-lmo': {
-    role: 'Student Developer (Full-Stack)',
-    challenge:
-      'The project required better task/workflow tracking and clearer status visibility for teams.',
-    solution:
-      'Built a workflow tracking interface with status visibility and a clearer organization of operational data.',
-    impact: [
-      'Improved clarity of progress and pending actions',
-      'Created a stronger base for team coordination',
-      'Enabled future extension for reporting and notifications',
-    ],
-    next: 'Expand collaboration features and enhance data visualization quality.',
-  },
 };
 
 export async function generateStaticParams() {
@@ -209,5 +183,4 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
     </div>
   );
 }
-
 

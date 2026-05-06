@@ -7,7 +7,6 @@ interface ProjectCardProps {
   tech: string[];
   caseStudyLink?: string;
   link?: string;
-  github?: string;
   image?: string;
   mobileImage?: string;
 }
@@ -18,11 +17,10 @@ export default function ProjectCard({
   tech,
   caseStudyLink,
   link,
-  github,
   image,
   mobileImage,
 }: ProjectCardProps) {
-  const shareUrl = link || github;
+  const shareUrl = link;
 
   return (
     <div className="surface-card overflow-hidden hover:shadow-md transition-shadow">
@@ -98,16 +96,6 @@ export default function ProjectCard({
               className="btn-primary focus-ring px-4 py-2 w-full sm:w-auto"
             >
               View Live
-            </a>
-          )}
-          {github && (
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary focus-ring px-4 py-2 w-full sm:w-auto"
-            >
-              GitHub
             </a>
           )}
         </div>

@@ -23,27 +23,4 @@ export const projects: Project[] = [
     image: '/images/asaa-portal-desktop-v2.png',
     mobileImage: '/images/asaa-portal-mobile-v2.png',
   },
-  {
-    id: 2,
-    slug: 'myfinance-lmo',
-    title: 'MyFinance LMO',
-    description:
-      'Personal finance management application focused on budget tracking, expense categorization, and practical financial analytics for daily decision-making.',
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Firebase'],
-    github: 'https://github.com/AkmelFed12/myfiancelmo',
-    image: '/images/myfinance-desktop.svg',
-    mobileImage: '/images/myfinance-mobile.svg',
-  },
-  {
-    id: 3,
-    slug: 'barakatrack-by-lmo',
-    title: 'Barakatrack by LMO',
-    description:
-      'Workflow tracking and management system with real-time updates, data visualization, and reporting features to improve team productivity.',
-    tech: ['Next.js', 'Node.js', 'MongoDB', 'TypeScript'],
-    link: 'https://frontend-sigma-lyart-40.vercel.app',
-    github: 'https://github.com/AkmelFed12/barakatrack-by-lmo',
-    image: '/images/barakatrack-desktop.png',
-    mobileImage: '/images/barakatrack-mobile.png',
-  },
 ];

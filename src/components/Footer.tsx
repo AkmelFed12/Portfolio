@@ -15,14 +15,6 @@ export default function Footer() {
         </p>
         <div className="flex justify-center space-x-6">
           <a
-            href="https://github.com/AkmelFed12"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-300 hover:text-white transition"
-          >
-            GitHub
-          </a>
-          <a
             href="https://www.linkedin.com/in/ladji-moussa-ouattara-8b5778298"
             target="_blank"
             rel="noopener noreferrer"
