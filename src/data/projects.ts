@@ -23,4 +23,14 @@ export const projects: Project[] = [
     image: '/images/asaa-portal-desktop-v2.png',
     mobileImage: '/images/asaa-portal-mobile-v2.png',
   },
+  {
+    id: 2,
+    slug: 'lmo-shop-services',
+    title: 'LMO SHOP SERVICES',
+    description:
+      "Plateforme e-commerce full stack avec authentification, dashboard admin, gestion des commandes, analytics, et deploiement production sur Vercel.",
+    tech: ['JavaScript', 'Node.js', 'Serverless API', 'Vercel'],
+    link: 'https://new-pro-ecommerce-demo.vercel.app',
+    github: 'https://github.com/AkmelFed12/LMO-SHOP-SERVICES',
+  },
 ];
