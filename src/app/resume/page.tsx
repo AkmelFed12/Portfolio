@@ -60,9 +60,6 @@ export default function Resume() {
                 <strong>Email:</strong> ouattaralm12@gmail.com
               </div>
               <div>
-                <strong>GitHub:</strong> github.com/AkmelFed12
-              </div>
-              <div>
                 <strong>Telephone :</strong> +225 01 500 700 83
               </div>
               <div>

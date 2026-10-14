@@ -253,16 +253,6 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
             Voir le site
           </a>
         )}
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-lg bg-gray-800 hover:bg-gray-900 text-white font-semibold transition"
-          >
-            Depot GitHub
-          </a>
-        )}
       </div>
 
       {relatedProjects.length > 0 && (
