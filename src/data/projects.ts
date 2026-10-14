@@ -33,4 +33,14 @@ export const projects: Project[] = [
     link: 'https://new-pro-ecommerce-demo.vercel.app',
     github: 'https://github.com/AkmelFed12/LMO-SHOP-SERVICES',
   },
+  {
+    id: 3,
+    slug: 'afropulse',
+    title: 'AfroPulse',
+    description:
+      'Réseau professionnel dédié aux talents africains et à la diaspora, avec annuaire de profils, missions, messagerie, authentification et présence en temps réel.',
+    tech: ['HTML', 'Tailwind CSS', 'JavaScript', 'Supabase', 'Realtime', 'PWA', 'Netlify'],
+    link: 'https://afro-pulse.netlify.app',
+    github: 'https://github.com/AkmelFed12/afropulse',
+  },
 ];
