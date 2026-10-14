@@ -12,6 +12,9 @@ type ProjectsFilterGridProps = {
 type FilterKey = 'all' | 'frontend' | 'backend' | 'fullstack' | 'live';
 
 function detectCategory(project: Project): Exclude<FilterKey, 'all' | 'live'> {
+  if (project.category) {
+    return project.category;
+  }
   const stack = project.tech.map((t) => t.toLowerCase());
   const hasFrontend = stack.some((t) => ['react', 'next.js', 'tailwind css', 'html/css/javascript', 'typescript'].includes(t));
   const hasBackend = stack.some((t) => ['node.js', 'express.js', 'firebase', 'postgresql', 'mongodb', 'rest apis'].includes(t));
@@ -113,6 +116,8 @@ export default function ProjectsFilterGrid({ projects, lang = 'fr' }: ProjectsFi
               github={project.github}
               image={project.image}
               mobileImage={project.mobileImage}
+              promoEmbed={project.promoEmbed}
+              categoryLabel={detectCategory(project) === 'fullstack' ? 'Full Stack' : undefined}
             />
           </div>
         ))}

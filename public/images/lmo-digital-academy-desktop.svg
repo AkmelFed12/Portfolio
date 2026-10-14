@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-label="LMO Digital Academy desktop preview">
+  <rect width="1400" height="900" fill="#f8fafc"/>
+  <rect x="80" y="70" width="1240" height="760" rx="44" fill="#0b1f3b"/>
+  <rect x="130" y="130" width="1140" height="86" rx="24" fill="#ffffff"/>
+  <text x="170" y="184" font-family="Montserrat,Arial" font-size="34" font-weight="800" fill="#0b1f3b">LMO Digital Academy</text>
+  <rect x="800" y="154" width="120" height="28" rx="14" fill="#e8eefb"/>
+  <rect x="950" y="154" width="120" height="28" rx="14" fill="#e8eefb"/>
+  <rect x="1100" y="154" width="120" height="28" rx="14" fill="#1e5eff"/>
+  <text x="170" y="340" font-family="Montserrat,Arial" font-size="62" font-weight="800" fill="#ffffff">Formation digitale premium</text>
+  <text x="170" y="402" font-family="Poppins,Arial" font-size="28" fill="#cbd5e1">Cours écrits, progression, paiements et certificats</text>
+  <rect x="170" y="470" width="220" height="58" rx="18" fill="#1e5eff"/>
+  <text x="226" y="508" font-family="Poppins,Arial" font-size="20" font-weight="700" fill="#ffffff">Commencer</text>
+  <rect x="820" y="300" width="350" height="380" rx="32" fill="#ffffff"/>
+  <rect x="860" y="350" width="170" height="28" rx="10" fill="#1e5eff"/>
+  <rect x="860" y="414" width="250" height="18" rx="9" fill="#94a3b8"/>
+  <rect x="860" y="462" width="220" height="18" rx="9" fill="#94a3b8"/>
+  <rect x="860" y="532" width="260" height="70" rx="18" fill="#fff2df"/>
+  <circle cx="1120" cy="360" r="46" fill="#ff8a00"/>
+</svg>

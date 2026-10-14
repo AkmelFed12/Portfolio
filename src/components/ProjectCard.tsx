@@ -8,6 +8,8 @@ interface ProjectCardProps {
   caseStudyLink?: string;
   link?: string;
   github?: string;
+  promoEmbed?: string;
+  categoryLabel?: string;
   image?: string;
   mobileImage?: string;
 }
@@ -19,6 +21,7 @@ export default function ProjectCard({
   caseStudyLink,
   link,
   github,
+  categoryLabel,
   image,
   mobileImage,
 }: ProjectCardProps) {
@@ -58,6 +61,11 @@ export default function ProjectCard({
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
           {title}
         </h3>
+        {categoryLabel && (
+          <span className="mb-3 inline-flex rounded-full bg-cyan-100 px-2.5 py-1 text-xs font-semibold text-cyan-800 dark:bg-cyan-950/60 dark:text-cyan-200">
+            {categoryLabel}
+          </span>
+        )}
         {!link && (
           <div className="mb-3">
             <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200">

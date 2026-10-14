@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="900" viewBox="0 0 520 900" role="img" aria-label="LMO Digital Academy mobile preview">
+  <rect width="520" height="900" fill="#0b1f3b"/>
+  <rect x="42" y="42" width="436" height="816" rx="54" fill="#f9fafb"/>
+  <rect x="76" y="92" width="368" height="64" rx="22" fill="#ffffff"/>
+  <text x="102" y="134" font-family="Montserrat,Arial" font-size="24" font-weight="800" fill="#0b1f3b">LMO Academy</text>
+  <rect x="76" y="196" width="368" height="190" rx="28" fill="#0b1f3b"/>
+  <text x="106" y="264" font-family="Montserrat,Arial" font-size="32" font-weight="800" fill="#ffffff">Digital Skills</text>
+  <text x="106" y="306" font-family="Montserrat,Arial" font-size="32" font-weight="800" fill="#ffffff">Training</text>
+  <rect x="106" y="330" width="150" height="42" rx="14" fill="#1e5eff"/>
+  <rect x="76" y="430" width="368" height="120" rx="24" fill="#ffffff"/>
+  <rect x="106" y="464" width="130" height="20" rx="10" fill="#1e5eff"/>
+  <rect x="106" y="504" width="260" height="16" rx="8" fill="#94a3b8"/>
+  <rect x="76" y="580" width="368" height="120" rx="24" fill="#ffffff"/>
+  <rect x="106" y="614" width="160" height="20" rx="10" fill="#ff8a00"/>
+  <rect x="106" y="654" width="240" height="16" rx="8" fill="#94a3b8"/>
+  <rect x="76" y="742" width="368" height="74" rx="24" fill="#1e5eff"/>
+  <text x="196" y="788" font-family="Poppins,Arial" font-size="22" font-weight="700" fill="#ffffff">Premium</text>
+</svg>

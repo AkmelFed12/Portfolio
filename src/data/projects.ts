@@ -4,10 +4,12 @@ export type Project = {
   title: string;
   description: string;
   tech: string[];
+  category?: 'frontend' | 'backend' | 'fullstack';
   link?: string;
   github?: string;
   image?: string;
   mobileImage?: string;
+  promoEmbed?: string;
 };
 
 export const projects: Project[] = [
