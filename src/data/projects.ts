@@ -74,6 +74,7 @@ export const projects: Project[] = [
     tech: ['HTML', 'Tailwind CSS', 'JavaScript', 'Supabase', 'Realtime', 'PWA', 'Netlify'],
     link: 'https://afro-pulse.netlify.app',
     github: 'https://github.com/AkmelFed12/afropulse',
-    image: '/images/afropulse.svg',
+    image: '/images/afropulse-desktop.png',
+    mobileImage: '/images/afropulse-mobile.png',
   },
 ];
