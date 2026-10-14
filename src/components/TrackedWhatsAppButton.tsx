@@ -11,7 +11,7 @@ type TrackedWhatsAppButtonProps = {
 
 export default function TrackedWhatsAppButton({ label, source, className, message }: TrackedWhatsAppButtonProps) {
   const text = encodeURIComponent(
-    message || 'Hello Ladji, I discovered your portfolio and would like to discuss an opportunity.'
+    message || 'Bonjour Ladji, j ai decouvert votre portfolio et je souhaite discuter d une opportunite.'
   );
 
   return (

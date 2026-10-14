@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Resume',
-  description: 'Resume of Ladji Moussa OUATTARA with education, skills, projects, and contact information.',
+  title: 'CV',
+  description: 'CV de Ladji Moussa OUATTARA avec formation, competences, projets et coordonnees.',
   openGraph: {
-    title: 'Resume | Ladji Moussa OUATTARA',
-    description: 'Education, technical skills, and project experience of Ladji Moussa OUATTARA.',
+    title: 'CV | Ladji Moussa OUATTARA',
+    description: 'Formation, competences techniques et experience projet de Ladji Moussa OUATTARA.',
     images: ['/og-resume.svg'],
   },
 };

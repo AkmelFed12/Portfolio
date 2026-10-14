@@ -4,37 +4,28 @@ import TrackedWhatsAppButton from '@/components/TrackedWhatsAppButton';
 
 export const metadata: Metadata = {
   title: 'Services',
-  description: 'Web services offered by Ladji Moussa OUATTARA including websites, dashboards, and maintenance.',
-  keywords: ['Web services', 'Portfolio website', 'Landing page', 'Full-stack app', 'LMO Web Services'],
+  description: 'Services web proposes par Ladji Moussa OUATTARA : sites, applications et maintenance.',
+  keywords: ['Services web', 'Site portfolio', 'Landing page', 'Application full-stack', 'LMO Web Services'],
   alternates: {
     canonical: '/services',
-    languages: {
-      'en-US': '/services',
-      'fr-FR': '/services?lang=fr',
-    },
   },
   openGraph: {
     title: 'Services | Ladji Moussa OUATTARA',
-    description: 'Portfolio websites, full-stack apps, landing pages, and maintenance services.',
+    description: 'Sites portfolio, applications full-stack, landing pages et maintenance.',
     url: '/services',
     images: ['/og-services.svg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Services | Ladji Moussa OUATTARA',
-    description: 'Portfolio websites, full-stack apps, landing pages, and maintenance services.',
+    description: 'Sites portfolio, applications full-stack, landing pages et maintenance.',
     images: ['/og-services.svg'],
   },
 };
 
-type ServicesPageProps = {
-  searchParams?: Promise<{ lang?: string }>;
-};
-
-export default async function ServicesPage({ searchParams }: ServicesPageProps) {
-  const params = await searchParams;
-  const lang = params?.lang === 'fr' ? 'fr' : 'en';
-  const withLang = (path: string) => (lang === 'fr' ? `${path}?lang=fr` : path);
+export default async function ServicesPage() {
+  const lang = 'fr' as const;
+  const withLang = (path: string) => path;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lmoportfolio.vercel.app';
 
   const t =
@@ -65,11 +56,11 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
           services: [
             {
               title: 'Sites Portfolio & Business',
-              description: 'Sites modernes et responsives avec UI propre, support bilingue et structure SEO.',
+              description: 'Sites modernes et responsives avec interface claire et structure SEO.',
             },
             {
               title: 'Applications Web Full-Stack',
-              description: 'Developpement sur mesure avec frontend React/Next.js et logique backend robuste.',
+              description: 'Developpement sur mesure avec frontend React/Next.js et logique backend fiable.',
             },
             {
               title: 'Landing Pages & Conversion',
@@ -85,8 +76,8 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
           title: 'Services',
           subtitle: 'Practical web solutions for organizations, creators, and growing projects.',
           reply: 'Typical first reply in under 24h via WhatsApp.',
-          availabilityNote: 'Currently available for 2 new projects this month.',
-          blockTitle: 'What I Can Build For You',
+          availabilityNote: 'Disponible actuellement pour 2 nouveaux projets ce mois-ci.',
+          blockTitle: 'Ce que je peux construire pour vous',
           pricingTitle: 'Packages & Pricing',
           starterFor: 'Simple landing pages or portfolio setup',
           growthFor: 'Business website with stronger conversion',
@@ -95,8 +86,8 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
           growthIncludes: ['Up to 8 pages', 'Conversion-focused sections', 'Performance optimization', 'Deployment support'],
           customIncludes: ['Tailored architecture', 'Advanced features', 'Milestone-based delivery', 'Post-launch support'],
           choose: 'Choose',
-          ready: 'Ready To Start?',
-          readyText: 'Send your brief and I will reply with scope, timeline, and next steps.',
+          ready: 'Pret a commencer ?',
+          readyText: "Envoie ton brief et je reviens avec perimetre, delai et prochaines etapes.",
           startBrief: 'Start Project Brief',
           whatsapp: 'Discuss on WhatsApp',
           services: [
@@ -195,7 +186,7 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
                 label={`${t.choose} ${pkg.name}`}
                 source={`services_package_${pkg.name.toLowerCase()}`}
                 className="btn-accent focus-ring w-full"
-                message={`Hello Ladji, I am interested in your ${pkg.name} package. Can we discuss details?`}
+                message={`Bonjour Ladji, je suis interesse par votre offre ${pkg.name}. Pouvons-nous en discuter ?`}
               />
             </article>
           ))}
@@ -221,6 +212,3 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
     </div>
   );
 }
-
-
-

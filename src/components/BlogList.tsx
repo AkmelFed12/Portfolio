@@ -8,44 +8,22 @@ import type { BlogPost } from '@/data/blogPosts';
 
 interface BlogListProps {
   posts: BlogPost[];
-  lang?: 'en' | 'fr';
 }
 
-export default function BlogList({ posts, lang = 'en' }: BlogListProps) {
+export default function BlogList({ posts }: BlogListProps) {
   const [query, setQuery] = useState('');
-  const [category, setCategory] = useState('All');
+  const [category, setCategory] = useState('Toutes');
   const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
-
-  const t =
-    lang === 'fr'
-      ? {
-          all: 'Tous',
-          searchLabel: 'Rechercher un article',
-          searchPlaceholder: 'Rechercher...',
-          categoryLabel: 'Filtrer par categorie',
-          readMore: 'Lire la suite →',
-          empty: 'Aucun article ne correspond a votre recherche.',
-          dateLocale: 'fr-FR',
-        }
-      : {
-          all: 'All',
-          searchLabel: 'Search posts',
-          searchPlaceholder: 'Search posts...',
-          categoryLabel: 'Filter by category',
-          readMore: 'Read More →',
-          empty: 'No posts match your search yet.',
-          dateLocale: 'en-US',
-        };
 
   const categories = useMemo(() => {
     const unique = Array.from(new Set(posts.map((post) => post.category)));
-    return ['All', ...unique];
+    return ['Toutes', ...unique];
   }, [posts]);
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     return posts.filter((post) => {
-      const matchesCategory = category === 'All' || post.category === category;
+      const matchesCategory = category === 'Toutes' || post.category === category;
       const matchesQuery =
         normalized.length === 0 ||
         post.title.toLowerCase().includes(normalized) ||
@@ -59,20 +37,20 @@ export default function BlogList({ posts, lang = 'en' }: BlogListProps) {
       <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex-1">
           <label htmlFor="search" className="sr-only">
-            {t.searchLabel}
+            Rechercher un article
           </label>
           <input
             id="search"
             type="text"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder={t.searchPlaceholder}
+            placeholder="            Rechercher des articles..."
             className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600"
           />
         </div>
         <div>
           <label htmlFor="category" className="sr-only">
-            {t.categoryLabel}
+            Filtrer par categorie
           </label>
           <select
             id="category"
@@ -82,7 +60,7 @@ export default function BlogList({ posts, lang = 'en' }: BlogListProps) {
           >
             {categories.map((item) => (
               <option key={item} value={item}>
-                {item === 'All' ? t.all : item}
+                {item}
               </option>
             ))}
           </select>
@@ -90,14 +68,8 @@ export default function BlogList({ posts, lang = 'en' }: BlogListProps) {
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {filtered.map((post, index) => {
-          const isFr = lang === 'fr';
-          const cardTitle = isFr && post.titleFr ? post.titleFr : post.title;
-          const cardExcerpt = isFr && post.excerptFr ? post.excerptFr : post.excerpt;
-          const cardCategory = isFr && post.categoryFr ? post.categoryFr : post.category;
-          const cardReadTime = isFr && post.readTimeFr ? post.readTimeFr : post.readTime;
-          return (
-          <Link key={post.id} href={`/blog/${post.slug}${lang === 'fr' ? '?lang=fr' : ''}`}>
+        {filtered.map((post, index) => (
+          <Link key={post.id} href={`/blog/${post.slug}`}>
             <article
               className={`bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all hover:scale-[1.01] stagger-item-${(index % 3) + 1} h-full cursor-pointer`}
             >
@@ -105,7 +77,7 @@ export default function BlogList({ posts, lang = 'en' }: BlogListProps) {
                 <div className="relative h-48 w-full">
                   <Image
                     src={post.coverImage}
-                    alt={`${cardTitle} cover image`}
+                    alt={`${post.title} cover image`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
@@ -115,45 +87,42 @@ export default function BlogList({ posts, lang = 'en' }: BlogListProps) {
               <div className="p-6">
                 <div className="mb-4 flex items-center justify-between">
                   <span className="text-sm font-semibold text-cyan-600 dark:text-cyan-400 bg-cyan-100 dark:bg-cyan-900 px-3 py-1 rounded-full">
-                    {cardCategory}
+                    {post.category}
                   </span>
-                  <span className="text-sm text-gray-600 dark:text-slate-300">{cardReadTime}</span>
+                  <span className="text-sm text-gray-600 dark:text-slate-300">{post.readTime}</span>
                 </div>
                 <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition">
-                  {cardTitle}
+                  {post.title}
                 </h2>
-                <p className="text-gray-700 dark:text-slate-200 mb-4">{cardExcerpt}</p>
+                <p className="text-gray-700 dark:text-slate-200 mb-4">{post.excerpt}</p>
                 <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700 mb-4">
                   <time className="text-sm text-gray-600 dark:text-slate-300">
-                    {new Date(post.date).toLocaleDateString(t.dateLocale, {
+                    {new Date(post.date).toLocaleDateString('fr-FR', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',
                     })}
                   </time>
-                  <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition">{t.readMore}</span>
+                  <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition">Lire l article →</span>
                 </div>
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <SocialShareButtons
-                    title={cardTitle}
-                    description={cardExcerpt}
+                    title={post.title}
+                    description={post.excerpt}
                     url={`${baseUrl}/blog/${post.slug}`}
                   />
                 </div>
               </div>
             </article>
           </Link>
-          );
-        })}
+        ))}
       </div>
 
       {filtered.length === 0 && (
         <div className="mt-10 text-center text-gray-600 dark:text-slate-300">
-          {t.empty}
+          Aucun article ne correspond a votre recherche.
         </div>
       )}
     </section>
   );
 }
-
-

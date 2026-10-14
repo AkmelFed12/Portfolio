@@ -2,27 +2,27 @@ export default function JourneyTimeline() {
   const timeline = [
     {
       year: '2026',
-      title: 'BS Computer Science Student',
-      description: 'Currently a BS Computer Science student and full-stack learner, improving through practical projects and continuous study.',
-      achievements: ['LMO Services platform in production', 'MyFinance LMO project developed', 'Barakatrack project developed'],
+      title: 'Etudiant en informatique',
+      description: 'Etudiant en informatique et developpeur full-stack, je progresse grace a des projets pratiques et a une formation continue.',
+      achievements: ['LMO Shop Services developpe', 'AfroPulse developpe', 'Portfolio constamment ameliore'],
     },
     {
       year: '2025',
-      title: 'Started Full Stack Development',
-      description: 'Started focused full-stack learning journey with frontend and backend technologies through personal and academic projects.',
-      achievements: ['React and Node.js practice projects', 'Next.js and TypeScript learning', 'Database fundamentals'],
+      title: 'Debut du developpement Full-Stack',
+      description: 'Debut d un parcours d apprentissage full-stack axe sur le frontend et le backend a travers des projets personnels et academiques.',
+      achievements: ['Projets pratiques React et Node.js', 'Apprentissage de Next.js et TypeScript', 'Bases de donnees'],
     },
     {
       year: '2022',
-      title: 'Started Computer Science Education',
-      description: 'Began computer science studies at International University of Grand-Bassam before redirecting academic path.',
-      achievements: ['Core programming', 'Web fundamentals', 'Problem solving'],
+      title: 'Debut des etudes en informatique',
+      description: 'Debut des etudes en informatique a l International University of Grand-Bassam avant une nouvelle orientation academique.',
+      achievements: ['Programmation fondamentale', 'Bases du web', 'Resolution de problemes'],
     },
     {
       year: '2021',
-      title: 'Discovered Passion for Coding',
-      description: 'First exploration into web development and programming. Found my passion in building digital solutions.',
-      achievements: ['First projects', 'HTML/CSS', 'JavaScript basics'],
+      title: 'Decouverte de la programmation',
+      description: 'Premiere exploration du developpement web et de la programmation. Decouverte de ma passion pour les solutions numeriques.',
+      achievements: ['Premiers projets', 'HTML/CSS', 'Bases de JavaScript'],
     },
   ];
 
@@ -30,7 +30,7 @@ export default function JourneyTimeline() {
     <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold mb-16 text-center animate-fade-in">
-          My Learning Journey
+          Mon parcours d apprentissage
         </h2>
 
         <div className="relative">
@@ -55,7 +55,7 @@ export default function JourneyTimeline() {
                       </span>
                       {index === 0 && (
                         <span className="text-lg font-semibold text-cyan-600 dark:text-cyan-400">
-                          Current
+                          Actuel
                         </span>
                       )}
                     </div>
@@ -94,7 +94,5 @@ export default function JourneyTimeline() {
     </section>
   );
 }
-
-
 
 

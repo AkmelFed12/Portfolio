@@ -45,6 +45,23 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(34, 211, 238, 0.09), transparent 28rem),
+    radial-gradient(circle at 88% 24%, rgba(14, 116, 144, 0.08), transparent 24rem);
+}
+
+.dark body::before {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(34, 211, 238, 0.08), transparent 28rem),
+    radial-gradient(circle at 88% 24%, rgba(8, 145, 178, 0.08), transparent 24rem);
+}
+
 ::selection {
   background: #a5f3fc;
   color: #0f172a;
@@ -207,23 +224,23 @@ body {
 }
 
 .surface-card {
-  @apply rounded-2xl border border-slate-200/80 dark:border-slate-700/80 bg-white dark:bg-slate-900 shadow-sm;
+  @apply rounded-2xl border border-slate-200/80 dark:border-slate-700/80 bg-white/95 dark:bg-slate-900/95 shadow-sm;
 }
 
 .surface-card-soft {
-  @apply rounded-2xl border border-slate-200/70 dark:border-slate-700/70 bg-slate-50 dark:bg-slate-800/60 shadow-sm;
+  @apply rounded-2xl border border-slate-200/70 dark:border-slate-700/70 bg-slate-50/90 dark:bg-slate-800/60 shadow-sm;
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-cyan-700 text-white hover:bg-cyan-800 shadow-sm hover:shadow-md transition-all duration-200;
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-cyan-700 text-white hover:bg-cyan-800 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-100 bg-white/70 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-700/80 transition-all duration-200;
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-100 bg-white/70 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-700/80 hover:-translate-y-0.5 transition-all duration-200;
 }
 
 .btn-accent {
-  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-green-600 text-white hover:bg-green-700 shadow-sm hover:shadow-md transition-all duration-200;
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-green-600 text-white hover:bg-green-700 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200;
 }
 
 .focus-ring {
@@ -293,4 +310,3 @@ body {
 .skill-bar-container[data-skill-level="90"] { --skill-level: 90%; }
 .skill-bar-container[data-skill-level="95"] { --skill-level: 95%; }
 .skill-bar-container[data-skill-level="100"] { --skill-level: 100%; }
-

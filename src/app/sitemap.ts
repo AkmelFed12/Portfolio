@@ -4,73 +4,49 @@ import { getBlogPosts, getProjectsPublic } from '@/lib/content';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lmoportfolio.vercel.app';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const now = new Date();
+  const siteUpdatedAt = new Date('2026-10-14T00:00:00.000Z');
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${siteUrl}/`,
-      lastModified: now,
+      lastModified: siteUpdatedAt,
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${siteUrl}/projects`,
-      lastModified: now,
+      lastModified: siteUpdatedAt,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${siteUrl}/services`,
-      lastModified: now,
+      lastModified: siteUpdatedAt,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${siteUrl}/about`,
-      lastModified: now,
+      lastModified: siteUpdatedAt,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${siteUrl}/blog`,
-      lastModified: now,
+      lastModified: siteUpdatedAt,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${siteUrl}/resume`,
-      lastModified: now,
+      lastModified: siteUpdatedAt,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${siteUrl}/contact`,
-      lastModified: now,
+      lastModified: siteUpdatedAt,
       changeFrequency: 'monthly',
       priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/?lang=fr`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/services?lang=fr`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/contact?lang=fr`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/about?lang=fr`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
     },
   ];
 
@@ -84,7 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${siteUrl}/projects/${project.slug}`,
-    lastModified: now,
+    lastModified: siteUpdatedAt,
     changeFrequency: 'monthly',
     priority: 0.75,
   }));

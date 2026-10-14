@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   },
   applicationName: 'Ladji Moussa Portfolio',
   description:
-    'BS Computer Science student and full-stack learner building practical web applications with real-world impact.',
+    'Etudiant en informatique et developpeur full-stack, je construis des applications web utiles et concretes.',
   keywords: [
     'Ladji Moussa OUATTARA',
-    'Full Stack Developer',
-    'Next.js portfolio',
-    'React developer',
-    'Web developer Abidjan',
-    'BS Computer Science student',
+    'Developpeur full-stack',
+    'Portfolio Next.js',
+    'Developpeur React',
+    'Developpeur web Abidjan',
+    'Etudiant en informatique',
     'LMO Web Services',
   ],
   authors: [{ name: 'Ladji Moussa OUATTARA' }],
@@ -39,15 +39,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/',
-    languages: {
-      'en-US': '/',
-      'fr-FR': '/?lang=fr',
-    },
   },
   openGraph: {
     title: 'Ladji Moussa OUATTARA | Portfolio',
     description:
-      'BS Computer Science student and full-stack learner building practical web applications with real-world impact.',
+      'Etudiant en informatique et developpeur full-stack, je construis des applications web utiles.',
     url: siteUrl,
     siteName: 'Ladji Portfolio',
     images: [
@@ -58,14 +54,14 @@ export const metadata: Metadata = {
         alt: 'Ladji Moussa OUATTARA Portfolio',
       },
     ],
-    locale: 'en_US',
+    locale: 'fr_FR',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ladji Moussa OUATTARA | Portfolio',
     description:
-      'BS Computer Science student and full-stack learner building practical web applications with real-world impact.',
+      'Etudiant en informatique et developpeur full-stack, je construis des applications web utiles.',
     images: ['/og-portfolio.svg'],
   },
 };
@@ -77,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="fr"
       className={`h-full antialiased ${geistSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
@@ -103,9 +99,9 @@ export default function RootLayout({
               '@type': 'Person',
               name: 'Ladji Moussa OUATTARA',
               url: siteUrl,
-              jobTitle: 'BS Computer Science Student | Full-Stack Developer',
+              jobTitle: 'Etudiant en informatique | Developpeur Full-Stack',
               description:
-                'BS Computer Science student and full-stack learner building practical web applications with real-world impact.',
+                'Etudiant en informatique et developpeur full-stack qui construit des applications web utiles.',
               image: `${siteUrl}/og-portfolio.svg`,
               sameAs: [
                 'https://github.com/AkmelFed12',
@@ -128,12 +124,8 @@ export default function RootLayout({
               url: siteUrl,
               name: 'Ladji Moussa Portfolio',
               description:
-                'BS Computer Science student and full-stack learner building practical web applications with real-world impact.',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: `${siteUrl}/projects?q={search_term_string}`,
-                'query-input': 'required name=search_term_string',
-              },
+                'Etudiant en informatique et developpeur full-stack qui construit des applications web utiles.',
+              inLanguage: 'fr-FR',
             }),
           }}
         />
@@ -150,4 +142,3 @@ export default function RootLayout({
     </html>
   );
 }
-

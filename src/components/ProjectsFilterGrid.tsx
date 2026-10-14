@@ -28,7 +28,7 @@ function detectCategory(project: Project): Exclude<FilterKey, 'all' | 'live'> {
   return 'frontend';
 }
 
-export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFilterGridProps) {
+export default function ProjectsFilterGrid({ projects, lang = 'fr' }: ProjectsFilterGridProps) {
   const [filter, setFilter] = useState<FilterKey>('all');
 
   const labels =
@@ -38,16 +38,16 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
           frontend: 'Frontend',
           backend: 'Backend',
           fullstack: 'Full Stack',
-          live: 'Avec Demo',
+          live: 'Avec demo',
           showing: 'Affichage',
         }
       : {
-          all: 'All',
+          all: 'Tous',
           frontend: 'Frontend',
           backend: 'Backend',
           fullstack: 'Full Stack',
-          live: 'Has Live Demo',
-          showing: 'Showing',
+          live: 'Avec demo',
+          showing: 'Affichage',
         };
 
   const filteredProjects = useMemo(() => {
@@ -88,7 +88,7 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-gray-800 px-4 py-2">
           <span className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-slate-300">
-            Filter
+            Filtre
           </span>
           <span className="text-sm font-semibold text-gray-900 dark:text-white">
             {buttons.find((btn) => btn.key === filter)?.label}
@@ -111,8 +111,9 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
               title={project.title}
               description={project.description}
               tech={project.tech}
-              caseStudyLink={`/projects/${project.slug}${lang === 'fr' ? '?lang=fr' : ''}`}
+              caseStudyLink={`/projects/${project.slug}`}
               link={project.link}
+              github={project.github}
               image={project.image}
               mobileImage={project.mobileImage}
               promoEmbed={project.promoEmbed}

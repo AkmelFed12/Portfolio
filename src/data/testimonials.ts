@@ -11,20 +11,19 @@ export const testimonials: Testimonial[] = [
   {
     id: 1,
     name: 'Ahmed Hassan',
-    title: 'Project Manager',
+    title: 'Chef de projet',
     company: 'Tech Solutions Inc',
     testimonial:
-      'Ladji Moussa delivered an exceptional web platform for our event. His attention to detail and ability to understand our requirements was impressive.',
+      'Ladji Moussa a livre une excellente plateforme web pour notre evenement. Son attention aux details et sa comprehension de nos besoins etaient remarquables.',
     rating: 5,
   },
   {
     id: 2,
     name: 'Ibrahim Traore',
-    title: 'Team Lead',
+    title: 'Responsable d equipe',
     company: 'Digital Innovations',
     testimonial:
-      'Ladji is a dedicated developer who brings creative solutions to technical challenges. Highly recommended for any project.',
+      'Ladji est un developpeur implique qui apporte des solutions creatives aux defis techniques. Je le recommande pour tout projet.',
     rating: 5,
   },
 ];
-

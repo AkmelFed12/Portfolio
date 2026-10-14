@@ -120,4 +120,3 @@ main().catch((error) => {
   console.error('sync:screenshots failed:', error);
   process.exit(1);
 });
-

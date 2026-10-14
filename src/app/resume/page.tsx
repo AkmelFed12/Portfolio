@@ -8,10 +8,10 @@ export default function Resume() {
       <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
           <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100 animate-slide-down">
-            My Resume
+            Mon CV
           </h1>
           <p className="text-xl text-gray-700 dark:text-slate-200">
-            Download or view my complete resume below
+            Telechargez ou consultez mon CV complet ci-dessous
           </p>
         </div>
       </section>
@@ -19,14 +19,14 @@ export default function Resume() {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6">
-            <h3 className="text-2xl font-bold mb-2 text-cyan-600 dark:text-cyan-400">Download</h3>
-            <p className="text-gray-700 dark:text-slate-200 mb-4">Get my resume as a PDF</p>
+            <h3 className="text-2xl font-bold mb-2 text-cyan-600 dark:text-cyan-400">Telecharger</h3>
+            <p className="text-gray-700 dark:text-slate-200 mb-4">Obtenir mon CV au format PDF</p>
             <DownloadResumeButton />
           </div>
 
           <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6">
-            <h3 className="text-2xl font-bold mb-2 text-cyan-600 dark:text-cyan-400">View</h3>
-            <p className="text-gray-700 dark:text-slate-200 mb-4">Read my resume here</p>
+            <h3 className="text-2xl font-bold mb-2 text-cyan-600 dark:text-cyan-400">Consulter</h3>
+            <p className="text-gray-700 dark:text-slate-200 mb-4">Lire mon CV sur cette page</p>
             <a
               href="#resume-content"
               className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded transition"
@@ -34,13 +34,13 @@ export default function Resume() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Scroll Down
+              Voir le contenu
             </a>
           </div>
 
           <div className="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6">
-            <h3 className="text-2xl font-bold mb-2 text-cyan-600 dark:text-cyan-400">Print</h3>
-            <p className="text-gray-700 dark:text-slate-200 mb-4">Print this page</p>
+            <h3 className="text-2xl font-bold mb-2 text-cyan-600 dark:text-cyan-400">Imprimer</h3>
+            <p className="text-gray-700 dark:text-slate-200 mb-4">Imprimer cette page</p>
             <PrintResumeButton />
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Resume() {
               LADJI MOUSSA OUATTARA
             </h1>
             <p className="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mb-4">
-              BS Computer Science Student | Full-Stack Learner
+              Etudiant en informatique | Developpeur Full-Stack
             </p>
             <div className="grid grid-cols-2 gap-4 text-sm text-gray-700 dark:text-slate-200">
               <div>
@@ -63,7 +63,7 @@ export default function Resume() {
                 <strong>GitHub:</strong> github.com/AkmelFed12
               </div>
               <div>
-                <strong>Phone:</strong> +225 01 500 700 83
+                <strong>Telephone :</strong> +225 01 500 700 83
               </div>
               <div>
                 <strong>LinkedIn:</strong> linkedin.com/in/ladji-moussa-ouattara-8b5778298
@@ -71,13 +71,13 @@ export default function Resume() {
             </div>
           </div>
 
-          {/* Professional Summary */}
+          {/* Resume professionnel */}
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 border-b border-gray-300 dark:border-gray-700 pb-2">
-              Professional Summary
+              Resume professionnel
             </h2>
             <p className="text-gray-700 dark:text-slate-200 leading-relaxed">
-              BS Computer Science student and full-stack learner with hands-on experience building production-grade web applications using modern technologies. Passionate about creating practical solutions for real-world problems. Strong proficiency in React, Next.js, TypeScript, and Tailwind CSS. In 2026, still actively learning backend development and databases while leveraging AI tools to enhance productivity and code quality.
+              Etudiant en informatique et developpeur full-stack avec une experience pratique dans la creation d applications web modernes. Passionne par les solutions utiles, je maitrise React, Next.js, TypeScript et Tailwind CSS, tout en continuant a progresser en backend et en bases de donnees.
             </p>
           </section>
 
@@ -89,36 +89,36 @@ export default function Resume() {
 
             <div className="mb-6">
               <div className="flex justify-between items-start mb-2">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">LMO Services Platform - Full-Stack Developer</h3>
-                <span className="text-gray-600 dark:text-slate-300">2025 - Present</span>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Projets personnels - Developpeur Full-Stack</h3>
+                <span className="text-gray-600 dark:text-slate-300">2025 - Aujourd hui</span>
               </div>
-              <p className="text-cyan-600 dark:text-cyan-400 font-semibold mb-3">Study-Abroad Admission Platform (Canada &amp; France)</p>
+              <p className="text-cyan-600 dark:text-cyan-400 font-semibold mb-3">Applications de commerce, networking et productivite</p>
               <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-slate-200">
-                <li>Designed and built a full-stack platform for Canadian (PPECFSM) and France admission procedures</li>
-                <li>Implemented a public site, secure client space, and admin dashboard for contracts, payments, and refunds</li>
-                <li>Deployed to production on Vercel with Supabase and Row Level Security</li>
-                <li>Technologies: Next.js, React, TypeScript, Tailwind CSS, Supabase, Vercel</li>
+                <li>Conception et developpement d applications full-stack de bout en bout</li>
+                <li>Mise en place d interfaces responsives, d authentification et de workflows metier</li>
+                <li>Deploiement en production et amelioration continue de l ergonomie et des performances</li>
+                <li>Technologies : Next.js, React, TypeScript, Tailwind CSS, Node.js, Supabase, Vercel</li>
               </ul>
             </div>
 
             <div>
               <div className="flex justify-between items-start mb-2">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Learning & Development</h3>
-                <span className="text-gray-600 dark:text-slate-300">Ongoing</span>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Apprentissage et developpement</h3>
+                <span className="text-gray-600 dark:text-slate-300">En cours</span>
               </div>
-              <p className="text-cyan-600 dark:text-cyan-400 font-semibold mb-3">Computer Science Student</p>
+              <p className="text-cyan-600 dark:text-cyan-400 font-semibold mb-3">Etudiant en informatique</p>
               <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-slate-200">
-                <li>Pursuing Bachelor of Science in Computer Science at University of the People</li>
-                <li>Building multiple portfolio projects to solidify learning</li>
-                <li>Exploring backend development, databases, and system design</li>
+                <li>Preparation d un Bachelor of Science in Computer Science a University of the People</li>
+                <li>Creation de projets pour consolider mes apprentissages</li>
+                <li>Exploration du backend, des bases de donnees et de la conception systeme</li>
               </ul>
             </div>
           </section>
 
-          {/* Skills */}
+          {/* Competences */}
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 border-b border-gray-300 dark:border-gray-700 pb-2">
-              Technical Skills
+              Competences techniques
             </h2>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -145,7 +145,7 @@ export default function Resume() {
               </div>
 
               <div>
-                <h4 className="font-bold text-gray-900 dark:text-white mb-2">Tools & Platforms</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-2">Outils et plateformes</h4>
                 <ul className="text-sm text-gray-700 dark:text-slate-200 space-y-1">
                   <li>• Git/GitHub</li>
                   <li>• Vercel</li>
@@ -157,72 +157,64 @@ export default function Resume() {
             </div>
           </section>
 
-          {/* Education */}
+          {/* Formation */}
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 border-b border-gray-300 dark:border-gray-700 pb-2">
-              Education
+              Formation
             </h2>
 
             <div className="mb-6">
               <div className="flex justify-between items-start">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">Bachelor of Science in Computer Science</h3>
-                <span className="text-gray-600 dark:text-slate-300">Expected 2028</span>
+                <span className="text-gray-600 dark:text-slate-300">Prevu pour 2028</span>
               </div>
               <p className="text-cyan-600 dark:text-cyan-400">University of the People</p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white">Previous Studies</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">Etudes precedentes</h3>
               <p className="text-cyan-600 dark:text-cyan-400">International University of Grand-Bassam</p>
               <p className="text-gray-700 dark:text-slate-200 mt-2">
-                Started computer science studies before stopping and applying to University of the People.
+                Debut d etudes en informatique avant une nouvelle orientation vers University of the People.
               </p>
             </div>
           </section>
 
-          {/* Projects */}
+          {/* Projets */}
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 border-b border-gray-300 dark:border-gray-700 pb-2">
-              Projects
+              Projets
             </h2>
 
             <div className="mb-6">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">LMO Services - Admission Canada &amp; France</h3>
-              <p className="text-gray-700 dark:text-slate-200 mb-2">Full-stack admission platform: public site, client space, and admin dashboard</p>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">LMO Shop Services</h3>
+              <p className="text-gray-700 dark:text-slate-200 mb-2">Plateforme e-commerce full-stack avec administration et analytics</p>
               <p className="text-sm text-gray-600 dark:text-slate-300">
-                <strong>Stack:</strong> Next.js, React, TypeScript, Tailwind CSS, Supabase, Vercel
+                <strong>Stack :</strong> JavaScript, Node.js, Serverless API, Vercel
               </p>
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">MyFinance LMO</h3>
-              <p className="text-gray-700 dark:text-slate-200 mb-2">Personal finance tracking and management application</p>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">AfroPulse</h3>
+              <p className="text-gray-700 dark:text-slate-200 mb-2">Reseau professionnel pour les talents africains et la diaspora</p>
               <p className="text-sm text-gray-600 dark:text-slate-300">
-                <strong>Stack:</strong> React, TypeScript, Tailwind CSS, Firebase
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Barakatrack by LMO</h3>
-              <p className="text-gray-700 dark:text-slate-200 mb-2">Tracking and workflow management system</p>
-              <p className="text-sm text-gray-600 dark:text-slate-300">
-                <strong>Stack:</strong> Next.js, Node.js, MongoDB, TypeScript
+                <strong>Stack :</strong> HTML, Tailwind CSS, JavaScript, Supabase, PWA
               </p>
             </div>
           </section>
 
-          {/* Interests & Goals */}
+          {/* Objectifs et centres d interet */}
           <section>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 border-b border-gray-300 dark:border-gray-700 pb-2">
-              Goals & Interests
+              Objectifs et centres d interet
             </h2>
             <ul className="grid md:grid-cols-2 gap-3 text-gray-700 dark:text-slate-200">
-              <li>✓ Build scalable full-stack applications</li>
-              <li>✓ Develop expertise in system design</li>
-              <li>✓ Create platforms serving real communities</li>
-              <li>✓ Become a senior full-stack developer</li>
-              <li>✓ Build my own technology company</li>
-              <li>✓ Contribute positively to society through tech</li>
+              <li>✓ Construire des applications full-stack evolutives</li>
+              <li>✓ Developper mon expertise en conception systeme</li>
+              <li>✓ Creer des plateformes utiles aux communautes</li>
+              <li>✓ Devenir developpeur full-stack senior</li>
+              <li>✓ Creer ma propre entreprise technologique</li>
+              <li>✓ Contribuer positivement a la societe par la technologie</li>
             </ul>
           </section>
         </div>
@@ -230,7 +222,3 @@ export default function Resume() {
     </div>
   );
 }
-
-
-
-

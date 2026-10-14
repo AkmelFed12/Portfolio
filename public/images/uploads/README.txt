@@ -11,4 +11,3 @@ Required filenames:
 The script will:
 1) Copy images to public/images with portfolio naming.
 2) Update src/data/projects.ts automatically.
-

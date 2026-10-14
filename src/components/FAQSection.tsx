@@ -2,7 +2,7 @@ type FAQSectionProps = {
   lang?: 'en' | 'fr';
 };
 
-export default function FAQSection({ lang = 'en' }: FAQSectionProps) {
+export default function FAQSection({ lang = 'fr' }: FAQSectionProps) {
   const content =
     lang === 'fr'
       ? {
@@ -28,24 +28,7 @@ export default function FAQSection({ lang = 'en' }: FAQSectionProps) {
         }
       : {
           title: 'FAQ',
-          items: [
-            {
-              q: 'Are you available for an internship in 2026?',
-              a: 'Yes. I am open to internship opportunities and product-focused collaboration.',
-            },
-            {
-              q: 'What is your main stack?',
-              a: 'Next.js, React, TypeScript, Tailwind CSS, Node.js, Firebase, and PostgreSQL depending on project needs.',
-            },
-            {
-              q: 'How do you like to collaborate?',
-              a: 'Clear goals, frequent communication, and iterative delivery based on feedback.',
-            },
-            {
-              q: 'What is the fastest way to contact you?',
-              a: 'WhatsApp is the fastest channel: +225 05 747 242 33.',
-            },
-          ],
+          items: [],
         };
 
   return (
@@ -67,4 +50,3 @@ export default function FAQSection({ lang = 'en' }: FAQSectionProps) {
     </section>
   );
 }
-
