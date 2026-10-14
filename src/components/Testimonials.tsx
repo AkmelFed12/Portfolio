@@ -10,7 +10,7 @@ export default function Testimonials({ items }: TestimonialsProps) {
     <section className="bg-gradient-to-br from-gray-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800 py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold mb-12 text-center animate-fade-in">
-          What Clients Say
+          Ce que disent les clients
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {items.map((testimonial, index) => (
@@ -24,7 +24,7 @@ export default function Testimonials({ items }: TestimonialsProps) {
                   <p className="font-bold text-gray-900 dark:text-white">{testimonial.name}</p>
                   <p className="text-sm text-gray-600 dark:text-slate-300">
                     {testimonial.title}
-                    {testimonial.company ? ` at ${testimonial.company}` : ''}
+                    {testimonial.company ? ` chez ${testimonial.company}` : ''}
                   </p>
                 </div>
               </div>
@@ -43,5 +43,4 @@ export default function Testimonials({ items }: TestimonialsProps) {
     </section>
   );
 }
-
 

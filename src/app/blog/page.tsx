@@ -4,10 +4,10 @@ import { getBlogPosts } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Articles from Ladji Moussa OUATTARA about learning, projects, and practical web development.',
+  description: 'Articles de Ladji Moussa OUATTARA sur l apprentissage, les projets et le developpement web.',
   openGraph: {
     title: 'Blog | Ladji Moussa OUATTARA',
-    description: 'Articles about project delivery, learning strategy, and full-stack development.',
+    description: 'Articles sur la livraison de projets, la methode d apprentissage et le developpement full-stack.',
     images: ['/og-blog.svg'],
   },
 };
@@ -20,10 +20,10 @@ export default async function Blog() {
       <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
           <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100 animate-slide-down">
-            Blog & Articles
+            Blog et articles
           </h1>
           <p className="text-xl text-gray-700 dark:text-slate-200">
-            Insights from my learning and project-building journey
+            Retours d experience sur mon apprentissage et la construction de mes projets
           </p>
         </div>
       </section>
@@ -32,6 +32,5 @@ export default async function Blog() {
     </div>
   );
 }
-
 
 

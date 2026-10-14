@@ -7,6 +7,7 @@ interface ProjectCardProps {
   tech: string[];
   caseStudyLink?: string;
   link?: string;
+  github?: string;
   image?: string;
   mobileImage?: string;
 }
@@ -17,32 +18,33 @@ export default function ProjectCard({
   tech,
   caseStudyLink,
   link,
+  github,
   image,
   mobileImage,
 }: ProjectCardProps) {
   const shareUrl = link;
 
   return (
-    <div className="surface-card overflow-hidden hover:shadow-md transition-shadow">
+    <div className="surface-card group h-full overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
       {(image || mobileImage) && (
-        <div className="p-4 bg-slate-100 dark:bg-slate-800/70">
+        <div className="relative overflow-hidden bg-slate-100 p-3 dark:bg-slate-800/70">
           <div className="grid grid-cols-3 gap-2 sm:gap-3">
             {image && (
-              <div className="relative col-span-2 h-28 sm:h-36 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+              <div className="relative col-span-3 aspect-[16/9] rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
                 <Image
                   src={image}
-                  alt={`${title} desktop preview`}
+                  alt={`${title} aperçu desktop`}
                   fill
                   sizes="(max-width: 768px) 60vw, 24vw"
-                  className="object-cover"
+                  className="object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>
             )}
             {mobileImage && (
-              <div className="relative col-span-1 h-28 sm:h-36 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+              <div className="relative col-span-1 h-28 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
                 <Image
                   src={mobileImage}
-                  alt={`${title} mobile preview`}
+                  alt={`${title} aperçu mobile`}
                   fill
                   sizes="(max-width: 768px) 30vw, 12vw"
                   className="object-cover"
@@ -59,14 +61,14 @@ export default function ProjectCard({
         {!link && (
           <div className="mb-3">
             <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
-              No live demo yet
+              Demo en ligne indisponible
             </span>
           </div>
         )}
         <p className="text-gray-700 dark:text-slate-200 mb-4">{description}</p>
         <div className="mb-4">
           <p className="text-sm font-semibold text-gray-600 dark:text-slate-300 mb-2">
-            Tech Stack:
+            Technologies :
           </p>
           <div className="flex flex-wrap gap-2">
             {tech.map((t) => (
@@ -85,7 +87,7 @@ export default function ProjectCard({
               href={caseStudyLink}
               className="btn-secondary focus-ring px-4 py-2 w-full sm:w-auto"
             >
-              Case Study
+              Étude de cas
             </a>
           )}
           {link && (
@@ -95,7 +97,17 @@ export default function ProjectCard({
               rel="noopener noreferrer"
               className="btn-primary focus-ring px-4 py-2 w-full sm:w-auto"
             >
-              View Live
+              Voir le site
+            </a>
+          )}
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary focus-ring px-4 py-2 w-full sm:w-auto"
+            >
+              Voir le code
             </a>
           )}
         </div>
@@ -110,6 +122,3 @@ export default function ProjectCard({
     </div>
   );
 }
-
-
-

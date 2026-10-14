@@ -46,6 +46,12 @@ function verifySessionToken(token: string, secret: string) {
   const parts = token.split('.');
   if (parts.length !== 3) return false;
 
+  const issuedAt = Number(parts[0]);
+  if (!Number.isFinite(issuedAt)) return false;
+
+  const age = Date.now() - issuedAt;
+  if (age < 0 || age > SESSION_DURATION_SECONDS * 1000) return false;
+
   const payload = `${parts[0]}.${parts[1]}`;
   const signature = parts[2] as string;
   const expected = sign(payload, secret);
@@ -98,4 +104,3 @@ export async function isAdminAuthenticated() {
 
   return verifySessionToken(token, config.sessionSecret);
 }
-

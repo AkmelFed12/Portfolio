@@ -1,39 +1,37 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ProjectCard from '@/components/ProjectCard';
-import NewsletterSignup from '@/components/NewsletterSignup';
 import FAQSection from '@/components/FAQSection';
 import TrackedWhatsAppButton from '@/components/TrackedWhatsAppButton';
 import ConversionStrip from '@/components/ConversionStrip';
 import { getProjectsPublic } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'Home',
-  description: 'Portfolio homepage of Ladji Moussa OUATTARA, BS Computer Science student, full-stack learner, and internship-ready developer in 2026.',
+  title: 'Accueil',
+  description: 'Portfolio de Ladji Moussa OUATTARA, etudiant en informatique et developpeur full-stack.',
   openGraph: {
     title: 'Ladji Moussa OUATTARA | Portfolio',
     description:
-      'BS Computer Science student, full-stack learner, and available for internship opportunities in 2026.',
+      'Etudiant en informatique, developpeur full-stack et disponible pour des opportunites de stage en 2026.',
     images: ['/og-home.svg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ladji Moussa OUATTARA | Portfolio',
     description:
-      'BS Computer Science student, full-stack learner, and available for internship opportunities in 2026.',
+      'Etudiant en informatique, developpeur full-stack et disponible pour des opportunites de stage en 2026.',
     images: ['/og-home.svg'],
   },
 };
 
-type HomePageProps = {
-  searchParams?: Promise<{ lang?: string }>;
-};
-
-export default async function Home({ searchParams }: HomePageProps) {
-  const params = await searchParams;
-  const lang = params?.lang === 'fr' ? 'fr' : 'en';
+export default async function Home() {
+  const lang = 'fr' as const;
   const projects = await getProjectsPublic();
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = [...projects].sort((a, b) => {
+    if (a.slug === 'afropulse') return -1;
+    if (b.slug === 'afropulse') return 1;
+    return 0;
+  }).slice(0, 3);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lmoportfolio.vercel.app';
 
   const t =
@@ -61,7 +59,7 @@ export default async function Home({ searchParams }: HomePageProps) {
           internshipCta3: 'Discuter sur WhatsApp',
           achievementsTitle: 'Realisations 2026',
           achievement1Date: 'Fevrier 2026',
-          achievement1: 'Mise en production et evolution continue du projet ASAA Portal.',
+          achievement1: 'Livraison et evolution continue de projets full-stack concrets.',
           achievement2Date: 'Mars 2026',
           achievement2: 'Amelioration UX de portfolio avec SEO, schema, sitemap et FAQ.',
           achievement3Date: 'Avril 2026',
@@ -74,39 +72,39 @@ export default async function Home({ searchParams }: HomePageProps) {
           availabilityNote: 'Actuellement disponible pour 2 nouveaux projets ce mois-ci',
         }
       : {
-          role: 'BS Computer Science Student | Full-Stack Learner',
+          role: 'Etudiant en informatique | Developpeur Full-Stack',
           summary:
-            'Building practical full-stack projects that solve real community needs, with strong focus on clean UX, backend reliability, and continuous improvement.',
-          ctaWork: 'View My Work',
-          ctaContact: 'Get In Touch',
-          ctaWhatsApp: 'WhatsApp Direct',
-          featured: 'Featured Projects',
-          viewAll: 'View All Projects',
-          goals: 'Internship Goals (2026 - 2028)',
+            'Je construis des projets full-stack utiles, avec un focus sur une UX claire, la fiabilite backend et l amelioration continue.',
+          ctaWork: 'Voir mes projets',
+          ctaContact: 'Me contacter',
+          ctaWhatsApp: 'WhatsApp direct',
+          featured: 'Projets recents',
+          viewAll: 'Voir tous les projets',
+          goals: 'Objectifs de stage (2026 - 2028)',
           goalsSubtitle:
-            'I am looking for an internship to learn on real product teams, contribute meaningfully, and grow through strong engineering mentorship.',
-          goal1: 'Contribute to real frontend and backend features in production workflows.',
-          goal2: 'Strengthen engineering habits: code quality, architecture, and Git collaboration.',
-          goal3: 'Grow as a disciplined learner with measurable impact on real projects.',
-          internshipTitle: 'Available for Internship 2026',
+            'Je recherche un stage pour apprendre sur des produits concrets, contribuer activement et progresser avec une equipe experimentee.',
+          goal1: 'Contribuer a des fonctionnalites frontend et backend en production.',
+          goal2: 'Renforcer mes pratiques : qualite, architecture et collaboration Git.',
+          goal3: 'Progresser avec rigueur et un impact mesurable sur des projets reels.',
+          internshipTitle: 'Disponible pour un stage en 2026',
           internshipText:
-            'Open to internship opportunities where I can contribute to real product development while learning from experienced engineers.',
-          internshipCta1: 'Contact Me',
-          internshipCta2: 'Download CV',
-          internshipCta3: 'Chat on WhatsApp',
-          achievementsTitle: 'Featured Achievements 2026',
-          achievement1Date: 'February 2026',
-          achievement1: 'Shipped and iterated ASAA Portal in production environment.',
-          achievement2Date: 'March 2026',
+            'Ouvert aux opportunites ou je peux contribuer a un vrai produit tout en apprenant aupres d ingenieurs experimentes.',
+          internshipCta1: 'Me contacter',
+          internshipCta2: 'Telecharger le CV',
+          internshipCta3: 'Discuter sur WhatsApp',
+          achievementsTitle: 'Realisations 2026',
+          achievement1Date: 'Fevrier 2026',
+          achievement1: 'Shipped and iterated practical full-stack projects.',
+          achievement2Date: 'Mars 2026',
           achievement2: 'Upgraded portfolio UX with SEO, schema, sitemap, and FAQ.',
-          achievement3Date: 'April 2026',
+          achievement3Date: 'Avril 2026',
           achievement3: 'Implemented conversion analytics for WhatsApp, CV, and contact flow.',
-          techTitle: 'Tech I Use Most',
-          techSubtitle: 'Primary stack I use in day-to-day project delivery',
-          badge1: 'Expected Graduation: 2028',
-          badge2: 'Available for Internship',
-          badge3: 'Open to Collaboration',
-          availabilityNote: 'Currently available for 2 new projects this month',
+          techTitle: 'Technologies que j utilise le plus',
+          techSubtitle: 'Stack principale utilisee au quotidien',
+          badge1: 'Diplome prevu : 2028',
+          badge2: 'Disponible pour un stage',
+          badge3: 'Ouvert aux collaborations',
+          availabilityNote: 'Disponible actuellement pour 2 nouveaux projets ce mois-ci',
         };
 
   const personJsonLd = {
@@ -145,12 +143,18 @@ export default async function Home({ searchParams }: HomePageProps) {
           __html: JSON.stringify(websiteJsonLd).replace(/</g, '\\u003c'),
         }}
       />
-      <section className="min-h-[60vh] bg-slate-50 dark:bg-slate-950 border-b border-slate-200/70 dark:border-slate-800 flex items-center justify-center py-14 sm:py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
+      <section className="relative overflow-hidden min-h-[60vh] border-b border-slate-200/70 bg-gradient-to-br from-slate-50 via-white to-cyan-50/60 dark:border-slate-800 dark:from-slate-950 dark:via-slate-950 dark:to-cyan-950/30 flex items-center justify-center py-16 sm:py-24">
+        <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl dark:bg-cyan-500/10" />
+        <div className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-slate-300/30 blur-3xl dark:bg-slate-700/20" />
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
+          <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/80 px-4 py-2 text-sm font-semibold text-cyan-800 shadow-sm dark:border-cyan-900 dark:bg-slate-900/80 dark:text-cyan-200">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+            Disponible pour de nouvelles opportunites
+          </div>
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 mb-5 sm:mb-6 animate-slide-down">
             Ladji Moussa OUATTARA
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-700 dark:text-slate-200 mb-6 animate-slide-up">{t.role}</p>
+          <p className="text-xl sm:text-2xl font-semibold text-gray-700 dark:text-slate-200 mb-6 animate-slide-up">{t.role}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
             <span className="px-3 py-1 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
               {t.badge1}
@@ -170,13 +174,13 @@ export default async function Home({ searchParams }: HomePageProps) {
           </p>
           <div className="flex gap-3 sm:gap-4 justify-center flex-wrap stagger-item-1">
             <Link
-              href={lang === 'fr' ? '/projects?lang=fr' : '/projects'}
+              href="/projects"
               className="btn-primary focus-ring w-full sm:w-auto"
             >
               {t.ctaWork}
             </Link>
             <Link
-              href={lang === 'fr' ? '/contact?lang=fr' : '/contact'}
+              href="/contact"
               className="btn-secondary focus-ring w-full sm:w-auto"
             >
               {t.ctaContact}
@@ -201,6 +205,7 @@ export default async function Home({ searchParams }: HomePageProps) {
                 tech={project.tech}
                 caseStudyLink={`/projects/${project.slug}`}
                 link={project.link}
+                github={project.github}
                 image={project.image}
                 mobileImage={project.mobileImage}
               />
@@ -209,7 +214,7 @@ export default async function Home({ searchParams }: HomePageProps) {
         </div>
         <div className="text-center">
           <Link
-            href={lang === 'fr' ? '/projects?lang=fr' : '/projects'}
+            href="/projects"
             className="btn-secondary focus-ring w-full sm:w-auto"
           >
             {t.viewAll} →
@@ -237,7 +242,7 @@ export default async function Home({ searchParams }: HomePageProps) {
           <p className="text-slate-700 dark:text-slate-300 mb-5">{t.internshipText}</p>
           <div className="flex flex-wrap gap-3">
             <Link
-              href={lang === 'fr' ? '/contact?lang=fr' : '/contact'}
+              href="/contact"
               className="btn-primary focus-ring px-5 py-2.5"
             >
               {t.internshipCta1}
@@ -292,13 +297,6 @@ export default async function Home({ searchParams }: HomePageProps) {
 
       <FAQSection lang={lang} />
 
-      <NewsletterSignup />
     </div>
   );
 }
-
-
-
-
-
-

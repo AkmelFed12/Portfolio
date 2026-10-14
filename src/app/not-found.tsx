@@ -11,15 +11,14 @@ export default function NotFound() {
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Link href="/" className="px-5 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition">
-            Back Home
+            Retour a l accueil
           </Link>
           <Link href="/projects" className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
-            View Projects
+            Voir les projets
           </Link>
         </div>
       </div>
     </div>
   );
 }
-
 

@@ -47,14 +47,11 @@ function buildNextSlots(lang: 'en' | 'fr', count: number): Slot[] {
 
       const hourLabel = `${String(hour).padStart(2, '0')}:00`;
       const dayLabel = dayFormatter.format(slotDate);
-      const label =
-        lang === 'fr'
-          ? `${dayLabel} • ${hourLabel} (GMT, Abidjan)`
-          : `${dayLabel} • ${hourLabel} (GMT, Abidjan)`;
+      const label = `${dayLabel} • ${hourLabel} (GMT, Abidjan)`;
       const value =
         lang === 'fr'
           ? `${dayLabel} a ${hourLabel} GMT (Abidjan)`
-          : `${dayLabel} at ${hourLabel} GMT (Abidjan)`;
+          : `${dayLabel} a ${hourLabel} GMT (Abidjan)`;
 
       slots.push({ date: slotDate, label, value });
       if (slots.length >= count) break;
@@ -78,12 +75,12 @@ export default function AvailabilityQuickSlots({ lang }: AvailabilityQuickSlotsP
             'Bonjour Ladji, je souhaite reserver ce creneau pour discuter de mon projet. Merci de confirmer.',
         }
       : {
-          title: 'Pick A Quick Slot',
+          title: 'Choisir un creneau rapide',
           subtitle:
-            'Availability: Mon-Fri 10:00-22:00, Saturday 14:00-22:00 (GMT, Abidjan). Click to book on WhatsApp.',
-          cta: 'Book This Slot',
+            'Disponibilite : lundi-vendredi 10h-22h, samedi 14h-22h (GMT, Abidjan). Cliquez pour reserver sur WhatsApp.',
+          cta: 'Reserver ce creneau',
           message:
-            'Hello Ladji, I would like to book this time slot to discuss my project. Please confirm availability.',
+            'Bonjour Ladji, je souhaite reserver ce creneau pour discuter de mon projet. Merci de confirmer.',
         };
 
   const onBook = (slot: string) => {

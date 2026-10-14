@@ -43,8 +43,7 @@ const CONTACT_PREF_OPTIONS = [
 ];
 
 function detectLang(): Lang {
-  if (typeof window === 'undefined') return 'en';
-  return new URLSearchParams(window.location.search).get('lang') === 'fr' ? 'fr' : 'en';
+  return 'fr';
 }
 
 function optionLabel(
@@ -123,7 +122,7 @@ export default function Contact() {
       : {
           heroTitle: 'Get In Touch',
           heroSub: "Have a project in mind? Let's discuss it.",
-          heroNote: 'Preferred channel: WhatsApp. Typical reply within 24h.',
+          heroNote: 'Canal prefere : WhatsApp. Reponse habituelle en moins de 24h.',
           socialProof1: 'Response Time',
           socialProof1v: 'Under 24h',
           socialProof1d: 'Typical first reply on WhatsApp.',
@@ -193,17 +192,17 @@ export default function Contact() {
     const contactPrefLabel = optionLabel(CONTACT_PREF_OPTIONS, formData.contactPreference, lang);
 
     const whatsappMessage = [
-      'Hello, I am contacting you from your portfolio.',
+      'Bonjour, je vous contacte depuis votre portfolio.',
       '',
       `Name: ${formData.name}`,
       `Email: ${emailValue}`,
-      `Service Needed: ${serviceLabel}`,
-      `Project Stage: ${stageLabel}`,
-      `Estimated Budget: ${budgetLabel}`,
-      `Preferred Timeline: ${timelineLabel}`,
-      `Preferred Contact Method: ${contactPrefLabel}`,
+      `Service souhaite : ${serviceLabel}`,
+      `Etat du projet : ${stageLabel}`,
+      `Budget estime : ${budgetLabel}`,
+      `Delai souhaite : ${timelineLabel}`,
+      `Canal de contact prefere : ${contactPrefLabel}`,
       '',
-      `Project Details: ${formData.message}`,
+      `Details du projet : ${formData.message}`,
     ].join('\n');
 
     trackEvent('contact_form_submit_whatsapp', {
@@ -389,4 +388,3 @@ export default function Contact() {
     </div>
   );
 }
-

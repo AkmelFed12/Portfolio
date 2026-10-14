@@ -17,59 +17,59 @@ export default function ResumeDownload() {
         document.body.removeChild(a);
         return;
       }
-    } catch (err) {
+    } catch {
       console.log('PDF not available, falling back to text format');
     }
 
     // Fallback: Create a text resume
     const resumeContent = `LADJI MOUSSA OUATTARA
-Beginner Full Stack Developer
+Developpeur Full-Stack Junior
 
-CONTACT INFORMATION
-Emails: ouattaralm12@gmail.com, ouattaral2@student.iugb.edu.ci
-Phone: +225 01 500 700 83 / +225 05 747 242 33 / +225 07 055 830 82
-Location: Côte d'Ivoire, Abidjan, Treichville, Avenue 4 Rue 13
+COORDONNEES
+Emails : ouattaralm12@gmail.com, ouattaral2@student.iugb.edu.ci
+Telephone : +225 01 500 700 83 / +225 05 747 242 33 / +225 07 055 830 82
+Localisation : Cote d'Ivoire, Abidjan, Treichville, Avenue 4 Rue 13
 
-PROFESSIONAL SUMMARY
-Motivated junior developer with a strong passion for building practical and impactful digital solutions. 
-Combining programming fundamentals with artificial intelligence tools to enhance coding efficiency and problem-solving approach. 
-Particularly interested in creating platforms that serve real communities and meaningful causes.
+PROFIL PROFESSIONNEL
+Developpeur junior motive, passionne par la creation de solutions numeriques pratiques et utiles.
+J associe les fondamentaux de la programmation aux outils d intelligence artificielle pour progresser plus efficacement.
+Je m interesse particulierement aux plateformes au service de communautes et de projets porteurs de sens.
 
 EXPERIENCE
-ASAA Portal Project - Full Stack Developer (2024 - Present)
-- Built a comprehensive web platform for managing pre-selections for the Islamic Quiz 2026
-- Managed dedicated member space and organization management
-- Implemented a complete membership and event management system
+Developpeur Full-Stack - Projets personnels (2025 - Aujourd hui)
+- Conception et evolution d applications web pour le commerce, le networking et la productivite
+- Creation d interfaces responsives connectees a des services backend et des workflows de donnees
+- Amelioration des projets grace aux tests, au deploiement et au raffinement continu
 
-EDUCATION
-Bachelor of Science in Computer Science
-University of the People (Ongoing)
+FORMATION
+Bachelor of Science en informatique
+University of the People (en cours)
 
-Previous Studies
+Etudes precedentes
 International University of Grand-Bassam
 
-TECHNICAL SKILLS
-Frontend Development: React, Next.js, TypeScript, Tailwind CSS, HTML, CSS, JavaScript
-Backend Development: Node.js, Express.js, PostgreSQL, MongoDB, REST APIs, Firebase
-Tools & Technologies: Git/GitHub, Docker, VS Code, Vercel, npm/yarn, AI Tools
+COMPETENCES TECHNIQUES
+Developpement Frontend : React, Next.js, TypeScript, Tailwind CSS, HTML, CSS, JavaScript
+Developpement Backend : Node.js, Express.js, PostgreSQL, MongoDB, API REST, Firebase
+Outils et technologies : Git/GitHub, Docker, VS Code, Vercel, npm/yarn, outils d IA
 
-KEY ACHIEVEMENTS
-- Successfully delivered ASAA Portal project demonstrating ability to turn ideas into functional systems
-- Strong proficiency in modern web technologies and frameworks
-- Experience with full-stack development and responsive design
-- Commitment to continuous learning and innovation
+REALISATIONS CLES
+- Livraison de plusieurs projets, de l idee au deploiement
+- Bonne maitrise des technologies et frameworks web modernes
+- Experience en developpement full-stack et design responsive
+- Engagement dans l apprentissage continu et l innovation
 
-GOALS
-- Become a Computer Science Engineer
-- Grow into a senior full-stack developer
-- Build my own technology company
-- Contribute positively to society through technology
+OBJECTIFS
+- Devenir ingenieur en informatique
+- Evoluer vers un profil de developpeur full-stack senior
+- Creer ma propre entreprise technologique
+- Contribuer positivement a la societe par la technologie
 
-INTERESTS
-Creating digital solutions for real communities
-Technology and innovation
-Web development and user experience
-Artificial intelligence and automation`;
+CENTRES D INTERET
+Creation de solutions numeriques pour les communautes
+Technologie et innovation
+Developpement web et experience utilisateur
+Intelligence artificielle et automatisation`;
 
     const blob = new Blob([resumeContent], { type: 'text/plain' });
     const url = window.URL.createObjectURL(blob);
@@ -100,10 +100,7 @@ Artificial intelligence and automation`;
           d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
         />
       </svg>
-      Download Resume
+      Telecharger le CV
     </button>
   );
 }
-
-
-

@@ -1,7 +1,7 @@
 export default function SkillsGallery() {
   const skillCategories = [
     {
-      category: 'Frontend Development',
+      category: 'Developpement Frontend',
       skills: [
         { name: 'React', level: 70 },
         { name: 'Next.js', level: 70 },
@@ -12,7 +12,7 @@ export default function SkillsGallery() {
       ],
     },
     {
-      category: 'Backend Development',
+      category: 'Developpement Backend',
       skills: [
         { name: 'Node.js', level: 60 },
         { name: 'Express.js', level: 55 },
@@ -28,7 +28,7 @@ export default function SkillsGallery() {
     <section className="py-20 bg-white dark:bg-slate-950">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold mb-12 text-center animate-fade-in">
-          Skills & Proficiency
+          Competences et niveau
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category, categoryIndex) => (
@@ -68,7 +68,6 @@ export default function SkillsGallery() {
     </section>
   );
 }
-
 
 
 

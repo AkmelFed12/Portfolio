@@ -50,7 +50,7 @@ export default function GiscusComments({ mapping = 'pathname' }: GiscusCommentsP
   if (!isEnabled) {
     return (
       <div className="rounded-lg border border-gray-200 dark:border-slate-700 p-6 text-center text-gray-600 dark:text-slate-300 bg-gray-50 dark:bg-slate-900">
-        Discussion is currently disabled. You can still share feedback via WhatsApp or Contact page.
+        Les commentaires sont actuellement desactives. Vous pouvez partager vos retours par WhatsApp ou via la page Contact.
       </div>
     );
   }
@@ -58,11 +58,10 @@ export default function GiscusComments({ mapping = 'pathname' }: GiscusCommentsP
   if (!configured) {
     return (
       <div className="rounded-lg border border-dashed border-gray-300 dark:border-gray-700 p-6 text-center text-gray-600 dark:text-slate-300">
-        Comments are not configured yet. Add your Giscus settings in `.env.local`.
+        Les commentaires ne sont pas encore configures. Ajoutez les parametres Giscus dans `.env.local`.
       </div>
     );
   }
 
   return <div ref={containerRef} />;
 }
-

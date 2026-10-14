@@ -33,7 +33,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className="p-2 rounded-full border border-gray-300 dark:border-slate-600 bg-gray-200 dark:bg-slate-800 text-gray-800 dark:text-slate-100 hover:bg-gray-300 dark:hover:bg-slate-700 transition-colors"
-      aria-label="Toggle theme"
+      aria-label="Changer de theme"
     >
       {isDark ? (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

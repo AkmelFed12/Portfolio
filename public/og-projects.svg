@@ -8,7 +8,7 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect x="60" y="60" width="1080" height="510" rx="28" fill="white" fill-opacity="0.06"/>
   <text x="100" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="78" font-weight="700" fill="#FFFFFF">Projects</text>
-  <text x="100" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="500" fill="#BFDBFE">ASAA Portal, MyFinance, Barakatrack</text>
+  <text x="100" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="500" fill="#BFDBFE">Full-Stack Web Projects</text>
   <text x="100" y="500" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700" fill="#E0E7FF">Ladji Moussa OUATTARA</text>
   <text x="100" y="548" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="500" fill="#C7D2FE">lmoportfolio.vercel.app</text>
 </svg>

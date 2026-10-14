@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   if (!post) {
     return {
-      title: 'Post Not Found',
-      description: 'The requested article was not found.',
+      title: 'Article introuvable',
+      description: 'L article demande est introuvable.',
     };
   }
 
@@ -98,7 +98,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
       <article className="min-h-screen bg-white dark:bg-slate-950">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <Link href="/blog" className="text-cyan-600 dark:text-cyan-400 hover:underline mb-8 inline-block">
-            ← Back to Blog
+            ← Retour au blog
           </Link>
 
           <header className="mb-12 animate-fade-in">
@@ -117,14 +117,14 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
                 {post.category}
               </span>
               <span>
-                {new Date(post.date).toLocaleDateString('en-US', {
+                {new Date(post.date).toLocaleDateString('fr-FR', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',
                 })}
               </span>
               <span>{post.readTime}</span>
-              <span>By {post.author}</span>
+              <span>Par {post.author}</span>
             </div>
           </header>
 
@@ -167,14 +167,14 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
 
       <section className="bg-gray-50 dark:bg-slate-900 py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-6">Comments</h2>
+          <h2 className="text-2xl font-bold mb-6">Commentaires</h2>
           <GiscusComments />
         </div>
       </section>
 
       <section className="bg-white dark:bg-slate-950 py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-6">More Articles</h2>
+          <h2 className="text-2xl font-bold mb-6">Autres articles</h2>
           <div className="space-y-4">
             {morePosts.map((item) => (
               <Link
@@ -192,7 +192,6 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
     </div>
   );
 }
-
 
 
 

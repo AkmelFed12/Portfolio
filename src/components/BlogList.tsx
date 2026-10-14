@@ -12,18 +12,18 @@ interface BlogListProps {
 
 export default function BlogList({ posts }: BlogListProps) {
   const [query, setQuery] = useState('');
-  const [category, setCategory] = useState('All');
+  const [category, setCategory] = useState('Toutes');
   const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
 
   const categories = useMemo(() => {
     const unique = Array.from(new Set(posts.map((post) => post.category)));
-    return ['All', ...unique];
+    return ['Toutes', ...unique];
   }, [posts]);
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     return posts.filter((post) => {
-      const matchesCategory = category === 'All' || post.category === category;
+      const matchesCategory = category === 'Toutes' || post.category === category;
       const matchesQuery =
         normalized.length === 0 ||
         post.title.toLowerCase().includes(normalized) ||
@@ -37,20 +37,20 @@ export default function BlogList({ posts }: BlogListProps) {
       <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex-1">
           <label htmlFor="search" className="sr-only">
-            Search posts
+            Rechercher un article
           </label>
           <input
             id="search"
             type="text"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search posts..."
+            placeholder="            Rechercher des articles..."
             className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600"
           />
         </div>
         <div>
           <label htmlFor="category" className="sr-only">
-            Filter by category
+            Filtrer par categorie
           </label>
           <select
             id="category"
@@ -97,13 +97,13 @@ export default function BlogList({ posts }: BlogListProps) {
                 <p className="text-gray-700 dark:text-slate-200 mb-4">{post.excerpt}</p>
                 <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700 mb-4">
                   <time className="text-sm text-gray-600 dark:text-slate-300">
-                    {new Date(post.date).toLocaleDateString('en-US', {
+                    {new Date(post.date).toLocaleDateString('fr-FR', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',
                     })}
                   </time>
-                  <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition">Read More →</span>
+                  <span className="text-cyan-600 dark:text-cyan-400 font-semibold transition">Lire l article →</span>
                 </div>
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <SocialShareButtons
@@ -120,11 +120,9 @@ export default function BlogList({ posts }: BlogListProps) {
 
       {filtered.length === 0 && (
         <div className="mt-10 text-center text-gray-600 dark:text-slate-300">
-          No posts match your search yet.
+          Aucun article ne correspond a votre recherche.
         </div>
       )}
     </section>
   );
 }
-
-

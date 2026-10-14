@@ -13,18 +13,6 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
-    slug: 'asaa-portal',
-    title: 'ASAA Portal - Islamic Quiz 2026',
-    description:
-      'Comprehensive membership and event management platform built for Islamic Quiz 2026, including pre-selection workflows, member space, and official organization website.',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    link: 'https://asaaofficiel.vercel.app/index.html',
-    github: 'https://github.com/AkmelFed12/PRESELECTION-QI26-tst',
-    image: '/images/asaa-portal-desktop-v2.png',
-    mobileImage: '/images/asaa-portal-mobile-v2.png',
-  },
-  {
-    id: 2,
     slug: 'lmo-shop-services',
     title: 'LMO SHOP SERVICES',
     description:
@@ -32,9 +20,10 @@ export const projects: Project[] = [
     tech: ['JavaScript', 'Node.js', 'Serverless API', 'Vercel'],
     link: 'https://new-pro-ecommerce-demo.vercel.app',
     github: 'https://github.com/AkmelFed12/LMO-SHOP-SERVICES',
+    image: '/images/lmo-shop-services.svg',
   },
   {
-    id: 3,
+    id: 2,
     slug: 'afropulse',
     title: 'AfroPulse',
     description:
@@ -42,5 +31,6 @@ export const projects: Project[] = [
     tech: ['HTML', 'Tailwind CSS', 'JavaScript', 'Supabase', 'Realtime', 'PWA', 'Netlify'],
     link: 'https://afro-pulse.netlify.app',
     github: 'https://github.com/AkmelFed12/afropulse',
+    image: '/images/afropulse.svg',
   },
 ];

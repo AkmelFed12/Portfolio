@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import TrackedWhatsAppButton from '@/components/TrackedWhatsAppButton';
 import { trackEvent } from '@/lib/analytics';
@@ -9,30 +9,37 @@ type ConversionStripProps = {
   lang: 'en' | 'fr';
 };
 
+function getVariant() {
+  if (typeof window === 'undefined') return 'A' as const;
+
+  const storedVariant = window.localStorage.getItem('cta_variant_home');
+  if (storedVariant === 'A' || storedVariant === 'B') {
+    return storedVariant;
+  }
+
+  const resolvedVariant = Math.random() < 0.5 ? 'A' : 'B';
+  window.localStorage.setItem('cta_variant_home', resolvedVariant);
+  return resolvedVariant;
+}
+
+function subscribe() {
+  return () => {};
+}
+
 export default function ConversionStrip({ lang }: ConversionStripProps) {
-  const [variant, setVariant] = useState<'A' | 'B'>('A');
+  const variant = useSyncExternalStore(subscribe, getVariant, () => 'A');
 
   useEffect(() => {
-    const storedVariant = window.localStorage.getItem('cta_variant_home');
-    const resolvedVariant =
-      storedVariant === 'A' || storedVariant === 'B'
-        ? (storedVariant as 'A' | 'B')
-        : Math.random() < 0.5
-          ? 'A'
-          : 'B';
-    window.localStorage.setItem('cta_variant_home', resolvedVariant);
-    setVariant(resolvedVariant);
-
-    const exposureKey = `cta_variant_home_seen_${resolvedVariant}_${lang}`;
+    const exposureKey = `cta_variant_home_seen_${variant}_${lang}`;
     if (!window.sessionStorage.getItem(exposureKey)) {
       trackEvent('cta_variant_exposure', {
         placement: 'home_conversion_strip',
-        variant: resolvedVariant,
+        variant,
         lang,
       });
       window.sessionStorage.setItem(exposureKey, '1');
     }
-  }, [lang]);
+  }, [lang, variant]);
 
   const t =
     lang === 'fr'
@@ -48,31 +55,29 @@ export default function ConversionStrip({ lang }: ConversionStripProps) {
           cta2B: 'WhatsApp maintenant',
         }
       : {
-          titleA: 'Ready To Start Quickly',
-          titleB: 'Need A Professional Site Fast?',
-          point1: 'Typical response in under 24h',
-          point2: 'Preferred channel: WhatsApp',
-          point3: '2 to 3 project slots available this month',
-          cta1A: 'Start A Project',
-          cta1B: 'Get A Proposal',
-          cta2A: 'Chat On WhatsApp',
-          cta2B: 'WhatsApp Now',
+          titleA: 'Pret a demarrer rapidement',
+          titleB: 'Besoin rapidement d un site professionnel ?',
+          point1: 'Reponse habituelle en moins de 24h',
+          point2: 'Canal prefere : WhatsApp',
+          point3: '2 a 3 projets disponibles ce mois-ci',
+          cta1A: 'Demarrer un projet',
+          cta1B: 'Recevoir une proposition',
+          cta2A: 'Discuter sur WhatsApp',
+          cta2B: 'WhatsApp maintenant',
         };
 
-  const copy = useMemo(() => {
-    if (variant === 'B') {
-      return {
-        title: t.titleB,
-        cta1: t.cta1B,
-        cta2: t.cta2B,
-      };
-    }
-    return {
-      title: t.titleA,
-      cta1: t.cta1A,
-      cta2: t.cta2A,
-    };
-  }, [variant, t]);
+  const copy =
+    variant === 'B'
+      ? {
+          title: t.titleB,
+          cta1: t.cta1B,
+          cta2: t.cta2B,
+        }
+      : {
+          title: t.titleA,
+          cta1: t.cta1A,
+          cta2: t.cta2A,
+        };
 
   return (
     <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
@@ -85,7 +90,7 @@ export default function ConversionStrip({ lang }: ConversionStripProps) {
         </div>
         <div className="flex flex-wrap gap-3">
           <Link
-            href={lang === 'fr' ? '/contact?lang=fr' : '/contact'}
+            href="/contact"
             className="btn-primary focus-ring w-full sm:w-auto"
             onClick={() =>
               trackEvent('conversion_strip_click', {
@@ -102,7 +107,7 @@ export default function ConversionStrip({ lang }: ConversionStripProps) {
             label={copy.cta2}
             source={`conversion_strip_${variant.toLowerCase()}`}
             className="btn-accent focus-ring w-full sm:w-auto"
-            message="Hello Ladji, I want to start a project with you. Can we discuss scope, timeline, and budget?"
+            message="Bonjour Ladji, je souhaite demarrer un projet avec vous. Pouvons-nous discuter du besoin, du delai et du budget ?"
           />
         </div>
       </div>

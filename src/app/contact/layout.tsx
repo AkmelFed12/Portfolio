@@ -2,25 +2,21 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Contact Ladji Moussa OUATTARA via WhatsApp, email, and phone.',
-  keywords: ['Contact web developer', 'WhatsApp developer contact', 'Ladji Moussa contact'],
+  description: 'Contacter Ladji Moussa OUATTARA par WhatsApp, email ou telephone.',
+  keywords: ['Contacter un developpeur web', 'Contact developpeur WhatsApp', 'Contact Ladji Moussa'],
   alternates: {
     canonical: '/contact',
-    languages: {
-      'en-US': '/contact',
-      'fr-FR': '/contact?lang=fr',
-    },
   },
   openGraph: {
     title: 'Contact | Ladji Moussa OUATTARA',
-    description: 'Reach out via WhatsApp, email, and phone for project inquiries.',
+    description: 'Contactez Ladji Moussa OUATTARA par WhatsApp, email ou telephone pour votre projet.',
     url: '/contact',
     images: ['/og-contact.svg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contact | Ladji Moussa OUATTARA',
-    description: 'Reach out via WhatsApp, email, and phone for project inquiries.',
+    description: 'Contactez Ladji Moussa OUATTARA par WhatsApp, email ou telephone pour votre projet.',
     images: ['/og-contact.svg'],
   },
 };
