@@ -117,7 +117,6 @@ export default async function Home() {
     email: 'mailto:ouattaralm12@gmail.com',
     telephone: '+2250574724233',
     sameAs: [
-      'https://github.com/AkmelFed12',
       'https://www.linkedin.com/in/ladji-moussa-ouattara-8b5778298',
     ],
   };
@@ -246,7 +245,6 @@ export default async function Home() {
                 tech={project.tech}
                 caseStudyLink={`/projects/${project.slug}`}
                 link={project.link}
-                github={project.github}
                 image={project.image}
                 mobileImage={project.mobileImage}
               />

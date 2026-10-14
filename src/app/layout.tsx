@@ -104,7 +104,6 @@ export default function RootLayout({
                 'Etudiant en informatique et developpeur full-stack qui construit des applications web utiles.',
               image: `${siteUrl}/og-portfolio.svg`,
               sameAs: [
-                'https://github.com/AkmelFed12',
                 'https://www.linkedin.com/in/ladji-moussa-ouattara-8b5778298',
               ],
               contactPoint: {
