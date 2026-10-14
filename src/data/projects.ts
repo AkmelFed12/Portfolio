@@ -15,6 +15,46 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
+    slug: 'lmo-quran-learning',
+    title: 'LMO Quran Learning',
+    description:
+      "Plateforme interactive d'apprentissage du Coran qui facilite la memorisation et la pratique de la recitation.",
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    category: 'fullstack',
+    link: 'https://lmo-quran-learning.vercel.app',
+    github: 'https://vercel.com/ladji-moussa-ouattaras-projects/lmo-quran-learning',
+    image: '/images/lmo-quran-learning-desktop.jpg',
+    mobileImage: '/images/lmo-quran-learning-mobile.jpg',
+    promoEmbed: '/videos/lmo-quran-learning-promo.html',
+  },
+  {
+    id: 2,
+    slug: 'lmo-digital-academy',
+    title: 'LMO Digital Academy',
+    description:
+      "Plateforme e-learning pour les competences numeriques, avec cours, paiement, espace etudiant, certificats et validation admin.",
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Vercel'],
+    category: 'fullstack',
+    link: 'https://lmo-academy.vercel.app',
+    github: 'https://vercel.com/ladji-moussa-ouattaras-projects/lmo-academy',
+    image: '/images/lmo-digital-academy-desktop.svg',
+    mobileImage: '/images/lmo-digital-academy-mobile.svg',
+  },
+  {
+    id: 3,
+    slug: 'lmo-services-canada',
+    title: 'LMO Services - Admission Canada & France',
+    description:
+      "Plateforme complete pour une agence d admission : site public, espace client securise et tableau de bord pour les dossiers, contrats et paiements.",
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Vercel'],
+    category: 'fullstack',
+    link: 'https://lmoservices-canada.vercel.app',
+    github: 'https://vercel.com/ladji-moussa-ouattaras-projects/lmoservices-canada',
+    image: '/images/lmo-services-canada-desktop.png',
+    mobileImage: '/images/lmo-services-canada-mobile.png',
+  },
+  {
+    id: 4,
     slug: 'lmo-shop-services',
     title: 'LMO SHOP SERVICES',
     description:
@@ -22,10 +62,11 @@ export const projects: Project[] = [
     tech: ['JavaScript', 'Node.js', 'Serverless API', 'Vercel'],
     link: 'https://new-pro-ecommerce-demo.vercel.app',
     github: 'https://github.com/AkmelFed12/LMO-SHOP-SERVICES',
-    image: '/images/lmo-shop-services.svg',
+    image: '/images/lmo-shop-services-desktop.png',
+    mobileImage: '/images/lmo-shop-services-mobile.png',
   },
   {
-    id: 2,
+    id: 5,
     slug: 'afropulse',
     title: 'AfroPulse',
     description:

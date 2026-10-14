@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
@@ -28,7 +29,13 @@ export default function Navbar() {
             href={withLang('/')}
             className="inline-flex items-center gap-2 font-bold text-xl text-slate-900 dark:text-slate-100"
           >
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-700 text-sm text-white shadow-sm">LM</span>
+            <Image
+              src="/images/ladji-moussa-profile.jpeg"
+              alt="Portrait de Ladji Moussa OUATTARA"
+              width={38}
+              height={38}
+              className="h-9 w-9 rounded-xl object-cover shadow-sm ring-2 ring-cyan-100 dark:ring-cyan-900"
+            />
             <span>Ladji Moussa</span>
           </Link>
 

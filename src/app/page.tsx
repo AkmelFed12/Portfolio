@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import ProjectCard from '@/components/ProjectCard';
 import FAQSection from '@/components/FAQSection';
 import TrackedWhatsAppButton from '@/components/TrackedWhatsAppButton';
@@ -147,6 +148,14 @@ export default async function Home() {
         <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl dark:bg-cyan-500/10" />
         <div className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-slate-300/30 blur-3xl dark:bg-slate-700/20" />
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
+          <Image
+            src="/images/ladji-moussa-profile.jpeg"
+            alt="Portrait de Ladji Moussa OUATTARA"
+            width={112}
+            height={112}
+            priority
+            className="mx-auto mb-6 h-28 w-28 rounded-full object-cover shadow-xl ring-4 ring-white dark:ring-slate-900"
+          />
           <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/80 px-4 py-2 text-sm font-semibold text-cyan-800 shadow-sm dark:border-cyan-900 dark:bg-slate-900/80 dark:text-cyan-200">
             <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
             Disponible pour de nouvelles opportunites

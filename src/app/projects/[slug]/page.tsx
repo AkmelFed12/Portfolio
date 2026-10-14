@@ -19,6 +19,51 @@ const detailsBySlug: Record<
     learnings: string[];
   }
 > = {
+  'lmo-quran-learning': {
+    role: 'Conception et developpement Full-Stack',
+    challenge: "Rendre l apprentissage et la memorisation du Coran plus accessibles avec une experience simple et progressive.",
+    solution: "Creation d une plateforme interactive responsive avec parcours d apprentissage et interface adaptee aux differents ecrans.",
+    impact: [
+      'Organisation claire des contenus et des parcours d apprentissage',
+      'Experience responsive utilisable sur mobile et ordinateur',
+      'Base technique prete a accueillir de nouvelles fonctionnalites pedagogiques',
+    ],
+    next: 'Ajouter davantage de suivi de progression et de contenus interactifs.',
+    learnings: [
+      'Concevoir une interface calme et lisible pour un usage regulier.',
+      'Transformer un besoin pedagogique en parcours numerique concret.',
+    ],
+  },
+  'lmo-digital-academy': {
+    role: 'Conception produit et developpement Full-Stack',
+    challenge: 'Structurer une experience de formation numerique avec des cours, un espace etudiant et un parcours de certification.',
+    solution: 'Developpement d une plateforme e-learning avec contenus, paiement, tableau de bord et workflows de validation.',
+    impact: [
+      'Regroupement des contenus et du suivi etudiant dans une seule plateforme',
+      'Mise en place d une base pour les cours premium et les certificats',
+      'Separation claire entre experience etudiante et administration',
+    ],
+    next: 'Enrichir le catalogue et ameliorer le suivi des apprentissages.',
+    learnings: [
+      'Modeliser les roles et les parcours avant de construire les ecrans.',
+      'Garder une architecture evolutive pour accompagner un produit educatif.',
+    ],
+  },
+  'lmo-services-canada': {
+    role: 'Developpeur Full-Stack',
+    challenge: 'Centraliser les demandes d admission, les dossiers clients et le suivi administratif dans une experience fiable.',
+    solution: 'Creation d un site public, d un espace client et d un dashboard admin relies a Supabase.',
+    impact: [
+      'Centralisation du suivi des dossiers et des etapes de procedure',
+      'Meilleure separation entre informations publiques et donnees client',
+      'Base operationnelle pour la gestion des contrats et des paiements',
+    ],
+    next: 'Continuer a renforcer les workflows metier et les notifications client.',
+    learnings: [
+      'Concevoir des interfaces distinctes pour plusieurs types d utilisateurs.',
+      'Accorder une attention particuliere a la clarte des workflows administratifs.',
+    ],
+  },
   'lmo-shop-services': {
     role: 'Developpeur Full-Stack',
     challenge: 'Creer une boutique en ligne fiable avec des parcours clairs pour les produits, les commandes et l administration.',
