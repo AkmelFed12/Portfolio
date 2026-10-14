@@ -8,6 +8,7 @@ import { getBlogPosts } from '@/lib/content';
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ lang?: string }>;
 };
 
 export async function generateStaticParams() {
@@ -53,8 +54,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
-export default async function BlogPost({ params }: BlogPostPageProps) {
+export default async function BlogPost({ params, searchParams }: BlogPostPageProps) {
   const { slug } = await params;
+  const resolvedParams = await searchParams;
+  const lang = resolvedParams?.lang === 'fr' ? 'fr' : 'en';
   const posts = await getBlogPosts();
   const post = posts.find((item) => item.slug === slug);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lmoportfolio.vercel.app';
@@ -63,12 +66,50 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const isFr = lang === 'fr';
+  const title = isFr && post.titleFr ? post.titleFr : post.title;
+  const excerpt = isFr && post.excerptFr ? post.excerptFr : post.excerpt;
+  const category = isFr && post.categoryFr ? post.categoryFr : post.category;
+  const readTime = isFr && post.readTimeFr ? post.readTimeFr : post.readTime;
+  const content = isFr && post.contentFr ? post.contentFr : post.content;
+  const withLang = (path: string) => (isFr ? `${path}?lang=fr` : path);
+
+  const ui = isFr
+    ? {
+        back: '← Retour au blog',
+        by: 'Par',
+        readBook: 'Lire le livre',
+        download: 'Telecharger',
+        stats: 'Statistiques Edition999',
+        views: 'Vues',
+        downloads: 'Telechargements',
+        rating: 'Note',
+        ratingBase: (votes: number) => `Base de notation : ${votes} votes.`,
+        comments: 'Commentaires',
+        moreArticles: 'Autres articles',
+        dateLocale: 'fr-FR',
+      }
+    : {
+        back: '← Back to Blog',
+        by: 'By',
+        readBook: 'Read the book',
+        download: 'Download',
+        stats: 'Edition999 Statistics',
+        views: 'Views',
+        downloads: 'Downloads',
+        rating: 'Rating',
+        ratingBase: (votes: number) => `Rating base: ${votes} votes.`,
+        comments: 'Comments',
+        moreArticles: 'More Articles',
+        dateLocale: 'en-US',
+      };
+
   const morePosts = posts.filter((item) => item.slug !== post.slug).slice(0, 2);
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: post.title,
-    description: post.excerpt,
+    headline: title,
+    description: excerpt,
     datePublished: post.date,
     dateModified: post.date,
     author: {
@@ -97,34 +138,34 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
       />
       <article className="min-h-screen bg-white dark:bg-slate-950">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <Link href="/blog" className="text-cyan-600 dark:text-cyan-400 hover:underline mb-8 inline-block">
-            ← Back to Blog
+          <Link href={withLang('/blog')} className="text-cyan-600 dark:text-cyan-400 hover:underline mb-8 inline-block">
+            {ui.back}
           </Link>
 
           <header className="mb-12 animate-fade-in">
             {post.coverImage && (
               <div className="relative w-full h-64 rounded-xl overflow-hidden mb-8 border border-gray-200 dark:border-gray-700">
-                <Image src={post.coverImage} alt={`${post.title} cover image`} fill sizes="100vw" className="object-cover" />
+                <Image src={post.coverImage} alt={`${title} cover image`} fill sizes="100vw" className="object-cover" />
               </div>
             )}
 
             <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100">
-              {post.title}
+              {title}
             </h1>
 
             <div className="flex flex-wrap gap-4 items-center text-gray-600 dark:text-slate-300">
               <span className="text-cyan-600 dark:text-cyan-400 font-semibold bg-cyan-100 dark:bg-cyan-900 px-3 py-1 rounded-full">
-                {post.category}
+                {category}
               </span>
               <span>
-                {new Date(post.date).toLocaleDateString('en-US', {
+                {new Date(post.date).toLocaleDateString(ui.dateLocale, {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',
                 })}
               </span>
-              <span>{post.readTime}</span>
-              <span>By {post.author}</span>
+              <span>{readTime}</span>
+              <span>{ui.by} {post.author}</span>
             </div>
 
             {(post.viewUrl || post.downloadUrl) && (
@@ -136,7 +177,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
                     rel="noopener noreferrer"
                     className="px-5 py-2.5 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition"
                   >
-                    Lire le livre
+                    {ui.readBook}
                   </a>
                 )}
                 {post.downloadUrl && (
@@ -146,7 +187,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
                     rel="noopener noreferrer"
                     className="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-900 text-white font-semibold transition"
                   >
-                    Telecharger
+                    {ui.download}
                   </a>
                 )}
               </div>
@@ -155,20 +196,20 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
             {post.stats && (
               <div className="mt-6 rounded-xl border border-gray-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 p-4">
                 <h3 className="text-sm font-bold uppercase tracking-wide text-gray-700 dark:text-slate-200 mb-3">
-                  Statistiques Edition999
+                  {ui.stats}
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   <div className="rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-2">
-                    <p className="text-xs text-gray-600 dark:text-slate-300">Vues</p>
+                    <p className="text-xs text-gray-600 dark:text-slate-300">{ui.views}</p>
                     <p className="text-lg font-bold text-slate-900 dark:text-white">{post.stats.views}</p>
                   </div>
                   <div className="rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-2">
-                    <p className="text-xs text-gray-600 dark:text-slate-300">Telechargements</p>
+                    <p className="text-xs text-gray-600 dark:text-slate-300">{ui.downloads}</p>
                     <p className="text-lg font-bold text-slate-900 dark:text-white">{post.stats.totalDownloads}</p>
                   </div>
                   {post.stats.rating && (
                     <div className="rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-2">
-                      <p className="text-xs text-gray-600 dark:text-slate-300">Note</p>
+                      <p className="text-xs text-gray-600 dark:text-slate-300">{ui.rating}</p>
                       <p className="text-lg font-bold text-slate-900 dark:text-white">{post.stats.rating}</p>
                     </div>
                   )}
@@ -193,7 +234,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
                 </div>
                 {typeof post.stats.votes === 'number' && (
                   <p className="mt-3 text-xs text-gray-600 dark:text-slate-300">
-                    Base de notation: {post.stats.votes} votes.
+                    {ui.ratingBase(post.stats.votes)}
                   </p>
                 )}
               </div>
@@ -201,7 +242,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
           </header>
 
           <div className="prose dark:prose-invert max-w-none mb-12 animate-slide-up">
-            {post.content.map((block, index) => {
+            {content.map((block, index) => {
               if (block.startsWith('### ')) {
                 return (
                   <h3 key={index} className="text-2xl font-bold text-gray-900 dark:text-white mt-6">
@@ -232,30 +273,34 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
           </div>
 
           <div className="border-t border-gray-200 dark:border-gray-700 pt-8">
-            <SocialShareButtons title={post.title} description={post.excerpt} />
+            <SocialShareButtons title={title} description={excerpt} />
           </div>
         </div>
       </article>
 
       <section className="bg-gray-50 dark:bg-slate-900 py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-6">Comments</h2>
+          <h2 className="text-2xl font-bold mb-6">{ui.comments}</h2>
           <GiscusComments />
         </div>
       </section>
 
       <section className="bg-white dark:bg-slate-950 py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-6">More Articles</h2>
+          <h2 className="text-2xl font-bold mb-6">{ui.moreArticles}</h2>
           <div className="space-y-4">
             {morePosts.map((item) => (
               <Link
                 key={item.slug}
-                href={`/blog/${item.slug}`}
+                href={withLang(`/blog/${item.slug}`)}
                 className="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-cyan-500 transition"
               >
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{item.title}</h3>
-                <p className="text-gray-600 dark:text-slate-300">{item.excerpt}</p>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  {isFr && item.titleFr ? item.titleFr : item.title}
+                </h3>
+                <p className="text-gray-600 dark:text-slate-300">
+                  {isFr && item.excerptFr ? item.excerptFr : item.excerpt}
+                </p>
               </Link>
             ))}
           </div>

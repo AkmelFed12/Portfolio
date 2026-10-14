@@ -111,7 +111,7 @@ export default function ProjectsFilterGrid({ projects, lang = 'en' }: ProjectsFi
               title={project.title}
               description={project.description}
               tech={project.tech}
-              caseStudyLink={`/projects/${project.slug}`}
+              caseStudyLink={`/projects/${project.slug}${lang === 'fr' ? '?lang=fr' : ''}`}
               link={project.link}
               image={project.image}
               mobileImage={project.mobileImage}
