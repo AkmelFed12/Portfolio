@@ -164,16 +164,31 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
       <h1 className="text-4xl sm:text-5xl font-bold mb-4">{project.title}</h1>
       <p className="text-lg text-gray-700 dark:text-slate-200 mb-8">{project.description}</p>
 
-      {project.image && (
-        <div className="relative mb-10 aspect-[16/9] overflow-hidden rounded-2xl border border-gray-200 bg-slate-100 shadow-sm dark:border-slate-700 dark:bg-slate-900">
-          <Image
-            src={project.image}
-            alt={`Apercu de ${project.title}`}
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 896px"
-            className="object-cover"
-          />
+      {(project.image || project.mobileImage) && (
+        <div className="mb-10 grid gap-3 sm:grid-cols-[minmax(0,1fr)_180px]">
+          {project.image && (
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-gray-200 bg-slate-100 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+              <Image
+                src={project.image}
+                alt={`Apercu de ${project.title} sur ordinateur`}
+                fill
+                priority
+                sizes="(max-width: 640px) 100vw, 700px"
+                className="object-cover"
+              />
+            </div>
+          )}
+          {project.mobileImage && (
+            <div className="relative mx-auto aspect-[9/16] w-full max-w-[180px] overflow-hidden rounded-2xl border border-gray-200 bg-slate-100 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+              <Image
+                src={project.mobileImage}
+                alt={`Apercu de ${project.title} sur mobile`}
+                fill
+                sizes="(max-width: 640px) 70vw, 180px"
+                className="object-cover"
+              />
+            </div>
+          )}
         </div>
       )}
 

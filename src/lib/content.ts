@@ -46,21 +46,29 @@ export async function getProjectsPublic(): Promise<Project[]> {
     return projects;
   }
 
-  return rows.map((row) => ({
-    id: row.id,
-    slug:
+  return rows.map((row) => {
+    const slug =
       (row as { slug?: string }).slug ||
       row.title
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, ''),
-    title: row.title,
-    description: row.description,
-    tech: row.tech.split(',').map((item) => item.trim()).filter(Boolean),
-    link: row.link || undefined,
-    github: row.github || undefined,
-    image: row.image || undefined,
-  }));
+        .replace(/^-+|-+$/g, '');
+    const localProject = projects.find((project) => project.slug === slug);
+
+    return {
+      id: row.id,
+      slug,
+      title: row.title,
+      description: row.description,
+      tech: row.tech.split(',').map((item) => item.trim()).filter(Boolean),
+      category: localProject?.category,
+      link: row.link || localProject?.link,
+      github: row.github || localProject?.github,
+      image: localProject?.image || row.image || undefined,
+      mobileImage: localProject?.mobileImage,
+      promoEmbed: localProject?.promoEmbed,
+    };
+  });
 }
 
 export async function getTestimonialsPublic(): Promise<Testimonial[]> {
