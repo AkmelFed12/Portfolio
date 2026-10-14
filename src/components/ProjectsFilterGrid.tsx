@@ -35,7 +35,7 @@ export default function ProjectsFilterGrid({ projects, lang = 'fr' }: ProjectsFi
           frontend: 'Frontend',
           backend: 'Backend',
           fullstack: 'Full Stack',
-          live: 'Avec Demo',
+          live: 'Avec demo',
           showing: 'Affichage',
         }
       : {

@@ -70,6 +70,21 @@ export default async function About() {
 
       <JourneyTimeline />
 
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            ['Construire', 'Transformer une idee en experience web utilisable.'],
+            ['Apprendre', 'Progresser par des projets concrets et des retours reguliers.'],
+            ['Partager', 'Creer des solutions utiles aux personnes et communautes.'],
+          ].map(([title, description]) => (
+            <article key={title} className="surface-card-soft p-5">
+              <h2 className="mb-2 text-lg font-bold text-slate-900 dark:text-white">{title}</h2>
+              <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="prose dark:prose-invert max-w-none animate-slide-up">
           <h2 className="text-3xl font-bold mb-6">{t.summary}</h2>

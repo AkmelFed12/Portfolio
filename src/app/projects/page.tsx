@@ -19,8 +19,8 @@ export default async function Projects() {
   const t =
     lang === 'fr'
       ? {
-          title: 'Mes Projets',
-          subtitle: 'Une selection de projets construits avec des technologies web modernes',
+          title: 'Mes projets',
+          subtitle: 'Des produits web construits pour apprendre, resoudre et progresser.',
         }
       : {
           title: 'Mes projets',

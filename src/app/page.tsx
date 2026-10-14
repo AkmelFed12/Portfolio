@@ -194,6 +194,38 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-10">
+        <div className="grid gap-4 md:grid-cols-3">
+          <article className="surface-card p-5">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-300">
+              Developpement
+            </p>
+            <h2 className="mb-2 text-xl font-bold">Du besoin au produit</h2>
+            <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
+              Interfaces responsives, logique metier et deploiement dans une meme approche.
+            </p>
+          </article>
+          <article className="surface-card p-5">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-300">
+              Approche
+            </p>
+            <h2 className="mb-2 text-xl font-bold">Simple, utile, evolutif</h2>
+            <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
+              Je privilegie une experience claire, une base fiable et des ameliorations mesurables.
+            </p>
+          </article>
+          <article className="surface-card p-5">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-300">
+              Collaboration
+            </p>
+            <h2 className="mb-2 text-xl font-bold">Un echange transparent</h2>
+            <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
+              Brief clair, jalons courts et communication directe du premier contact a la livraison.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
         <h2 className="text-4xl font-bold mb-12 text-center animate-fade-in">{t.featured}</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
