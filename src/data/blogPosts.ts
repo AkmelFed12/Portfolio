@@ -8,6 +8,17 @@ export type BlogPost = {
   readTime: string;
   author: string;
   coverImage?: string;
+  viewUrl?: string;
+  downloadUrl?: string;
+  stats?: {
+    views: number;
+    totalDownloads: number;
+    pdfDownloads?: number;
+    epubDownloads?: number;
+    kindleDownloads?: number;
+    rating?: string;
+    votes?: number;
+  };
   content: string[];
 };
 
@@ -38,26 +49,68 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 2,
-    slug: 'asaa-portal-real-world-lessons',
-    title: 'ASAA Portal: Real-World Lessons from a Live Project',
+    slug: 'desir-et-passion-book-release',
+    title: 'Desir Et Passion: Official Reading and Download Access',
     excerpt:
-      'What building ASAA Portal taught me about delivery, responsibility, and improving a product for real users.',
-    date: '2026-03-10',
-    category: 'Case Study',
-    readTime: '8 min read',
+      "My first published book is now available online. Access the official page for both reading and download.",
+    date: '2021-02-02',
+    category: 'Book Release',
+    readTime: '3 min read',
     author: 'Ladji Moussa OUATTARA',
-    coverImage: '/images/asaa-portal-desktop-v2.png',
+    coverImage: '/images/desir-et-passion-cover.jpg',
+    viewUrl: 'https://www.edition999.info/Desir-Et-Passion.html',
+    downloadUrl: 'https://www.edition999.info/Desir-Et-Passion.html',
+    stats: {
+      views: 1245,
+      totalDownloads: 638,
+      pdfDownloads: 482,
+      epubDownloads: 95,
+      kindleDownloads: 61,
+      rating: '4.8/5',
+      votes: 40,
+    },
     content: [
-      '# ASAA Portal: Real-World Lessons from a Live Project',
-      'ASAA Portal helped me move from theory to responsibility. Real users quickly reveal what quality really means.',
-      '## Lesson 1: clarity beats complexity',
-      'Simple navigation and clear action paths improved usability more than adding extra features.',
-      '## Lesson 2: backend reliability matters',
-      'Validation, predictable data flow, and robust handling reduced user friction and support effort.',
-      '## Lesson 3: delivery is iterative',
-      'A project improves through continuous feedback, not one perfect release.',
-      '## Next step',
-      'I continue improving the platform while strengthening architecture and maintainability skills.',
+      '# Desir Et Passion',
+      'I am pleased to share my first published book, now available through Edition999.',
+      '## About this release',
+      'This publication reflects my personal writing journey and my commitment to delivering meaningful, high-quality work across disciplines.',
+      '## Access',
+      'You can read the book online or download it directly from the official Edition999 page using the links below.',
+      '## Thank you',
+      'Thank you for your support. Your trust and encouragement continue to inspire my next projects.',
+    ],
+  },
+  {
+    id: 3,
+    slug: 'le-temps-additionnel-tome1-book-release',
+    title: 'Le temps additionnel Tome 1: Avant le coup de sifflet final',
+    excerpt:
+      'My second book is now available. Visit the official page to read online and access the download.',
+    date: '2026-02-04',
+    category: 'Book Release',
+    readTime: '3 min read',
+    author: 'Ladji Moussa OUATTARA',
+    coverImage: '/images/temps-additionnel-cover.jpg',
+    viewUrl:
+      'https://www.edition999.info/Le-temps-additionnel-Tome1-Avant-le-coup-de-sifflet-final.html',
+    downloadUrl:
+      'https://www.edition999.info/Le-temps-additionnel-Tome1-Avant-le-coup-de-sifflet-final.html',
+    stats: {
+      views: 105,
+      totalDownloads: 115,
+      pdfDownloads: 62,
+      epubDownloads: 29,
+      kindleDownloads: 24,
+    },
+    content: [
+      '# Le temps additionnel - Tome 1',
+      "I am proud to present my second published book, continuing my literary and creative development.",
+      '## Positioning',
+      'This release extends my author portfolio with a focused narrative project designed for engaged readers.',
+      '## Access',
+      'Reading and download are available from the official Edition999 page via the action buttons below.',
+      '## Perspective',
+      'I will continue to publish with the same standard of quality, clarity, and long-term ambition.',
     ],
   },
 ];

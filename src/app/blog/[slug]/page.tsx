@@ -126,6 +126,78 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
               <span>{post.readTime}</span>
               <span>By {post.author}</span>
             </div>
+
+            {(post.viewUrl || post.downloadUrl) && (
+              <div className="mt-6 flex flex-wrap gap-3">
+                {post.viewUrl && (
+                  <a
+                    href={post.viewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition"
+                  >
+                    Lire le livre
+                  </a>
+                )}
+                {post.downloadUrl && (
+                  <a
+                    href={post.downloadUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-900 text-white font-semibold transition"
+                  >
+                    Telecharger
+                  </a>
+                )}
+              </div>
+            )}
+
+            {post.stats && (
+              <div className="mt-6 rounded-xl border border-gray-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 p-4">
+                <h3 className="text-sm font-bold uppercase tracking-wide text-gray-700 dark:text-slate-200 mb-3">
+                  Statistiques Edition999
+                </h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div className="rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-2">
+                    <p className="text-xs text-gray-600 dark:text-slate-300">Vues</p>
+                    <p className="text-lg font-bold text-slate-900 dark:text-white">{post.stats.views}</p>
+                  </div>
+                  <div className="rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-2">
+                    <p className="text-xs text-gray-600 dark:text-slate-300">Telechargements</p>
+                    <p className="text-lg font-bold text-slate-900 dark:text-white">{post.stats.totalDownloads}</p>
+                  </div>
+                  {post.stats.rating && (
+                    <div className="rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-2">
+                      <p className="text-xs text-gray-600 dark:text-slate-300">Note</p>
+                      <p className="text-lg font-bold text-slate-900 dark:text-white">{post.stats.rating}</p>
+                    </div>
+                  )}
+                  {typeof post.stats.pdfDownloads === 'number' && (
+                    <div className="rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-2">
+                      <p className="text-xs text-gray-600 dark:text-slate-300">PDF</p>
+                      <p className="text-lg font-bold text-slate-900 dark:text-white">{post.stats.pdfDownloads}</p>
+                    </div>
+                  )}
+                  {typeof post.stats.epubDownloads === 'number' && (
+                    <div className="rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-2">
+                      <p className="text-xs text-gray-600 dark:text-slate-300">ePub</p>
+                      <p className="text-lg font-bold text-slate-900 dark:text-white">{post.stats.epubDownloads}</p>
+                    </div>
+                  )}
+                  {typeof post.stats.kindleDownloads === 'number' && (
+                    <div className="rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-2">
+                      <p className="text-xs text-gray-600 dark:text-slate-300">Kindle</p>
+                      <p className="text-lg font-bold text-slate-900 dark:text-white">{post.stats.kindleDownloads}</p>
+                    </div>
+                  )}
+                </div>
+                {typeof post.stats.votes === 'number' && (
+                  <p className="mt-3 text-xs text-gray-600 dark:text-slate-300">
+                    Base de notation: {post.stats.votes} votes.
+                  </p>
+                )}
+              </div>
+            )}
           </header>
 
           <div className="prose dark:prose-invert max-w-none mb-12 animate-slide-up">

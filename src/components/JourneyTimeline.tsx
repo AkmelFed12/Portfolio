@@ -4,7 +4,7 @@ export default function JourneyTimeline() {
       year: '2026',
       title: 'BS Computer Science Student',
       description: 'Currently a BS Computer Science student and full-stack learner, improving through practical projects and continuous study.',
-      achievements: ['ASAA Portal project in production', 'MyFinance LMO project developed', 'Barakatrack project developed'],
+      achievements: ['LMO Services platform in production', 'MyFinance LMO project developed', 'Barakatrack project developed'],
     },
     {
       year: '2025',

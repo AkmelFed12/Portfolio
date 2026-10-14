@@ -19,15 +19,6 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: 'Fatima Diallo',
-    title: 'Organization Lead',
-    company: 'ASAA Organization',
-    testimonial:
-      'Working with Ladji on the ASAA portal was seamless. He transformed our vision into a fully functional platform that our members love.',
-    rating: 5,
-  },
-  {
-    id: 3,
     name: 'Ibrahim Traore',
     title: 'Team Lead',
     company: 'Digital Innovations',

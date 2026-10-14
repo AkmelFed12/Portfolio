@@ -4,11 +4,11 @@ import { getProjectsPublic } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Selected projects by Ladji Moussa OUATTARA including ASAA Portal, MyFinance LMO, and Barakatrack.',
+  description: 'Selected projects by Ladji Moussa OUATTARA including LMO Services, LMO Digital Academy, and LMO Quran Learning.',
   openGraph: {
     title: 'Projects | Ladji Moussa OUATTARA',
     description:
-      'Selected projects including ASAA Portal, MyFinance LMO, and Barakatrack by Ladji Moussa OUATTARA.',
+      'Selected projects including LMO Services, LMO Digital Academy, and LMO Quran Learning by Ladji Moussa OUATTARA.',
     images: ['/og-projects.svg'],
   },
 };
@@ -26,34 +26,34 @@ export default async function Projects({ searchParams }: ProjectsPageProps) {
       ? {
           title: 'Mes Projets',
           subtitle: 'Une selection de projets construits avec des technologies web modernes',
-          caseStudy: 'Etude de Cas: ASAA Portal',
+          caseStudy: 'Etude de Cas: LMO Services',
           caseDesc:
-            "Plateforme orientee projet pour soutenir les operations du Quiz Islamique 2026, avec gestion des membres, flux de preselection et site public de l'organisation.",
+            "Plateforme complete pour une agence d'admission d'etudes, couvrant les procedures Canada (PPECFSM) et France : site public, espace client securise et tableau de bord admin pour dossiers, contrats, paiements et remboursements.",
           challenge: 'Defi',
           challengeText:
-            'Structurer la preselection des participants et fournir un espace numerique fiable pour membres et administrateurs.',
+            "Donner a une agence d'admission un systeme fiable pour piloter les procedures Canada et France avec des contrats clairs, des paiements transparents et un suivi visible pour les clients.",
           solution: 'Solution',
           solutionText:
-            "Conception d'une plateforme full-stack avec navigation claire, parcours membre et deploiement en production.",
+            "Conception d'une plateforme Next.js et Supabase avec site public, espace client securise et tableau de bord admin, proteges par Row Level Security et autorisations cote serveur.",
           result: 'Resultat',
           resultText:
-            'Experience concrete de livraison projet avec impact reel, meilleure rigueur technique et resultat valorisable en portfolio.',
+            "Centralisation de tout le parcours d'admission, conditions contractuelles et remboursements explicites et auditables, et visibilite self-service pour les clients.",
         }
       : {
           title: 'My Projects',
           subtitle: "A collection of projects I've built using modern web technologies",
-          caseStudy: 'Case Study: ASAA Portal',
+          caseStudy: 'Case Study: LMO Services',
           caseDesc:
-            'A project-focused platform built to support Islamic Quiz 2026 operations, combining member management, pre-selection workflows, and a public-facing organization website.',
+            'End-to-end platform for a study-abroad admission agency, covering Canadian (PPECFSM) and France procedures: public site, secure client space, and an admin dashboard for dossiers, contracts, payments, and refunds.',
           challenge: 'Challenge',
           challengeText:
-            'Organize participant pre-selection and create a reliable digital space for members and admins.',
+            'Give an admission agency one trusted system to run Canadian and France procedures with clear contracts, transparent payments, and visible progress for clients.',
           solution: 'Solution',
           solutionText:
-            'Built a full-stack web platform with structured navigation, member flows, and production deployment.',
+            'Built a Next.js and Supabase platform with a public site, a secure client space, and an admin dashboard, protected by Row Level Security and server-side authorization.',
           result: 'Result',
           resultText:
-            'Real project delivery experience with practical impact, stronger engineering discipline, and portfolio-ready output.',
+            'Centralized the full admission workflow, made contractual terms and refunds explicit and auditable, and gave clients self-service visibility into their dossier.',
         };
 
   return (

@@ -3,8 +3,6 @@ Drop your real screenshots here, then run:
 npm run sync:screenshots
 
 Required filenames:
-- asaa-desktop.png (or .jpg/.jpeg/.webp/.svg)
-- asaa-mobile.png
 - myfinance-desktop.png
 - myfinance-mobile.png
 - barakatrack-desktop.png

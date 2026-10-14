@@ -89,15 +89,15 @@ export default function Resume() {
 
             <div className="mb-6">
               <div className="flex justify-between items-start mb-2">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">ASAA Portal Project - Student Developer</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">LMO Services Platform - Full-Stack Developer</h3>
                 <span className="text-gray-600 dark:text-slate-300">2025 - Present</span>
               </div>
-              <p className="text-cyan-600 dark:text-cyan-400 font-semibold mb-3">Islamic Quiz 2026 Management Platform</p>
+              <p className="text-cyan-600 dark:text-cyan-400 font-semibold mb-3">Study-Abroad Admission Platform (Canada &amp; France)</p>
               <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-slate-200">
-                <li>Designed and built a comprehensive membership and event management platform from scratch</li>
-                <li>Implemented user authentication, pre-selection management, and member portal features</li>
-                <li>Deployed to production on Vercel with 99.9% uptime</li>
-                <li>Technologies: Next.js, React, TypeScript, Tailwind CSS, Firebase, Vercel</li>
+                <li>Designed and built a full-stack platform for Canadian (PPECFSM) and France admission procedures</li>
+                <li>Implemented a public site, secure client space, and admin dashboard for contracts, payments, and refunds</li>
+                <li>Deployed to production on Vercel with Supabase and Row Level Security</li>
+                <li>Technologies: Next.js, React, TypeScript, Tailwind CSS, Supabase, Vercel</li>
               </ul>
             </div>
 
@@ -187,10 +187,10 @@ export default function Resume() {
             </h2>
 
             <div className="mb-6">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">ASAA Portal - Islamic Quiz 2026</h3>
-              <p className="text-gray-700 dark:text-slate-200 mb-2">Comprehensive membership and event management platform</p>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">LMO Services - Admission Canada &amp; France</h3>
+              <p className="text-gray-700 dark:text-slate-200 mb-2">Full-stack admission platform: public site, client space, and admin dashboard</p>
               <p className="text-sm text-gray-600 dark:text-slate-300">
-                <strong>Stack:</strong> Next.js, React, TypeScript, Tailwind CSS, Firebase
+                <strong>Stack:</strong> Next.js, React, TypeScript, Tailwind CSS, Supabase, Vercel
               </p>
             </div>
 

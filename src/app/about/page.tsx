@@ -5,7 +5,7 @@ import JourneyTimeline from '@/components/JourneyTimeline';
 export const metadata: Metadata = {
   title: 'About',
   description: 'About Ladji Moussa OUATTARA, BS Computer Science student and project-based full-stack learner.',
-  keywords: ['About Ladji Moussa', 'Computer Science student', 'Full-stack learner', 'ASAA Portal'],
+  keywords: ['About Ladji Moussa', 'Computer Science student', 'Full-stack learner', 'LMO Services'],
   alternates: {
     canonical: '/about',
     languages: {
@@ -45,7 +45,7 @@ export default async function About({ searchParams }: AboutPageProps) {
           summary2:
             "En 2026, je continue d'apprendre en backend, bases de donnees et conception systeme, avec une approche orientee progression continue.",
           experience: 'Experience',
-          expTitle: 'Projet ASAA Portal - Developpeur Etudiant',
+          expTitle: 'Plateforme LMO Services - Developpeur Full-Stack',
           expSub: 'Apprentissage Full-Stack par Projet | 2025 - Present',
           education: 'Education',
           educationSub: 'University of the People | Diplome prevu en 2028',
@@ -59,7 +59,7 @@ export default async function About({ searchParams }: AboutPageProps) {
           summary2:
             'In 2026, still actively learning and continuously improving in backend engineering, databases, and system design while leveraging AI tools to improve delivery quality and speed.',
           experience: 'Experience',
-          expTitle: 'ASAA Portal Project - Student Developer',
+          expTitle: 'LMO Services Platform - Full-Stack Developer',
           expSub: 'Project-Based Full-Stack Learning | 2025 - Present',
           education: 'Education',
           educationSub: 'University of the People | Expected 2028',
@@ -91,10 +91,10 @@ export default async function About({ searchParams }: AboutPageProps) {
               <h3 className="text-2xl font-bold mb-2">{t.expTitle}</h3>
               <p className="text-gray-600 dark:text-slate-300 mb-3">{t.expSub}</p>
               <ul className="space-y-2 text-gray-700 dark:text-slate-200">
-                <li>Designed and built a complete membership and event management platform.</li>
-                <li>Implemented authentication, pre-selection workflows, and member space features.</li>
-                <li>Deployed to production on Vercel with strong availability and performance.</li>
-                <li>Tech stack: Next.js, React, TypeScript, Tailwind CSS, Firebase, Vercel.</li>
+                <li>Designed and built a full-stack admission platform for Canadian (PPECFSM) and France procedures.</li>
+                <li>Implemented a public site, secure client space, and admin dashboard for dossiers, contracts, payments, and refunds.</li>
+                <li>Deployed to production on Vercel with Supabase, protected by Row Level Security.</li>
+                <li>Tech stack: Next.js, React, TypeScript, Tailwind CSS, Supabase, Vercel.</li>
               </ul>
             </div>
             <div className="border-l-4 border-cyan-600 pl-6">

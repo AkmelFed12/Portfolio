@@ -10,11 +10,6 @@ const allowedExt = new Set(['.png', '.jpg', '.jpeg', '.webp', '.svg']);
 
 const projectMap = [
   {
-    key: 'asaa',
-    desktopTargetBase: 'asaa-portal-desktop',
-    mobileTargetBase: 'asaa-portal-mobile',
-  },
-  {
     key: 'myfinance',
     desktopTargetBase: 'myfinance-desktop',
     mobileTargetBase: 'myfinance-mobile',
@@ -76,7 +71,7 @@ async function main() {
 
   if (uploadFiles.length === 0) {
     console.log('No screenshot files found in public/images/uploads.');
-    console.log('Expected names: asaa-desktop.png, asaa-mobile.png, myfinance-desktop.png, myfinance-mobile.png, barakatrack-desktop.png, barakatrack-mobile.png');
+    console.log('Expected names: myfinance-desktop.png, myfinance-mobile.png, barakatrack-desktop.png, barakatrack-mobile.png');
     return;
   }
 

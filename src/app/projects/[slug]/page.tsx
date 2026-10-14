@@ -17,18 +17,44 @@ const detailsBySlug: Record<
     next: string;
   }
 > = {
-  'asaa-portal': {
-    role: 'Student Developer (Full-Stack)',
+  'lmo-quran-learning': {
+    role: 'Project Owner and Developer',
     challenge:
-      'The organization needed one reliable platform for membership, pre-selection workflow, and official public communication.',
+      'Provide a focused and simple learning experience for Quran students who need consistent recitation and memorization practice online.',
     solution:
-      'Built a structured Next.js platform with clear admin/member paths, practical data workflows, and production deployment.',
+      'Built a dedicated learning platform with a clear interface and practical study flow, then deployed it on Vercel for easy access.',
     impact: [
-      'Centralized communication and candidate management in one place',
-      'Improved visibility of event and committee information',
-      'Enabled practical product iteration with real user feedback',
+      'Made Quran learning resources available through one accessible web app',
+      'Improved consistency for learners through a structured digital experience',
+      'Expanded portfolio impact in education-focused product development',
     ],
-    next: 'Continue improving reliability, admin UX, and reporting features for upcoming cycles.',
+    next: 'Enhance learning features with progress tracking and deeper personalization.',
+  },
+  'lmo-digital-academy': {
+    role: 'Product Owner and Full-Stack Developer',
+    challenge:
+      'Create a credible e-learning platform for beginners that works well on mobile, supports local African payment habits, and gives the admin a practical way to validate Premium access.',
+    solution:
+      'Built a Next.js SaaS learning experience with written courses, Supabase-backed progress, manual Wave/Djamo payment review, certificate verification, student dashboard, and admin operations.',
+    impact: [
+      'Delivered a live education product with mobile-first learning flows',
+      'Added practical monetization through Premium access and manual payment validation',
+      'Created a stronger portfolio case study around SaaS, education, and admin tooling',
+    ],
+    next: 'Improve analytics, live class scheduling, and richer course authoring for future cohorts.',
+  },
+  'lmo-services-canada': {
+    role: 'Product Owner and Full-Stack Developer',
+    challenge:
+      'An admission agency needed one trusted system to run Canadian (PPECFSM) and France procedures, with clear contracts, transparent payments, and a way for clients to follow each step without back-and-forth over messaging.',
+    solution:
+      'Built a Next.js and Supabase platform with a public site, a secure client space, and an admin dashboard covering dossiers, contract generation, payment and refund tracking, and secondary-procedure eligibility, protected by Row Level Security and server-side authorization.',
+    impact: [
+      'Centralized the full admission workflow from consultation to visa follow-up',
+      'Made contractual terms and refund calculations explicit and auditable',
+      'Gave clients self-service visibility into their dossier, contracts, and payments',
+    ],
+    next: 'Add richer client notifications, document reminders, and reporting for the admin side.',
   },
 };
 
@@ -183,4 +209,3 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
     </div>
   );
 }
-

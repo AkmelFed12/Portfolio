@@ -4,23 +4,53 @@ export type Project = {
   title: string;
   description: string;
   tech: string[];
+  category?: 'frontend' | 'backend' | 'fullstack';
   link?: string;
   github?: string;
   image?: string;
   mobileImage?: string;
+  promoEmbed?: string;
 };
 
 export const projects: Project[] = [
   {
     id: 1,
-    slug: 'asaa-portal',
-    title: 'ASAA Portal - Islamic Quiz 2026',
+    slug: 'lmo-quran-learning',
+    title: 'LMO Quran Learning',
     description:
-      'Comprehensive membership and event management platform built for Islamic Quiz 2026, including pre-selection workflows, member space, and official organization website.',
+      'Interactive Quran learning platform designed to make memorization and recitation practice more accessible for learners.',
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    link: 'https://asaaofficiel.vercel.app/index.html',
-    github: 'https://github.com/AkmelFed12/PRESELECTION-QI26-tst',
-    image: '/images/asaa-portal-desktop-v2.png',
-    mobileImage: '/images/asaa-portal-mobile-v2.png',
+    category: 'fullstack',
+    link: 'https://lmo-quran-learning.vercel.app',
+    github: 'https://vercel.com/ladji-moussa-ouattaras-projects/lmo-quran-learning',
+    image: '/images/lmo-quran-learning-desktop.jpg',
+    mobileImage: '/images/lmo-quran-learning-mobile.jpg',
+    promoEmbed: '/videos/lmo-quran-learning-promo.html',
+  },
+  {
+    id: 2,
+    slug: 'lmo-digital-academy',
+    title: 'LMO Digital Academy',
+    description:
+      'Professional e-learning SaaS platform for beginner digital skills, with written courses, premium checkout, student dashboard, certificates, and admin validation workflows.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Vercel'],
+    category: 'fullstack',
+    link: 'https://lmo-academy.vercel.app',
+    github: 'https://vercel.com/ladji-moussa-ouattaras-projects/lmo-academy',
+    image: '/images/lmo-digital-academy-desktop.svg',
+    mobileImage: '/images/lmo-digital-academy-mobile.svg',
+  },
+  {
+    id: 3,
+    slug: 'lmo-services-canada',
+    title: 'LMO Services - Admission Canada & France',
+    description:
+      'End-to-end platform for a study-abroad admission agency, covering Canadian (PPECFSM) and France procedures: public site, secure client space, and an admin dashboard for dossiers, contract generation, payments, refunds, and secondary-procedure eligibility.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Vercel'],
+    category: 'fullstack',
+    link: 'https://lmoservices-canada.vercel.app',
+    github: 'https://vercel.com/ladji-moussa-ouattaras-projects/lmoservices-canada',
+    image: '/images/lmo-services-canada-desktop.png',
+    mobileImage: '/images/lmo-services-canada-mobile.png',
   },
 ];

@@ -17,7 +17,7 @@ export default function ResumeDownload() {
         document.body.removeChild(a);
         return;
       }
-    } catch (err) {
+    } catch {
       console.log('PDF not available, falling back to text format');
     }
 
@@ -36,10 +36,10 @@ Combining programming fundamentals with artificial intelligence tools to enhance
 Particularly interested in creating platforms that serve real communities and meaningful causes.
 
 EXPERIENCE
-ASAA Portal Project - Full Stack Developer (2024 - Present)
-- Built a comprehensive web platform for managing pre-selections for the Islamic Quiz 2026
-- Managed dedicated member space and organization management
-- Implemented a complete membership and event management system
+LMO Services Platform - Full Stack Developer (2025 - Present)
+- Built a full-stack platform for Canadian (PPECFSM) and France study-abroad admission procedures
+- Implemented a public site, secure client space, and admin dashboard for contracts, payments, and refunds
+- Shipped to production on Vercel with Supabase and Row Level Security
 
 EDUCATION
 Bachelor of Science in Computer Science
@@ -54,7 +54,7 @@ Backend Development: Node.js, Express.js, PostgreSQL, MongoDB, REST APIs, Fireba
 Tools & Technologies: Git/GitHub, Docker, VS Code, Vercel, npm/yarn, AI Tools
 
 KEY ACHIEVEMENTS
-- Successfully delivered ASAA Portal project demonstrating ability to turn ideas into functional systems
+- Successfully delivered the LMO Services platform demonstrating ability to turn ideas into functional systems
 - Strong proficiency in modern web technologies and frameworks
 - Experience with full-stack development and responsive design
 - Commitment to continuous learning and innovation
@@ -85,7 +85,7 @@ Artificial intelligence and automation`;
   return (
     <button
       onClick={handleDownload}
-      className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-700 hover:bg-cyan-800 text-white rounded-lg font-semibold transition transform hover:scale-105 shadow-lg"
+      className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-900 to-blue-700 hover:from-slate-950 hover:to-blue-800 text-white rounded-lg font-semibold transition transform hover:scale-105 shadow-lg"
     >
       <svg
         className="w-5 h-5"
@@ -104,6 +104,4 @@ Artificial intelligence and automation`;
     </button>
   );
 }
-
-
 
