@@ -53,7 +53,12 @@ export async function getProjectsPublic(): Promise<Project[]> {
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-+|-+$/g, '');
-    const localProject = projects.find((project) => project.slug === slug);
+    const normalizeProjectKey = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, '');
+    const localProject = projects.find(
+      (project) =>
+        normalizeProjectKey(project.slug) === normalizeProjectKey(slug) ||
+        normalizeProjectKey(project.title) === normalizeProjectKey(row.title)
+    );
 
     return {
       id: row.id,
