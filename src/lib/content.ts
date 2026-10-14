@@ -14,26 +14,51 @@ function splitContent(content: string) {
 
 export async function getBlogPosts(): Promise<BlogPost[]> {
   if (!isDbEnabled) {
-    return blogPosts;
+    return blogPosts.map(localizeBlogPost);
   }
 
   const rows = await getPosts();
   if (rows.length === 0) {
-    return blogPosts;
+    return blogPosts.map(localizeBlogPost);
   }
 
-  return rows.map((row, index) => ({
-    id: row.id || index + 1,
-    slug: row.slug,
-    title: row.title,
-    excerpt: row.excerpt,
-    date: row.published_at || new Date().toISOString().slice(0, 10),
-    category: row.category || 'General',
-    readTime: row.read_time || '5 min read',
-    author: row.author || 'Ladji Moussa OUATTARA',
-    coverImage: (row as { cover_image?: string }).cover_image || undefined,
-    content: splitContent(row.content || ''),
-  }));
+  const databasePosts = rows.map((row, index) => {
+    const localPost = blogPosts.find((post) => post.slug === row.slug);
+    return localizeBlogPost({
+      id: row.id || index + 1,
+      slug: row.slug,
+      title: localPost?.title || row.title,
+      excerpt: localPost?.excerpt || row.excerpt,
+      date: row.published_at || new Date().toISOString().slice(0, 10),
+      category: localPost?.category || row.category || 'General',
+      readTime: localPost?.readTime || row.read_time || '5 min read',
+      author: row.author || 'Ladji Moussa OUATTARA',
+      coverImage: localPost?.coverImage || (row as { cover_image?: string }).cover_image || undefined,
+      content: localPost?.content || splitContent(row.content || ''),
+      titleFr: localPost?.titleFr,
+      excerptFr: localPost?.excerptFr,
+      categoryFr: localPost?.categoryFr,
+      readTimeFr: localPost?.readTimeFr,
+      contentFr: localPost?.contentFr,
+      viewUrl: localPost?.viewUrl,
+      downloadUrl: localPost?.downloadUrl,
+      stats: localPost?.stats,
+    });
+  });
+
+  const knownSlugs = new Set(databasePosts.map((post) => post.slug));
+  return [...databasePosts, ...blogPosts.filter((post) => !knownSlugs.has(post.slug)).map(localizeBlogPost)];
+}
+
+function localizeBlogPost(post: BlogPost): BlogPost {
+  return {
+    ...post,
+    title: post.titleFr || post.title,
+    excerpt: post.excerptFr || post.excerpt,
+    category: post.categoryFr || post.category,
+    readTime: post.readTimeFr || post.readTime,
+    content: post.contentFr || post.content,
+  };
 }
 
 export async function getProjectsPublic(): Promise<Project[]> {

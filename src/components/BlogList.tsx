@@ -44,7 +44,7 @@ export default function BlogList({ posts }: BlogListProps) {
             type="text"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="            Rechercher des articles..."
+            placeholder="Rechercher des articles..."
             className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-600"
           />
         </div>
