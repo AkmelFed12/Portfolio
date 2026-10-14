@@ -53,4 +53,24 @@ export const projects: Project[] = [
     image: '/images/lmo-services-canada-desktop.png',
     mobileImage: '/images/lmo-services-canada-mobile.png',
   },
+  {
+    id: 4,
+    slug: 'lmo-shop-services',
+    title: 'LMO SHOP SERVICES',
+    description:
+      "Plateforme e-commerce full stack avec authentification, dashboard admin, gestion des commandes, analytics, et deploiement production sur Vercel.",
+    tech: ['JavaScript', 'Node.js', 'Serverless API', 'Vercel'],
+    link: 'https://new-pro-ecommerce-demo.vercel.app',
+    github: 'https://github.com/AkmelFed12/LMO-SHOP-SERVICES',
+  },
+  {
+    id: 5,
+    slug: 'afropulse',
+    title: 'AfroPulse',
+    description:
+      'Réseau professionnel dédié aux talents africains et à la diaspora, avec annuaire de profils, missions, messagerie, authentification et présence en temps réel.',
+    tech: ['HTML', 'Tailwind CSS', 'JavaScript', 'Supabase', 'Realtime', 'PWA', 'Netlify'],
+    link: 'https://afro-pulse.netlify.app',
+    github: 'https://github.com/AkmelFed12/afropulse',
+  },
 ];
