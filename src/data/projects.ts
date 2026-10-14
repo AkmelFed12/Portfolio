@@ -62,6 +62,8 @@ export const projects: Project[] = [
     tech: ['JavaScript', 'Node.js', 'Serverless API', 'Vercel'],
     link: 'https://new-pro-ecommerce-demo.vercel.app',
     github: 'https://github.com/AkmelFed12/LMO-SHOP-SERVICES',
+    image: '/images/lmo-shop-services-desktop.png',
+    mobileImage: '/images/lmo-shop-services-mobile.png',
   },
   {
     id: 5,
@@ -72,5 +74,7 @@ export const projects: Project[] = [
     tech: ['HTML', 'Tailwind CSS', 'JavaScript', 'Supabase', 'Realtime', 'PWA', 'Netlify'],
     link: 'https://afro-pulse.netlify.app',
     github: 'https://github.com/AkmelFed12/afropulse',
+    image: '/images/afropulse-desktop.png',
+    mobileImage: '/images/afropulse-mobile.png',
   },
 ];
