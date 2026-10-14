@@ -26,38 +26,22 @@ export default function ProjectCard({
   mobileImage,
 }: ProjectCardProps) {
   const shareUrl = link;
+  const previewImage = image || mobileImage;
 
   return (
     <div className="surface-card group h-full overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
-      {(image || mobileImage) && (
-        <div className="relative overflow-hidden bg-slate-100 p-3 dark:bg-slate-800/70">
-          <div className="grid grid-cols-3 gap-2 sm:gap-3">
-            {image && (
-              <div className="relative col-span-3 aspect-[16/9] rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
-                <Image
-                  src={image}
-                  alt={`${title} aperçu desktop`}
-                  fill
-                  sizes="(max-width: 768px) 60vw, 24vw"
-                  className="object-cover transition duration-500 group-hover:scale-105"
-                />
-              </div>
-            )}
-            {mobileImage && (
-              <div className="relative col-span-1 h-28 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
-                <Image
-                  src={mobileImage}
-                  alt={`${title} aperçu mobile`}
-                  fill
-                  sizes="(max-width: 768px) 30vw, 12vw"
-                  className="object-cover"
-                />
-              </div>
-            )}
-          </div>
+      {previewImage && (
+        <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-slate-800/70">
+          <Image
+            src={previewImage}
+            alt={`${title} aperçu`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+            className="object-cover transition duration-500 group-hover:scale-105"
+          />
         </div>
       )}
-      <div className="p-6">
+      <div className="flex h-[calc(100%-12rem)] flex-col p-5 sm:p-6">
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
           {title}
         </h3>
@@ -73,7 +57,7 @@ export default function ProjectCard({
             </span>
           </div>
         )}
-        <p className="text-gray-700 dark:text-slate-200 mb-4">{description}</p>
+        <p className="mb-4 flex-1 text-gray-700 dark:text-slate-200">{description}</p>
         <div className="mb-4">
           <p className="text-sm font-semibold text-gray-600 dark:text-slate-300 mb-2">
             Technologies :
@@ -89,7 +73,7 @@ export default function ProjectCard({
             ))}
           </div>
         </div>
-        <div className="flex flex-wrap gap-2 sm:gap-3 mb-4">
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3 mb-4">
           {caseStudyLink && (
             <a
               href={caseStudyLink}
