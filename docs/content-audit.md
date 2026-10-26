@@ -14,7 +14,7 @@
 
 ## Source limitations
 
-The deployed portfolio and reference URLs were not used as authoritative runtime dependencies. The rebuild uses repository content and checked-in assets so it can deploy independently. External page-by-page verification and current feature inspection were not possible in this environment; descriptions therefore remain intentionally conservative and do not add metrics, clients, certifications, or employment claims.
+The deployed portfolio and reference URLs were not used as authoritative runtime dependencies. The rebuild uses repository content and checked-in assets so it can deploy independently. The accessible pages were inspected for factual project context; unavailable pages and unverified claims were intentionally excluded. No metrics, clients, certifications, or employment claims were added.
 
 ## Content decisions
 
