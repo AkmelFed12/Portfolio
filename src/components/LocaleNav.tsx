@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Locale } from '@/content/portfolio';
 import { localizedPath } from '@/content/portfolio';
 import type { Dictionary } from '@/content/dictionary';
@@ -18,6 +18,10 @@ export default function LocaleNav({ locale, t }: { locale: Locale; t: Dictionary
   ] as const;
   const switchLocale = locale === 'en' ? 'fr' : 'en';
   const equivalent = pathname.replace(/^\/(en|fr)/, `/${switchLocale}`) || `/${switchLocale}`;
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   return (
     <header className="site-header">
