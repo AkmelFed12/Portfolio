@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import type { Locale } from '@/content/portfolio';
 import { localizedPath, projects } from '@/content/portfolio';
 import type { Dictionary } from '@/content/dictionary';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function LocaleNav({ locale, t }: { locale: Locale; t: Dictionary }) {
   const [open, setOpen] = useState(false);
@@ -46,6 +47,7 @@ export default function LocaleNav({ locale, t }: { locale: Locale; t: Dictionary
             <Link href={equivalent} className="locale-switch" aria-label={`${t.nav.switchLanguage}: ${t.nav.switchTo} ${switchLocale.toUpperCase()}`} onClick={() => setOpen(false)}>
               <span className={locale === 'en' ? 'selected' : ''} aria-current={locale === 'en' ? 'page' : undefined}>EN</span><span aria-hidden="true">/</span><span className={locale === 'fr' ? 'selected' : ''} aria-current={locale === 'fr' ? 'page' : undefined}>FR</span>
             </Link>
+            <ThemeToggle locale={locale} />
             <a className="button button-small" href="/CV_LADJI_MOUSSA_OUATTARA.pdf" download onClick={() => setOpen(false)}>{t.nav.cv}</a>
           </div>
         </div>

@@ -139,7 +139,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full bg-white dark:bg-slate-950 text-gray-900 dark:text-white">
+      <body className="min-h-full">
         <GoogleAnalytics />
         {children}
       </body>

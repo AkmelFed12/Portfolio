@@ -1,49 +1,50 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import type { Locale } from '@/content/portfolio';
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ locale = 'fr' }: { locale?: Locale } = {}) {
   const [isDark, setIsDark] = useState(false);
-  const [mounted] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    
-    // Restore theme from localStorage
-    const savedTheme = localStorage.getItem('theme');
-    const isDarkMode =
-      savedTheme === 'dark' ||
-      (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    }
-    
-    return true;
-  });
+
+  useEffect(() => {
+    setIsDark(document.documentElement.classList.contains('dark'));
+  }, []);
 
   const toggleTheme = () => {
-    const newDark = !isDark;
-    setIsDark(newDark);
-    document.documentElement.classList.toggle('dark', newDark);
-    localStorage.setItem('theme', newDark ? 'dark' : 'light');
+    const nextIsDark = !document.documentElement.classList.contains('dark');
+    document.documentElement.classList.toggle('dark', nextIsDark);
+    setIsDark(nextIsDark);
+    try {
+      localStorage.setItem('theme', nextIsDark ? 'dark' : 'light');
+    } catch {
+      // Keep the in-session theme switch available when storage is disabled.
+    }
   };
 
-  if (!mounted) return null;
+  const label = locale === 'fr'
+    ? (isDark ? 'Passer au thème clair' : 'Passer au thème sombre')
+    : (isDark ? 'Switch to light theme' : 'Switch to dark theme');
 
   return (
     <button
+      className="theme-toggle"
+      type="button"
       onClick={toggleTheme}
-      className="p-2 rounded-full border border-gray-300 dark:border-slate-600 bg-gray-200 dark:bg-slate-800 text-gray-800 dark:text-slate-100 hover:bg-gray-300 dark:hover:bg-slate-700 transition-colors"
-      aria-label="Changer de theme"
+      aria-label={label}
+      aria-pressed={isDark}
+      title={label}
     >
       {isDark ? (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
         </svg>
       ) : (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1h2zm4.22 1.78a1 1 0 011.414 0l1.414 1.414a1 1 0 01-1.414 1.414L15.22 5.22a1 1 0 010-1.414zm0 10.586a1 1 0 011.414 0l1.414 1.414a1 1 0 01-1.414 1.414l-1.414-1.414a1 1 0 010-1.414zm-10.586 0a1 1 0 011.414 1.414L5.22 15.22a1 1 0 01-1.414-1.414l1.414-1.414zM5.22 5.22a1 1 0 011.414-1.414L5.22 3.392a1 1 0 01-1.414 1.414L5.22 5.22zm5.78-1a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1z" clipRule="evenodd" />
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+          <path d="M20.4 15.4A8.5 8.5 0 0 1 8.6 3.6 8.6 8.6 0 1 0 20.4 15.4Z" />
         </svg>
       )}
+      <span className="theme-toggle-label">{label}</span>
     </button>
   );
 }
