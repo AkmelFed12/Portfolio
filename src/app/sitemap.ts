@@ -1,69 +1,25 @@
 import type { MetadataRoute } from 'next';
-import { getBlogPosts, getProjectsPublic } from '@/lib/content';
+import { projects, site, locales } from '@/content/portfolio';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lmoportfolio.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || site.siteUrl;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUpdatedAt = new Date('2026-10-14T00:00:00.000Z');
-  const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${siteUrl}/`,
+  const staticRoutes = locales.flatMap((locale) =>
+    ['', '/projects', '/about', '/contact'].map((path) => ({
+      url: `${siteUrl}/${locale}${path}`,
       lastModified: siteUpdatedAt,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${siteUrl}/projects`,
+      changeFrequency: path === '' ? 'weekly' as const : 'monthly' as const,
+      priority: path === '' ? 1 : 0.8,
+    })),
+  );
+  const projectRoutes = locales.flatMap((locale) =>
+    projects.map((project) => ({
+      url: `${siteUrl}/${locale}/projects/${project.slug}`,
       lastModified: siteUpdatedAt,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/services`,
-      lastModified: siteUpdatedAt,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/about`,
-      lastModified: siteUpdatedAt,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/blog`,
-      lastModified: siteUpdatedAt,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/resume`,
-      lastModified: siteUpdatedAt,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/contact`,
-      lastModified: siteUpdatedAt,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-  ];
-
-  const posts = await getBlogPosts();
-  const projects = await getProjectsPublic();
-  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${siteUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }));
-  const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
-    url: `${siteUrl}/projects/${project.slug}`,
-    lastModified: siteUpdatedAt,
-    changeFrequency: 'monthly',
-    priority: 0.75,
-  }));
-
-  return [...staticRoutes, ...blogRoutes, ...projectRoutes];
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
+  );
+  return [...staticRoutes, ...projectRoutes];
 }

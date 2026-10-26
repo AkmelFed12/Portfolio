@@ -1,11 +1,8 @@
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
+import { headers } from 'next/headers';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
-import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' });
@@ -66,18 +63,29 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = (await headers()).get('x-portfolio-locale') === 'fr' ? 'fr' : 'en';
   return (
     <html
-      lang="fr"
+      lang={locale}
       className={`h-full antialiased ${geistSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var match = window.location.pathname.match(/^\\/(en|fr)(?:\\/|$)/);
+                if (match) document.documentElement.lang = match[1];
+              })();
+            `,
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -129,14 +137,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white dark:bg-slate-950 text-gray-900 dark:text-white">
+      <body className="min-h-full bg-white dark:bg-slate-950 text-gray-900 dark:text-white">
         <GoogleAnalytics />
-        <Suspense fallback={null}>
-          <Navbar />
-        </Suspense>
-        <main className="flex-1">{children}</main>
-        <WhatsAppFloat />
-        <Footer />
+        {children}
       </body>
     </html>
   );
