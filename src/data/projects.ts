@@ -21,6 +21,7 @@ export const projects: Project[] = [
       "Site officiel de l'Association des Serviteurs d'Allah Azawajal, présentant notamment le Quiz Islamique 2026.",
     tech: [],
     link: 'https://asaaofficiel.vercel.app',
+    image: '/images/asaa-officiel-hero.jpg',
   },
   {
     id: 1,
