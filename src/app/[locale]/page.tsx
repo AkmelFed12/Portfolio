@@ -12,7 +12,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
   return <div>
     <section className="hero">
       <div className="shell hero-grid">
-        <div className="hero-copy">
+        <div className="hero-copy hero-reveal">
           <p className="eyebrow">{t.home.eyebrow}</p>
           <h1>{t.home.title}</h1>
           <p className="hero-intro">{t.home.intro}</p>
@@ -25,7 +25,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
           </div>
           <p className="availability"><span className="status-dot" />{t.home.availability}</p>
         </div>
-        <div className="hero-aside">
+        <div className="hero-aside hero-reveal hero-reveal-late">
           <div className="portrait-frame">
             <Image src="/images/ladji-moussa-profile.jpeg" alt="Ladji Moussa OUATTARA" fill priority sizes="(max-width: 800px) 82vw, (max-width: 1100px) 38vw, 34vw" className="object-cover" />
           </div>
@@ -37,11 +37,11 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
     </section>
 
     <section className="section shell">
-      <div className="section-heading">
+      <div className="section-heading section-reveal">
         <div><p className="eyebrow">{t.home.selected}</p><h2>{t.home.selectedIntro}</h2></div>
         <Link className="text-link" href={localizedPath(locale, '/projects')}>{t.home.allWork} ↗</Link>
       </div>
-      <div className="project-grid">
+      <div className="project-grid project-grid-reveal">
         {featured.map((project, index) => <article className={`project-card ${index === 0 ? 'project-card-featured' : ''}`} key={project.id}>
           <ProjectVisual src={project.image} alt={`${project.title} preview`} title={project.title} caption={t.home.projectCoverLabel} />
           <div className="project-card-body">
