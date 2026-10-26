@@ -35,7 +35,7 @@ export default function LocaleNav({ locale, t }: { locale: Locale; t: Dictionary
           <span className="brand-mark">LM</span>
           <span>Ladji Moussa</span>
         </Link>
-        <button className="menu-button" type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? t.nav.close : t.nav.menu} onClick={() => setOpen((value) => !value)}>
+        <button className={`menu-button ${open ? 'is-open' : ''}`} type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? t.nav.close : t.nav.menu} onClick={() => setOpen((value) => !value)}>
           <span aria-hidden="true">{open ? '×' : '☰'}</span>
         </button>
         <div id="site-menu" className={`nav-menu ${open ? 'is-open' : ''}`}>
