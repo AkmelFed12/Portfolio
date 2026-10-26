@@ -43,7 +43,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
       </div>
       <div className="project-grid project-grid-reveal">
         {featured.map((project, index) => <article className={`project-card ${index === 0 ? 'project-card-featured' : ''}`} key={project.id}>
-          <ProjectVisual src={project.image} alt={`${project.title} preview`} title={project.title} caption={t.home.projectCoverLabel} />
+          <ProjectVisual src={project.image} mobileSrc={project.mobileImage} alt={`${project.title} preview`} title={project.title} caption={t.home.projectCoverLabel} />
           <div className="project-card-body">
             <div className="project-card-topline"><p className="project-number">0{index + 1}</p>{project.category && <span className="project-category">{project.category}</span>}</div>
             <h3>{project.title}</h3>
