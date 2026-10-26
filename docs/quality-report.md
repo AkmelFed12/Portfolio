@@ -30,8 +30,8 @@
 
 ## Vercel preview status
 
-The workspace's GitHub push triggered a preview deployment in the intended `portfolio` Vercel project for commit `85225cc0756953f6b605a78ed400ffb59baa2357` on branch `akmelfed12-portfolio-rebuild`. Deployment `dpl_HQDoSzVU1V2rftdgp25sy5rtHT8A` is `READY`; preview URL: `https://portfolio-6l1kf6w1w-ladji-moussa-ouattaras-projects.vercel.app`. Authenticated HTTP checks returned 200 for `/en`, `/fr/projects`, `/fr/projects/asaa-officiel`, `/sitemap.xml`, and `/robots.txt`. The French page renders with `lang="fr"`, portfolio content, and canonical and English alternate URLs pointing to `lmoportfolio.vercel.app`. The first upload to `portfolio_repo` was a separate project and was not the requested target. No production promotion, domain alias, or DNS change was made.
+The workspace's GitHub push triggered a preview deployment in the intended `portfolio` Vercel project. The user-authorized production promotion completed as deployment `dpl_2xZMYHmfQW3LWMvSYHSW7rHyyEDj` from commit `153dc34a644980cc94820efaf349c6b7a4a72bb7`; Vercel reports `READY` and assigns `lmoportfolio.vercel.app` to it. On the public domain, `/` redirects to `/en`; `/en`, `/fr`, `/en/projects`, `/fr/projects/asaa-officiel`, `/sitemap.xml`, and `/robots.txt` returned 200. The French page renders with `lang="fr"`, portfolio content, and canonical and English alternate URLs pointing to `lmoportfolio.vercel.app`. No DNS or domain configuration was changed. The first upload to `portfolio_repo` was a separate project and was not used for this release.
 
 ## Deployment requirement
 
-The `portfolio` project preview correctly uses `lmoportfolio.vercel.app` as its canonical origin. Its production deployment was not changed; the preview is available for review before any production release.
+Production now serves the bilingual rebuild at `https://lmoportfolio.vercel.app`. The previous production deployment was superseded by the user-authorized promotion above.
