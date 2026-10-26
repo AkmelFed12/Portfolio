@@ -20,7 +20,7 @@ export default async function LocalizedProjects({ params }: { params: Promise<{ 
   return <div>
     <section className="page-intro"><div className="shell"><p className="eyebrow">{t.projects.eyebrow}</p><h1>{t.projects.title}</h1><p>{t.projects.intro}</p></div></section>
     <section className="section shell"><div className="project-list">{projects.map((project, index) => <article className="project-row" key={project.id}>
-      <ProjectVisual src={project.image} mobileSrc={project.mobileImage} alt={`${project.title} preview`} title={project.title} caption={t.home.projectCoverLabel} />
+      <ProjectVisual src={project.image} mobileSrc={project.mobileImage} alt={`${project.title} preview`} title={project.title} caption={t.home.projectCoverLabel} sizes="(max-width: 700px) 100vw, 44vw" />
       <div className="project-row-body">
         <div className="project-row-top"><p className="project-number">{String(index + 1).padStart(2, '0')}</p><h2>{project.title}</h2></div>
         <p>{project.copy[locale].description}</p>

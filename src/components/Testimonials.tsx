@@ -1,46 +1,54 @@
+import type { Locale } from '@/content/portfolio';
 import type { Testimonial } from '@/data/testimonials';
+import { dictionary } from '@/content/dictionary';
 
-interface TestimonialsProps {
-  items: Testimonial[];
-}
+const englishVersions: Record<number, { title: string; text: string }> = {
+  1: {
+    title: 'Project Manager',
+    text: 'Ladji Moussa delivered an excellent web platform for our event. His attention to detail and understanding of our needs were remarkable.',
+  },
+  2: {
+    title: 'Team Lead',
+    text: 'Ladji is a committed developer who brings creative solutions to technical challenges. I recommend him for any project.',
+  },
+};
 
-export default function Testimonials({ items }: TestimonialsProps) {
+export default function Testimonials({ items, locale }: { items: Testimonial[]; locale: Locale }) {
+  const copy = dictionary[locale].testimonials;
 
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800 py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold mb-12 text-center animate-fade-in">
-          Ce que disent les clients
-        </h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {items.map((testimonial, index) => (
-            <div
-              key={testimonial.id}
-              className={`bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow hover:scale-105 transform stagger-item-${index + 1}`}
-            >
-              <div className="flex items-center mb-4">
-                <div className="text-4xl mr-4">👤</div>
-                <div>
-                  <p className="font-bold text-gray-900 dark:text-white">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600 dark:text-slate-300">
-                    {testimonial.title}
-                    {testimonial.company ? ` chez ${testimonial.company}` : ''}
-                  </p>
-                </div>
-              </div>
-              <p className="text-gray-700 dark:text-slate-200 italic">
-                &ldquo;{testimonial.testimonial}&rdquo;
-              </p>
-              <div className="mt-4 flex text-yellow-400">
-                {[...Array(testimonial.rating || 5)].map((_, i) => (
-                  <span key={i}>★</span>
-                ))}
-              </div>
-            </div>
-          ))}
+    <section className="section section-tinted testimonials-section" aria-labelledby="testimonials-title">
+      <div className="shell">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">{copy.eyebrow}</p>
+            <h2 id="testimonials-title">{copy.title}</h2>
+          </div>
+          <p className="testimonials-subtitle">{copy.subtitle}</p>
+        </div>
+        <div className="testimonials-grid">
+          {items.map((item) => {
+            const translated = englishVersions[item.id];
+            const title = locale === 'en' && translated ? translated.title : item.title;
+            const quote = locale === 'en' && translated ? translated.text : item.testimonial;
+
+            return (
+              <figure className="testimonial-card" key={item.id}>
+                <span className="testimonial-quote-mark" aria-hidden="true">“</span>
+                <blockquote>{quote}</blockquote>
+                <figcaption>
+                  <span className="testimonial-avatar" aria-hidden="true">{item.name.split(/\s+/).map((part) => part[0]).join('').slice(0, 2)}</span>
+                  <span className="testimonial-attribution">
+                    <strong>{item.name}</strong>
+                    <span>{title}{item.company ? ` · ${item.company}` : ''}</span>
+                  </span>
+                  <span className="testimonial-rating" aria-hidden="true">{'★'.repeat(Math.max(0, Math.min(5, item.rating)))}</span>
+                </figcaption>
+              </figure>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
-

@@ -32,7 +32,6 @@ export const projects: Project[] = [
     category: 'fullstack',
     link: 'https://lmo-quran-learning.vercel.app',
     image: '/images/lmo-quran-learning-desktop.jpg',
-    mobileImage: '/images/lmo-quran-learning-mobile.jpg',
     promoEmbed: '/videos/lmo-quran-learning-promo.html',
   },
   {

@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ProjectVisual from '@/components/ProjectVisual';
+import Testimonials from '@/components/Testimonials';
 import { dictionary } from '@/content/dictionary';
+import { testimonials } from '@/data/testimonials';
 import { localizedPath, projects, site, type Locale } from '@/content/portfolio';
 
 export default async function LocalizedHome({ params }: { params: Promise<{ locale: Locale }> }) {
@@ -43,7 +45,7 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
       </div>
       <div className="project-grid project-grid-reveal">
         {featured.map((project, index) => <article className={`project-card ${index === 0 ? 'project-card-featured' : ''}`} key={project.id}>
-          <ProjectVisual src={project.image} mobileSrc={project.mobileImage} alt={`${project.title} preview`} title={project.title} caption={t.home.projectCoverLabel} />
+          <ProjectVisual src={project.image} mobileSrc={project.mobileImage} alt={`${project.title} preview`} title={project.title} caption={t.home.projectCoverLabel} sizes={index === 0 ? '(max-width: 700px) 100vw, 78vw' : '(max-width: 700px) 100vw, 42vw'} />
           <div className="project-card-body">
             <div className="project-card-topline"><p className="project-number">0{index + 1}</p>{project.category && <span className="project-category">{project.category}</span>}</div>
             <h3>{project.title}</h3>
@@ -59,6 +61,8 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
       <div className="section-heading"><div><p className="eyebrow">{t.home.approach}</p><h2>{t.home.approachIntro}</h2></div></div>
       <div className="principle-grid">{t.home.points.map(([title, text], index) => <article key={title} className="principle"><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
     </div></section>
+
+    <Testimonials items={testimonials} locale={locale} />
 
     <section className="section shell"><div className="contact-banner">
       <div><p className="eyebrow">{t.home.conversation}</p><h2>{t.home.contactTitle}</h2><p>{t.home.contactText}</p></div>

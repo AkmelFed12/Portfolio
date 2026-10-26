@@ -380,6 +380,75 @@ body::before {
 .dark .project-device-showcase { background: linear-gradient(135deg, #1b2b24, #263d32); }
 .dark .site-footer { background: #080e0c; }
 
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  padding: 11px 16px;
+  border-radius: 10px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform .2s ease;
+}
+.skip-link:focus { transform: translateY(0); outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.case-study-layout { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr); gap: clamp(36px, 7vw, 88px); align-items: start; }
+.case-study-main { display: grid; gap: 44px; }
+.case-study-objective { padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.case-study-objective h2 { margin-bottom: 13px; color: var(--accent-dark); font-size: 1.12rem; letter-spacing: -.02em; }
+.case-study-objective .large-copy { margin-bottom: 0; color: var(--ink); font-size: clamp(1.35rem, 2.8vw, 2rem); line-height: 1.45; letter-spacing: -.035em; }
+.case-study-scope h2 { margin-bottom: 22px; font-size: clamp(1.45rem, 3vw, 2rem); }
+.case-study-scope .eyebrow, .case-study-tech .eyebrow { margin-bottom: 14px; }
+.case-study-scope .feature-list { margin-bottom: 0; }
+.case-study-tech .tag-row { margin: 0; }
+.case-study-sidebar { position: sticky; top: 108px; min-width: 0; }
+.case-study-sidebar .project-visual { min-height: 320px; border-radius: 22px; }
+.case-study-preview-note { margin: 12px 0 0; }
+.case-study-actions { margin-top: 0; }
+.case-study-contact { min-height: 180px; }
+.case-study-contact h2 { max-width: 640px; }
+.case-study-contact .button { flex: 0 0 auto; }
+
+.testimonials-subtitle { max-width: 350px; margin-bottom: 0; color: var(--muted-ink); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.testimonial-card { position: relative; display: flex; min-width: 0; min-height: 280px; flex-direction: column; margin: 0; padding: clamp(24px, 4vw, 36px); overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: 0 12px 32px rgba(20, 33, 31, .055); }
+.testimonial-quote-mark { position: absolute; top: 2px; right: 24px; color: color-mix(in srgb, var(--accent) 27%, transparent); font-family: Georgia, serif; font-size: 7rem; line-height: 1; }
+.testimonial-card blockquote { position: relative; margin: 18px 0 30px; color: var(--ink); font-size: clamp(1.05rem, 1.8vw, 1.25rem); line-height: 1.7; letter-spacing: -.012em; }
+.testimonial-card figcaption { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+.testimonial-avatar { display: grid; width: 44px; height: 44px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #e6eee8; color: var(--green); font-size: .76rem; font-weight: 800; }
+.testimonial-attribution { display: grid; gap: 3px; min-width: 0; }
+.testimonial-attribution strong { color: var(--ink); font-size: .9rem; }
+.testimonial-attribution > span { color: var(--muted-ink); font-size: .76rem; }
+.testimonial-rating { margin-left: auto; color: var(--accent-dark); font-size: .82rem; letter-spacing: .08em; white-space: nowrap; }
+.dark .testimonial-card { border-color: var(--line); background: #111d19; box-shadow: 0 12px 32px rgba(0, 0, 0, .18); }
+.dark .testimonial-avatar { background: #23382e; color: #a3d2b8; }
+
+@media (max-width: 800px) {
+  .case-study-layout { grid-template-columns: 1fr; gap: 44px; }
+  .case-study-sidebar { position: static; grid-row: 1; }
+  .case-study-sidebar .project-visual { min-height: 240px; }
+  .case-study-main { gap: 36px; }
+  .testimonials-grid { gap: 14px; }
+  .testimonial-card { min-height: 310px; }
+}
+
+@media (max-width: 600px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonial-card { min-height: 0; padding: 24px; }
+  .testimonial-card blockquote { margin-top: 14px; }
+  .testimonials-section .section-heading { flex-direction: column; }
+  .case-study-sidebar .project-visual { min-height: 210px; }
+  .case-study-main { gap: 30px; }
+  .case-study-actions { display: grid; grid-template-columns: 1fr; }
+  .case-study-actions .button { width: 100%; }
+  .case-study-contact { align-items: stretch; }
+  .case-study-contact .button { width: 100%; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .theme-toggle { transition: none; }
   .theme-toggle:hover { transform: none; }

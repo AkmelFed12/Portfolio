@@ -34,5 +34,5 @@ export default async function LocaleLayout({ children, params }: Readonly<{ chil
   const { locale: value } = await params;
   if (!isLocale(value)) notFound();
   const locale = value as Locale;
-  return <><LocaleNav locale={locale} t={dictionary[locale]} /><main>{children}</main><LocaleFooter locale={locale} t={dictionary[locale]} /></>;
+  return <><a className="skip-link" href="#main-content">{locale === 'fr' ? 'Aller au contenu' : 'Skip to content'}</a><LocaleNav locale={locale} t={dictionary[locale]} /><main id="main-content" tabIndex={-1}>{children}</main><LocaleFooter locale={locale} t={dictionary[locale]} /></>;
 }
