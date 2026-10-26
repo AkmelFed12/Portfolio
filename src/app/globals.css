@@ -286,8 +286,9 @@ body::before {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
 
-  /* Portfolio rebuild */
+/* Portfolio rebuild */
   :root {
     --ink: #14211f;
     --muted-ink: #61706d;
@@ -424,8 +425,6 @@ body::before {
     .contact-banner { padding: 30px 24px; }
     .footer-bottom { flex-direction: column; }
   }
-}
-
 .skill-level-bar {
   width: var(--skill-level, 0%);
 }

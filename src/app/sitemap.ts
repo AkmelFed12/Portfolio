@@ -1,13 +1,14 @@
 import type { MetadataRoute } from 'next';
-import { projects, site, locales } from '@/content/portfolio';
+import { getSiteUrl, localizedAlternates, projects, locales } from '@/content/portfolio';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || site.siteUrl;
+const siteUrl = getSiteUrl();
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUpdatedAt = new Date('2026-10-14T00:00:00.000Z');
+  const siteUpdatedAt = new Date();
   const staticRoutes = locales.flatMap((locale) =>
     ['', '/projects', '/about', '/contact'].map((path) => ({
       url: `${siteUrl}/${locale}${path}`,
+      alternates: { languages: localizedAlternates(locale, path).languages },
       lastModified: siteUpdatedAt,
       changeFrequency: path === '' ? 'weekly' as const : 'monthly' as const,
       priority: path === '' ? 1 : 0.8,
@@ -16,6 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projectRoutes = locales.flatMap((locale) =>
     projects.map((project) => ({
       url: `${siteUrl}/${locale}/projects/${project.slug}`,
+      alternates: { languages: localizedAlternates(locale, `/projects/${project.slug}`).languages },
       lastModified: siteUpdatedAt,
       changeFrequency: 'monthly' as const,
       priority: 0.75,

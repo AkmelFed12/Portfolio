@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import { headers } from 'next/headers';
 import { dictionary } from '@/content/dictionary';
 import { localizedPath, type Locale } from '@/content/portfolio';
 
-export default async function LocalizedNotFound({ params }: { params: Promise<{ locale: Locale }> }) {
-  const { locale } = await params;
+export default async function LocalizedNotFound() {
+  const locale: Locale = (await headers()).get('x-portfolio-locale') === 'fr' ? 'fr' : 'en';
   const t = dictionary[locale];
 
   return (

@@ -3,8 +3,9 @@ import { headers } from 'next/headers';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { getSiteUrl } from '@/content/portfolio';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const siteUrl = getSiteUrl();
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' });
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' });
 
@@ -16,14 +17,14 @@ export const metadata: Metadata = {
   },
   applicationName: 'Ladji Moussa Portfolio',
   description:
-    'Etudiant en informatique et developpeur full-stack, je construis des applications web utiles et concretes.',
+    'Computer science student and full-stack learner building useful, practical web applications.',
   keywords: [
     'Ladji Moussa OUATTARA',
-    'Developpeur full-stack',
+    'Full-stack learner',
     'Portfolio Next.js',
-    'Developpeur React',
-    'Developpeur web Abidjan',
-    'Etudiant en informatique',
+    'Web development',
+    'React development',
+    'Computer science student',
     'LMO Web Services',
   ],
   authors: [{ name: 'Ladji Moussa OUATTARA' }],
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ladji Moussa OUATTARA | Portfolio',
     description:
-      'Etudiant en informatique et developpeur full-stack, je construis des applications web utiles.',
+      'Computer science student and full-stack learner building useful web applications.',
     url: siteUrl,
     siteName: 'Ladji Portfolio',
     images: [
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ladji Moussa OUATTARA | Portfolio',
     description:
-      'Etudiant en informatique et developpeur full-stack, je construis des applications web utiles.',
+      'Computer science student and full-stack learner building useful web applications.',
     images: ['/og-portfolio.svg'],
   },
 };
@@ -69,6 +70,9 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = (await headers()).get('x-portfolio-locale') === 'fr' ? 'fr' : 'en';
+  const schemaDescription = locale === 'fr'
+    ? 'Étudiant en informatique et apprenant full-stack, je construis des applications web utiles et concrètes.'
+    : 'Computer science student and full-stack learner building useful, practical web applications.';
   return (
     <html
       lang={locale}
@@ -107,17 +111,16 @@ export default async function RootLayout({
               '@type': 'Person',
               name: 'Ladji Moussa OUATTARA',
               url: siteUrl,
-              jobTitle: 'Etudiant en informatique | Developpeur Full-Stack',
-              description:
-                'Etudiant en informatique et developpeur full-stack qui construit des applications web utiles.',
+              jobTitle: locale === 'fr' ? 'Étudiant en informatique · Apprenant full-stack' : 'Computer science student · Full-stack learner',
+              description: schemaDescription,
               image: `${siteUrl}/og-portfolio.svg`,
               sameAs: [
                 'https://www.linkedin.com/in/ladji-moussa-ouattara-8b5778298',
               ],
               contactPoint: {
                 '@type': 'ContactPoint',
-                contactType: 'Customer Support',
-                url: `${siteUrl}/contact`,
+                contactType: 'General contact',
+                url: `${siteUrl}/${locale}/contact`,
               },
             }),
           }}
@@ -130,9 +133,8 @@ export default async function RootLayout({
               '@type': 'WebSite',
               url: siteUrl,
               name: 'Ladji Moussa Portfolio',
-              description:
-                'Etudiant en informatique et developpeur full-stack qui construit des applications web utiles.',
-              inLanguage: 'fr-FR',
+              description: schemaDescription,
+              inLanguage: locale === 'fr' ? 'fr-FR' : 'en',
             }),
           }}
         />

@@ -13,6 +13,10 @@ export const site = {
   siteUrl: 'https://lmoportfolio.vercel.app',
 };
 
+export function getSiteUrl() {
+  return process.env.NEXT_PUBLIC_SITE_URL || site.siteUrl;
+}
+
 export type LocalizedProject = SourceProject & {
   copy: {
     en: { description: string; features: string[] };
@@ -21,24 +25,34 @@ export type LocalizedProject = SourceProject & {
 };
 
 const projectCopy: Record<string, LocalizedProject['copy']> = {
+  'asaa-officiel': {
+    en: {
+      description: 'The official website of Association des Serviteurs d’Allah Azawajal, featuring information about its 2026 Islamic Quiz.',
+      features: ['Association information and announcements', 'Quiz registration and waiting-list sections', 'Public documents, events and donation information'],
+    },
+    fr: {
+      description: "Site officiel de l’Association des Serviteurs d’Allah Azawajal, avec des informations sur son Quiz Islamique 2026.",
+      features: ['Informations et communiqués de l’association', 'Rubriques d’inscription et de liste d’attente au quiz', 'Documents publics, événements et informations sur les dons'],
+    },
+  },
   'lmo-quran-learning': {
     en: {
       description: 'An educational platform for learning Arabic, reading the Quran with tajwid, listening to recitations, memorising and revising methodically.',
       features: ['Arabic and Quran learning journeys', 'Tajwid, recitation and revision support', 'Responsible learning guidance'],
     },
     fr: {
-      description: "Plateforme educative pour apprendre l'arabe, lire le Coran avec le tajwid, ecouter des recitations, memoriser et reviser avec methode.",
+      description: "Plateforme éducative pour apprendre l’arabe, lire le Coran avec le tajwid, écouter des récitations, mémoriser et réviser avec méthode.",
       features: ['Parcours d’apprentissage de l’arabe et du Coran', 'Tajwid, récitation et révision', 'Repères pour un apprentissage responsable'],
     },
   },
   'lmo-digital-academy': {
     en: {
-      description: 'A French-language, mobile-first learning platform for practical digital skills, with courses, exercises, premium access and certificates.',
-      features: ['Written lessons and guided exercises', 'Wave and Djamo payment flows', 'Student dashboard, certificates and admin validation'],
+      description: 'An e-learning platform for digital skills, with courses, payments, a student area, certificates and administrative validation.',
+      features: ['Digital-skills courses', 'Student area and certificates', 'Administrative validation'],
     },
     fr: {
-      description: 'Plateforme d’apprentissage francophone et mobile-first pour les competences numeriques, avec cours, exercices, acces Premium et certificats.',
-      features: ['Lecons ecrites et exercices guides', 'Paiements Wave et Djamo', 'Dashboard etudiant, certificats et validation admin'],
+      description: 'Plateforme d’apprentissage des compétences numériques, avec des cours, des paiements, un espace étudiant, des certificats et une validation administrative.',
+      features: ['Cours de compétences numériques', 'Espace étudiant et certificats', 'Validation administrative'],
     },
   },
   'lmo-services-canada': {
@@ -47,8 +61,8 @@ const projectCopy: Record<string, LocalizedProject['copy']> = {
       features: ['Public information experience', 'Secure client area', 'File, contract and payment management'],
     },
     fr: {
-      description: "Plateforme complete pour une agence d'admission : site public, espace client securise et tableau de bord pour les dossiers, contrats et paiements.",
-      features: ['Experience d’information publique', 'Espace client securise', 'Gestion des dossiers, contrats et paiements'],
+      description: "Plateforme complète pour une agence d’admission : site public, espace client sécurisé et tableau de bord pour les dossiers, contrats et paiements.",
+      features: ['Site d’information publique', 'Espace client sécurisé', 'Gestion des dossiers, contrats et paiements'],
     },
   },
   'lmo-shop-services': {
@@ -57,8 +71,8 @@ const projectCopy: Record<string, LocalizedProject['copy']> = {
       features: ['Authentication and admin dashboard', 'Order management', 'Analytics and production deployment'],
     },
     fr: {
-      description: "Plateforme e-commerce full-stack avec authentification, tableau de bord admin, gestion des commandes, analytics et deploiement sur Vercel.",
-      features: ['Authentification et dashboard admin', 'Gestion des commandes', 'Analytics et deploiement production'],
+      description: "Plateforme e-commerce full-stack avec authentification, tableau de bord administrateur, gestion des commandes, statistiques et déploiement sur Vercel.",
+      features: ['Authentification et tableau de bord administrateur', 'Gestion des commandes', 'Statistiques et déploiement en production'],
     },
   },
   afropulse: {
@@ -67,8 +81,8 @@ const projectCopy: Record<string, LocalizedProject['copy']> = {
       features: ['Professional profiles and missions', 'Messaging and authentication', 'Real-time presence and PWA delivery'],
     },
     fr: {
-      description: 'Reseau professionnel pour les talents africains et la diaspora, avec profils, missions, messagerie, authentification et presence en temps reel.',
-      features: ['Profils professionnels et missions', 'Messagerie et authentification', 'Presence temps reel et PWA'],
+      description: 'Réseau professionnel pour les talents africains et la diaspora, avec profils, missions, messagerie, authentification et présence en temps réel.',
+      features: ['Profils professionnels et missions', 'Messagerie et authentification', 'Présence en temps réel et PWA'],
     },
   },
 };
@@ -87,6 +101,18 @@ export function isLocale(value: string): value is Locale {
 
 export function localizedPath(locale: Locale, path = '') {
   return `/${locale}${path}`;
+}
+
+export function localizedAlternates(locale: Locale, path = '') {
+  const baseUrl = getSiteUrl();
+  const targetUrl = (targetLocale: Locale) => `${baseUrl}/${targetLocale}${path}`;
+  return {
+    canonical: targetUrl(locale),
+    languages: {
+      en: targetUrl('en'),
+      fr: targetUrl('fr'),
+    },
+  };
 }
 
 export function getProject(slug: string) {

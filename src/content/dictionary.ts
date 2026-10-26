@@ -2,14 +2,14 @@ import type { Locale } from './portfolio';
 
 export const dictionary = {
   en: {
-    nav: { home: 'Home', work: 'Selected work', about: 'About', contact: 'Contact', cv: 'Download CV', menu: 'Open menu', close: 'Close menu' },
+    nav: { home: 'Home', work: 'Selected work', about: 'About', contact: 'Contact', cv: 'Download CV', menu: 'Open menu', close: 'Close menu', primary: 'Primary navigation', switchLanguage: 'Switch language', switchTo: 'Switch to' },
     home: {
       eyebrow: 'Computer science student · Full-stack learner',
       title: 'Useful digital products, built with care.',
       intro: 'I build practical web experiences that turn real needs into clear, reliable products. My current focus is full-stack development, continuous learning and thoughtful execution.',
       primary: 'Explore selected work',
       secondary: 'Start a conversation',
-      availability: 'Open to internship and meaningful collaborations',
+      availability: 'Interested in practical projects and thoughtful collaboration',
       selected: 'Selected work',
       selectedIntro: 'A few practical products built to learn, solve and improve.',
       allWork: 'View all projects',
@@ -23,8 +23,10 @@ export const dictionary = {
       contactTitle: 'Have a real problem to work through?',
       contactText: 'Let’s discuss the context, constraints and the next useful step.',
       contactCta: 'Get in touch',
+      note: 'From idea to usable product.',
+      conversation: 'Open conversation',
     },
-    projects: { eyebrow: 'Portfolio', title: 'Selected projects', intro: 'Real project work across learning, commerce, community and service experiences.', visit: 'Visit live project', repository: 'Repository', unavailable: 'Live link unavailable' },
+    projects: { eyebrow: 'Portfolio', title: 'Selected projects', intro: 'Real project work across learning, commerce, community and service experiences.', visit: 'Visit live project', repository: 'Repository', unavailable: 'Live link unavailable', details: 'Project details' },
     about: {
       eyebrow: 'About',
       title: 'Learning through useful work.',
@@ -34,7 +36,7 @@ export const dictionary = {
       education: 'Education',
       educationItems: [
         ['University of the People', 'Bachelor of Science in Computer Science · Expected 2028'],
-        ['International University of Grand-Bassam', 'Started computer science studies before changing academic direction.'],
+        ['International University of Grand-Bassam', 'Previous computer science studies.'],
       ],
       principles: 'Working principles',
       principlesItems: [['Build', 'Turn an idea into a usable web experience.'], ['Learn', 'Use concrete projects and feedback to progress.'], ['Share', 'Create tools that can be useful to people and communities.']],
@@ -51,14 +53,14 @@ export const dictionary = {
     project: { back: 'Back to projects', overview: 'Overview', features: 'Verified highlights', stack: 'Technology noted in the source portfolio' },
   },
   fr: {
-    nav: { home: 'Accueil', work: 'Projets', about: 'À propos', contact: 'Contact', cv: 'Télécharger le CV', menu: 'Ouvrir le menu', close: 'Fermer le menu' },
+    nav: { home: 'Accueil', work: 'Projets', about: 'À propos', contact: 'Contact', cv: 'Télécharger le CV', menu: 'Ouvrir le menu', close: 'Fermer le menu', primary: 'Navigation principale', switchLanguage: 'Changer de langue', switchTo: 'Passer en' },
     home: {
       eyebrow: 'Étudiant en informatique · Apprenant full-stack',
       title: 'Des produits numériques utiles, construits avec soin.',
       intro: 'Je conçois des expériences web pratiques qui transforment des besoins réels en produits clairs et fiables. Je me concentre aujourd’hui sur le développement full-stack, l’apprentissage continu et une exécution attentive.',
       primary: 'Découvrir mes projets',
       secondary: 'Prendre contact',
-      availability: 'Ouvert aux stages et aux collaborations pertinentes',
+      availability: 'Intéressé par les projets concrets et les collaborations pertinentes',
       selected: 'Projets sélectionnés',
       selectedIntro: 'Quelques produits concrets créés pour apprendre, résoudre et progresser.',
       allWork: 'Voir tous les projets',
@@ -72,8 +74,10 @@ export const dictionary = {
       contactTitle: 'Un problème concret à résoudre ?',
       contactText: 'Échangeons sur le contexte, les contraintes et la prochaine étape utile.',
       contactCta: 'Me contacter',
+      note: 'De l’idée au produit utilisable.',
+      conversation: 'Échangeons',
     },
-    projects: { eyebrow: 'Portfolio', title: 'Projets sélectionnés', intro: 'Des projets réels autour de l’apprentissage, du commerce, de la communauté et des services.', visit: 'Voir le projet', repository: 'Dépôt', unavailable: 'Lien live indisponible' },
+    projects: { eyebrow: 'Portfolio', title: 'Projets sélectionnés', intro: 'Des projets réels autour de l’apprentissage, du commerce, de la communauté et des services.', visit: 'Voir le projet', repository: 'Dépôt', unavailable: 'Lien indisponible', details: 'Détails du projet' },
     about: {
       eyebrow: 'À propos',
       title: 'Apprendre en construisant des outils utiles.',
@@ -83,7 +87,7 @@ export const dictionary = {
       education: 'Formation',
       educationItems: [
         ['University of the People', 'Bachelor of Science in Computer Science · Diplôme prévu en 2028'],
-        ['International University of Grand-Bassam', 'Début d’études en informatique avant une nouvelle orientation académique.'],
+        ['International University of Grand-Bassam', 'Études antérieures en informatique.'],
       ],
       principles: 'Principes de travail',
       principlesItems: [['Construire', 'Transformer une idée en expérience web utilisable.'], ['Apprendre', 'Progresser grâce à des projets concrets et aux retours.'], ['Partager', 'Créer des outils utiles aux personnes et aux communautés.']],

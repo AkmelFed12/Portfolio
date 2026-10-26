@@ -1,24 +1,23 @@
 import Link from 'next/link';
+import { headers } from 'next/headers';
+import { dictionary } from '@/content/dictionary';
+import { localizedPath, type Locale } from '@/content/portfolio';
 
-export default function NotFound() {
+export default async function NotFound() {
+  const locale: Locale = (await headers()).get('x-portfolio-locale') === 'fr' ? 'fr' : 'en';
+  const t = dictionary[locale];
+
   return (
-    <div className="min-h-[70vh] flex items-center justify-center px-4">
-      <div className="max-w-xl text-center">
-        <p className="text-sm font-semibold text-cyan-600 dark:text-cyan-400 mb-2">404</p>
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">Page Not Found</h1>
-        <p className="text-gray-600 dark:text-slate-300 mb-8">
-          The page you are looking for does not exist or may have been moved.
-        </p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/" className="px-5 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition">
-            Retour a l accueil
-          </Link>
-          <Link href="/projects" className="px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
-            Voir les projets
-          </Link>
+    <div className="not-found-page">
+      <div className="shell not-found-content">
+        <p className="eyebrow">404</p>
+        <h1>{t.notFound.title}</h1>
+        <p>{t.notFound.text}</p>
+        <div className="hero-actions">
+          <Link className="button" href={localizedPath(locale)}>{t.notFound.home}</Link>
+          <Link className="button button-quiet" href={localizedPath(locale, '/projects')}>{t.notFound.projects}</Link>
         </div>
       </div>
     </div>
   );
 }
-

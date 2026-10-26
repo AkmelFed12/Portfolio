@@ -14,6 +14,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 0,
+    slug: 'asaa-officiel',
+    title: 'ASAA Officiel',
+    description:
+      "Site officiel de l'Association des Serviteurs d'Allah Azawajal, présentant notamment le Quiz Islamique 2026.",
+    tech: [],
+    link: 'https://asaaofficiel.vercel.app',
+  },
+  {
     id: 1,
     slug: 'lmo-quran-learning',
     title: 'LMO Quran Learning',
@@ -22,7 +31,6 @@ export const projects: Project[] = [
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     category: 'fullstack',
     link: 'https://lmo-quran-learning.vercel.app',
-    github: 'https://vercel.com/ladji-moussa-ouattaras-projects/lmo-quran-learning',
     image: '/images/lmo-quran-learning-desktop.jpg',
     mobileImage: '/images/lmo-quran-learning-mobile.jpg',
     promoEmbed: '/videos/lmo-quran-learning-promo.html',
@@ -36,7 +44,6 @@ export const projects: Project[] = [
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Vercel'],
     category: 'fullstack',
     link: 'https://lmo-academy.vercel.app',
-    github: 'https://vercel.com/ladji-moussa-ouattaras-projects/lmo-academy',
     image: '/images/lmo-digital-academy-desktop.svg',
     mobileImage: '/images/lmo-digital-academy-mobile.svg',
   },
@@ -49,7 +56,6 @@ export const projects: Project[] = [
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Vercel'],
     category: 'fullstack',
     link: 'https://lmoservices-canada.vercel.app',
-    github: 'https://vercel.com/ladji-moussa-ouattaras-projects/lmoservices-canada',
     image: '/images/lmo-services-canada-desktop.png',
     mobileImage: '/images/lmo-services-canada-mobile.png',
   },
