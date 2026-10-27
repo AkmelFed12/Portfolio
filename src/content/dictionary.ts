@@ -2,7 +2,7 @@ import type { Locale } from './portfolio';
 
 export const dictionary = {
   en: {
-    nav: { home: 'Home', work: 'My projects', about: 'About', resume: 'CV', contact: 'Contact', cv: 'Download CV', menu: 'Open menu', close: 'Close menu', primary: 'Primary navigation', switchLanguage: 'Switch language', switchTo: 'Switch to' },
+    nav: { home: 'Home', work: 'My projects', services: 'Services', about: 'About', resume: 'CV', contact: 'Contact', cv: 'Download CV', menu: 'Open menu', close: 'Close menu', primary: 'Primary navigation', switchLanguage: 'Switch language', switchTo: 'Switch to' },
     home: {
       eyebrow: 'Web developer · Founder of LMO Services',
       title: 'I’m Ladji, founder of LMO Services.',
@@ -53,10 +53,11 @@ export const dictionary = {
     },
     footer: { built: 'Created by Ladji Moussa OUATTARA · LMO Services.', rights: 'All rights reserved.' },
     notFound: { title: 'Page not found', text: 'This page does not exist in this language.', home: 'Back to home', projects: 'Browse projects' },
-    project: { back: 'Back to my projects', overview: 'About this project', objective: 'The idea', scope: 'What I worked on', stack: 'Tools and technologies', discuss: 'Working on something similar?', contactCta: 'Let’s talk' },
+    project: { back: 'Back to my projects', overview: 'Project case study', objective: 'The brief', scope: 'Key features', stack: 'Tools and technologies', discuss: 'Working on something similar?', contactCta: 'Let’s talk' },
+    services: { eyebrow: 'LMO Services', title: 'Web services shaped around your needs.', intro: 'From a first landing page to a complete web platform, I help turn a clear need into a useful, responsive experience.', section: 'What I can help with', items: [['Business websites', 'Responsive websites for businesses, associations and personal brands, with clear information and straightforward navigation.'], ['Web applications', 'Custom interfaces and connected web tools, from member spaces to dashboards and online workflows.'], ['Landing pages', 'Focused pages that explain an offer, guide visitors and make the next step easy to find.'], ['Improvements and support', 'Fixes, interface refinements and performance improvements for an existing website or application.']], processTitle: 'A clear way to get started', process: [['01', 'Talk through the need', 'We clarify the audience, priorities and what the site should help people do.'], ['02', 'Shape the solution', 'I outline the pages and features, then agree on the scope before development.'], ['03', 'Build and refine', 'The interface is developed for mobile and desktop, then reviewed together.']], ctaTitle: 'Have a project in mind?', ctaText: 'Share a little context and we can work out a sensible next step.', cta: 'Discuss a project', contact: 'Contact LMO Services' },
   },
   fr: {
-    nav: { home: 'Accueil', work: 'Mes projets', about: 'À propos', resume: 'CV', contact: 'Contact', cv: 'Télécharger le CV', menu: 'Ouvrir le menu', close: 'Fermer le menu', primary: 'Navigation principale', switchLanguage: 'Changer de langue', switchTo: 'Passer en' },
+    nav: { home: 'Accueil', work: 'Mes projets', services: 'Services', about: 'À propos', resume: 'CV', contact: 'Contact', cv: 'Télécharger le CV', menu: 'Ouvrir le menu', close: 'Fermer le menu', primary: 'Navigation principale', switchLanguage: 'Changer de langue', switchTo: 'Passer en' },
     home: {
       eyebrow: 'Développeur web · Fondateur de LMO Services',
       title: 'Moi, c’est Ladji, fondateur de LMO Services.',
@@ -107,7 +108,8 @@ export const dictionary = {
     },
     footer: { built: 'Créé par Ladji Moussa OUATTARA · LMO Services.', rights: 'Tous droits réservés.' },
     notFound: { title: 'Page introuvable', text: 'Cette page n’existe pas dans cette langue.', home: 'Retour à l’accueil', projects: 'Voir les projets' },
-    project: { back: 'Retour à mes projets', overview: 'À propos du projet', objective: 'L’idée de départ', scope: 'Ce que j’ai réalisé', stack: 'Outils et technologies', discuss: 'Tu travailles sur un projet similaire ?', contactCta: 'Parlons-en' },
+    project: { back: 'Retour à mes projets', overview: 'Étude de projet', objective: 'Le besoin', scope: 'Fonctionnalités clés', stack: 'Outils et technologies', discuss: 'Tu travailles sur un projet similaire ?', contactCta: 'Parlons-en' },
+    services: { eyebrow: 'LMO Services', title: 'Des services web pensés selon ton besoin.', intro: 'D’une première page de présentation à une plateforme web complète, je t’aide à transformer un besoin clair en une expérience utile et adaptée au mobile.', section: 'Comment je peux t’aider', items: [['Sites pour les professionnels', 'Des sites responsives pour les entreprises, associations et marques personnelles, avec une information claire et une navigation simple.'], ['Applications web', 'Des interfaces et outils web adaptés au besoin : espaces membres, tableaux de bord et parcours en ligne.'], ['Pages de présentation', 'Des pages ciblées qui expliquent une offre, guident les visiteurs et rendent la prochaine étape facile à trouver.'], ['Améliorations et suivi', 'Corrections, ajustements d’interface et améliorations de performance sur un site ou une application existante.']], processTitle: 'Une façon simple de démarrer', process: [['01', 'Parler du besoin', 'On précise le public, les priorités et ce que le site doit permettre de faire.'], ['02', 'Définir la solution', 'Je propose les pages et fonctionnalités, puis on valide ensemble le périmètre avant le développement.'], ['03', 'Construire et ajuster', 'L’interface est réalisée pour mobile et ordinateur, puis revue ensemble.']], ctaTitle: 'Tu as un projet en tête ?', ctaText: 'Présente-moi l’idée en quelques mots et nous verrons quelle suite lui donner.', cta: 'Discuter du projet', contact: 'Contacter LMO Services' },
   },
 } satisfies Record<Locale, unknown>;
 

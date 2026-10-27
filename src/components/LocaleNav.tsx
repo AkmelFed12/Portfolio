@@ -14,13 +14,14 @@ export default function LocaleNav({ locale, t }: { locale: Locale; t: Dictionary
   const items = [
     [localizedPath(locale), t.nav.home],
     [localizedPath(locale, '/projects'), t.nav.work],
+    [localizedPath(locale, '/services'), t.nav.services],
     [localizedPath(locale, '/about'), t.nav.about],
     [localizedPath(locale, '/cv'), t.nav.resume],
     [localizedPath(locale, '/contact'), t.nav.contact],
   ] as const;
   const switchLocale = locale === 'en' ? 'fr' : 'en';
   const currentPath = pathname.replace(/^\/(en|fr)/, '');
-  const knownPaths = new Set(['/','/projects','/about','/cv','/contact']);
+  const knownPaths = new Set(['/','/projects','/services','/about','/cv','/contact']);
   const isKnownProject = projects.some((project) => currentPath === `/projects/${project.slug}`);
   const equivalent = knownPaths.has(currentPath) || isKnownProject
     ? `/${switchLocale}${currentPath === '/' ? '' : currentPath}`

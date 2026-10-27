@@ -7,7 +7,7 @@ export default function proxy(request: NextRequest) {
     '/contact': '/en/contact',
     '/projects': '/en/projects',
     '/resume': '/en/cv',
-    '/services': '/en',
+    '/services': '/en/services',
     '/blog': '/en',
   };
   if (legacyPaths[pathname]) {

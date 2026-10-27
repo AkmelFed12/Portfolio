@@ -19,7 +19,13 @@ export default async function LocalizedProjects({ params }: { params: Promise<{ 
   const t = dictionary[locale];
   return <div>
     <section className="page-intro"><div className="shell"><p className="eyebrow">{t.projects.eyebrow}</p><h1>{t.projects.title}</h1><p>{t.projects.intro}</p></div></section>
-    <section className="section shell"><div className="project-list">{projects.map((project, index) => <article className="project-row" key={project.id}>
+    <section className="section shell">
+      <div className="proof-strip" aria-label={locale === 'fr' ? 'Liens de preuve du portfolio' : 'Portfolio project links'}>
+        <div><strong>{projects.filter((project) => project.link).length}</strong><span>{locale === 'fr' ? 'démos en ligne' : 'live demos'}</span></div>
+        <div><strong>{projects.filter((project) => project.github).length}</strong><span>{locale === 'fr' ? 'dépôts publics' : 'public repositories'}</span></div>
+        <p>{locale === 'fr' ? 'Chaque projet indique où consulter le site et, lorsque disponible, son code source.' : 'Each project links to its live site and, where available, its source code.'}</p>
+      </div>
+      <div className="project-list">{projects.map((project, index) => <article className="project-row" key={project.id}>
       <ProjectVisual src={project.image} mobileSrc={project.mobileImage} alt={`${project.title} preview`} title={project.title} caption={t.home.projectCoverLabel} sizes="(max-width: 700px) 100vw, 44vw" />
       <div className="project-row-body">
         <div className="project-row-top"><p className="project-number">{String(index + 1).padStart(2, '0')}</p><h2>{project.title}</h2></div>

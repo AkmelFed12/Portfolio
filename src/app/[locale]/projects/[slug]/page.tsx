@@ -42,6 +42,11 @@ export default async function ProjectDetail({ params }: { params: Promise<{ loca
           <p className="eyebrow">{t.project.overview}</p>
           <h1>{project.title}</h1>
           <p>{project.copy[locale].description}</p>
+          {(project.link || project.github) && <div className="case-study-proof" aria-label={locale === 'fr' ? 'Liens du projet' : 'Project links'}>
+            <span className="case-study-proof-label">{locale === 'fr' ? 'À consulter' : 'Explore'}</span>
+            {project.link && <a className="button" href={project.link} target="_blank" rel="noreferrer">{t.projects.visit}<span aria-hidden="true"> ↗</span></a>}
+            {project.github && <a className="button button-quiet" href={project.github} target="_blank" rel="noreferrer">{t.projects.repository}<span aria-hidden="true"> ↗</span></a>}
+          </div>}
         </div>
       </section>
 
@@ -70,10 +75,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ loca
             </section>
           )}
 
-          <div className="inline-actions case-study-actions">
-            {project.link && <a className="button" href={project.link} target="_blank" rel="noreferrer">{t.projects.visit} ↗</a>}
-            {project.github && <a className="button button-quiet" href={project.github} target="_blank" rel="noreferrer">{t.projects.repository} ↗</a>}
-          </div>
         </div>
 
         <aside className="case-study-sidebar">
