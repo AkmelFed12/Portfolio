@@ -15,11 +15,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const pageTitle = locale === 'en'
     ? 'Ladji Moussa OUATTARA | Founder of LMO Services'
     : 'Ladji Moussa OUATTARA | Fondateur de LMO Services';
+  const defaultTitle = locale === 'en' ? 'Founder of LMO Services' : 'Fondateur de LMO Services';
   const description = locale === 'en'
     ? 'Ladji Moussa OUATTARA is the founder of LMO Services and a web developer building websites and web applications for businesses, associations and growing projects.'
     : 'Ladji Moussa OUATTARA, fondateur de LMO Services et développeur web. Création de sites et d’applications web pour les entreprises, associations et porteurs de projets.';
   return {
-    title: { default: pageTitle, template: `%s | Ladji Moussa OUATTARA` },
+    title: { default: defaultTitle, template: `%s | Ladji Moussa OUATTARA` },
     description,
     keywords: locale === 'en'
       ? ['Ladji Moussa OUATTARA', 'Founder of LMO Services', 'Web developer', 'Website development', 'Web applications']
