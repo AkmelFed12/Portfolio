@@ -6,7 +6,7 @@ const siteUrl = getSiteUrl();
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUpdatedAt = new Date();
   const staticRoutes = locales.flatMap((locale) =>
-    ['', '/projects', '/about', '/contact'].map((path) => ({
+    ['', '/projects', '/about', '/cv', '/contact'].map((path) => ({
       url: `${siteUrl}/${locale}${path}`,
       alternates: { languages: localizedAlternates(locale, path).languages },
       lastModified: siteUpdatedAt,

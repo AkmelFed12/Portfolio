@@ -2,7 +2,7 @@ import type { Locale } from './portfolio';
 
 export const dictionary = {
   en: {
-    nav: { home: 'Home', work: 'Selected work', about: 'About', contact: 'Contact', cv: 'Download CV', menu: 'Open menu', close: 'Close menu', primary: 'Primary navigation', switchLanguage: 'Switch language', switchTo: 'Switch to' },
+    nav: { home: 'Home', work: 'Selected work', about: 'About', resume: 'CV', contact: 'Contact', cv: 'Download CV', menu: 'Open menu', close: 'Close menu', primary: 'Primary navigation', switchLanguage: 'Switch language', switchTo: 'Switch to' },
     home: {
       eyebrow: 'Computer science student · Full-stack product builder',
       title: 'Useful digital products, built with care.',
@@ -56,7 +56,7 @@ export const dictionary = {
     project: { back: 'Back to projects', overview: 'Project overview', objective: 'Product objective', scope: 'Project scope', stack: 'Technology noted in the source portfolio', discuss: 'Have a similar project in mind?', contactCta: 'Let’s discuss it' },
   },
   fr: {
-    nav: { home: 'Accueil', work: 'Projets', about: 'À propos', contact: 'Contact', cv: 'Télécharger le CV', menu: 'Ouvrir le menu', close: 'Fermer le menu', primary: 'Navigation principale', switchLanguage: 'Changer de langue', switchTo: 'Passer en' },
+    nav: { home: 'Accueil', work: 'Projets', about: 'À propos', resume: 'CV', contact: 'Contact', cv: 'Télécharger le CV', menu: 'Ouvrir le menu', close: 'Fermer le menu', primary: 'Navigation principale', switchLanguage: 'Changer de langue', switchTo: 'Passer en' },
     home: {
       eyebrow: 'Étudiant en informatique · Créateur de produits web full-stack',
       title: 'Des produits numériques utiles, construits avec soin.',

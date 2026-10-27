@@ -6,7 +6,7 @@ export default function proxy(request: NextRequest) {
     '/about': '/en/about',
     '/contact': '/en/contact',
     '/projects': '/en/projects',
-    '/resume': '/en/about',
+    '/resume': '/en/cv',
     '/services': '/en',
     '/blog': '/en',
   };
