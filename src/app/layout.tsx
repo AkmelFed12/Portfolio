@@ -12,24 +12,27 @@ const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Ladji Moussa OUATTARA | Portfolio',
+    default: 'Ladji Moussa OUATTARA | Founder of LMO Services',
     template: '%s | Ladji Moussa OUATTARA',
   },
-  applicationName: 'Ladji Moussa Portfolio',
+  applicationName: 'LMO Services',
   description:
-    'Computer science student and full-stack learner building useful, practical web applications.',
+    'Ladji Moussa OUATTARA is the founder of LMO Services and a web developer building websites and web applications.',
   keywords: [
     'Ladji Moussa OUATTARA',
-    'Full-stack learner',
+    'Founder of LMO Services',
+    'Fondateur de LMO Services',
+    'Web developer',
+    'Développeur web',
     'Portfolio Next.js',
     'Web development',
     'React development',
     'Computer science student',
-    'LMO Web Services',
+    'LMO Services',
   ],
   authors: [{ name: 'Ladji Moussa OUATTARA' }],
   creator: 'Ladji Moussa OUATTARA',
-  publisher: 'LMO Web Services',
+  publisher: 'LMO Services',
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
@@ -39,11 +42,11 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Ladji Moussa OUATTARA | Portfolio',
+    title: 'Ladji Moussa OUATTARA | Founder of LMO Services',
     description:
-      'Computer science student and full-stack learner building useful web applications.',
+      'Ladji Moussa OUATTARA is the founder of LMO Services and a web developer building websites and web applications.',
     url: siteUrl,
-    siteName: 'Ladji Portfolio',
+    siteName: 'LMO Services · Ladji Moussa OUATTARA',
     images: [
       {
         url: '/og-portfolio.svg',
@@ -57,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ladji Moussa OUATTARA | Portfolio',
+    title: 'Ladji Moussa OUATTARA | Founder of LMO Services',
     description:
-      'Computer science student and full-stack learner building useful web applications.',
+      'Ladji Moussa OUATTARA is the founder of LMO Services and a web developer building websites and web applications.',
     images: ['/og-portfolio.svg'],
   },
 };
@@ -71,8 +74,8 @@ export default async function RootLayout({
 }>) {
   const locale = (await headers()).get('x-portfolio-locale') === 'fr' ? 'fr' : 'en';
   const schemaDescription = locale === 'fr'
-    ? 'Étudiant en informatique et apprenant full-stack, je construis des applications web utiles et concrètes.'
-    : 'Computer science student and full-stack learner building useful, practical web applications.';
+    ? 'Ladji Moussa OUATTARA est le fondateur de LMO Services et développeur web. Il conçoit des sites et des applications web pour les entreprises, les associations et les porteurs de projets.'
+    : 'Ladji Moussa OUATTARA is the founder of LMO Services and a web developer building websites and web applications for businesses, associations and growing projects.';
   return (
     <html
       lang={locale}
@@ -111,9 +114,13 @@ export default async function RootLayout({
               '@type': 'Person',
               name: 'Ladji Moussa OUATTARA',
               url: siteUrl,
-              jobTitle: locale === 'fr' ? 'Étudiant en informatique · Apprenant full-stack' : 'Computer science student · Full-stack learner',
+              jobTitle: locale === 'fr' ? 'Fondateur de LMO Services · Développeur web' : 'Founder of LMO Services · Web developer',
               description: schemaDescription,
               image: `${siteUrl}/og-portfolio.svg`,
+              worksFor: {
+                '@type': 'Organization',
+                name: 'LMO Services',
+              },
               sameAs: [
                 'https://www.linkedin.com/in/ladji-moussa-ouattara-8b5778298',
               ],
@@ -132,7 +139,7 @@ export default async function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
               url: siteUrl,
-              name: 'Ladji Moussa Portfolio',
+              name: 'LMO Services · Ladji Moussa OUATTARA',
               description: schemaDescription,
               inLanguage: locale === 'fr' ? 'fr-FR' : 'en',
             }),

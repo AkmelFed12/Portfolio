@@ -11,20 +11,25 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: value } = await params;
   if (!isLocale(value)) return {};
   const locale = value as Locale;
-  const t = dictionary[locale];
   const baseUrl = getSiteUrl();
+  const pageTitle = locale === 'en'
+    ? 'Ladji Moussa OUATTARA | Founder of LMO Services'
+    : 'Ladji Moussa OUATTARA | Fondateur de LMO Services';
+  const description = locale === 'en'
+    ? 'Ladji Moussa OUATTARA is the founder of LMO Services and a web developer building websites and web applications for businesses, associations and growing projects.'
+    : 'Ladji Moussa OUATTARA, fondateur de LMO Services et développeur web. Création de sites et d’applications web pour les entreprises, associations et porteurs de projets.';
   return {
-    title: { default: `Ladji Moussa OUATTARA — Portfolio`, template: `%s | Ladji Moussa OUATTARA` },
-    description: t.home.intro,
+    title: { default: pageTitle, template: `%s | Ladji Moussa OUATTARA` },
+    description,
     keywords: locale === 'en'
-      ? ['Ladji Moussa OUATTARA', 'Computer science student', 'Web development', 'Portfolio']
-      : ['Ladji Moussa OUATTARA', 'Étudiant en informatique', 'Développement web', 'Portfolio'],
+      ? ['Ladji Moussa OUATTARA', 'Founder of LMO Services', 'Web developer', 'Website development', 'Web applications']
+      : ['Ladji Moussa OUATTARA', 'Fondateur de LMO Services', 'Développeur web', 'Création de site web', 'Application web'],
     alternates: { canonical: `/${locale}`, languages: { en: '/en', fr: '/fr' } },
-    openGraph: { siteName: 'Ladji Moussa Portfolio', type: 'website', locale: locale === 'en' ? 'en_US' : 'fr_FR', url: `${baseUrl}/${locale}`, images: ['/og-portfolio.svg'] },
+    openGraph: { title: pageTitle, description, siteName: 'LMO Services · Ladji Moussa OUATTARA', type: 'website', locale: locale === 'en' ? 'en_US' : 'fr_FR', url: `${baseUrl}/${locale}`, images: ['/og-portfolio.svg'] },
     twitter: {
       card: 'summary_large_image',
-      title: 'Ladji Moussa OUATTARA — Portfolio',
-      description: t.home.intro,
+      title: pageTitle,
+      description,
       images: ['/og-portfolio.svg'],
     },
   };
