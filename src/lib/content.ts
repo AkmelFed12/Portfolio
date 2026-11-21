@@ -71,7 +71,7 @@ export async function getProjectsPublic(): Promise<Project[]> {
     return projects;
   }
 
-  return rows.map((row) => {
+  const databaseProjects = rows.map((row) => {
     const slug =
       (row as { slug?: string }).slug ||
       row.title
@@ -99,6 +99,12 @@ export async function getProjectsPublic(): Promise<Project[]> {
       promoEmbed: localProject?.promoEmbed,
     };
   });
+
+  const knownSlugs = new Set(databaseProjects.map((project) => project.slug));
+  return [
+    ...databaseProjects,
+    ...projects.filter((project) => !knownSlugs.has(project.slug)),
+  ];
 }
 
 export async function getTestimonialsPublic(): Promise<Testimonial[]> {
