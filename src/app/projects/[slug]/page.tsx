@@ -94,6 +94,22 @@ const detailsBySlug: Record<
       'Exploiter le temps reel pour rendre les interactions plus utiles.',
     ],
   },
+  'nour-elegance': {
+    role: 'Conception produit et developpement front-end',
+    challenge: 'Creer une boutique elegante et simple pour proposer des vetements pudiques, organiser les collections et faciliter la prise de commande.',
+    solution: 'Developpement d une boutique Next.js responsive avec catalogue, recherche, filtres, fiches produit, panier persistant et commande WhatsApp.',
+    impact: [
+      'Navigation claire entre les categories et les creations',
+      'Fiches produit avec galeries, quantites, tailles et couleurs disponibles',
+      'Panier persistant et recapitulatif de commande adapte au mobile',
+      'Transmission des informations client, du paiement et des articles via WhatsApp',
+    ],
+    next: 'Enrichir progressivement le catalogue et mesurer les conversions du parcours boutique.',
+    learnings: [
+      'Concevoir un parcours e-commerce simple sans complexifier inutilement les interactions.',
+      'Relier les besoins de vente au mobile avec une transmission directe et claire.',
+    ],
+  },
 };
 
 export async function generateStaticParams() {
@@ -251,6 +267,16 @@ export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyP
             className="px-5 py-2.5 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition"
           >
             Voir le site
+          </a>
+        )}
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 rounded-lg border border-gray-300 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-800 font-semibold transition"
+          >
+            Code source
           </a>
         )}
       </div>
