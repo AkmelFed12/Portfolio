@@ -3,22 +3,10 @@
 import { useState } from 'react';
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(false);
-  const [mounted] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    
-    // Restore theme from localStorage
-    const savedTheme = localStorage.getItem('theme');
-    const isDarkMode =
-      savedTheme === 'dark' ||
-      (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    }
-    
-    return true;
-  });
+  const [isDark, setIsDark] = useState(() =>
+    typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
+  );
+  const [mounted] = useState(true);
 
   const toggleTheme = () => {
     const newDark = !isDark;
