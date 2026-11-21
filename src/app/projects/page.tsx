@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ProjectsFilterGrid from '@/components/ProjectsFilterGrid';
+import PageHero from '@/components/PageHero';
 import { getProjectsPublic } from '@/lib/content';
 
 export const metadata: Metadata = {
@@ -29,16 +30,9 @@ export default async function Projects() {
 
   return (
     <div>
-      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100">
-            {t.title}
-          </h1>
-          <p className="text-xl text-gray-700 dark:text-slate-200">{t.subtitle}</p>
-        </div>
-      </section>
+      <PageHero eyebrow="Portefeuille 2026" title={t.title} description={t.subtitle} />
 
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <ProjectsFilterGrid projects={projects} lang={lang} />
       </section>
     </div>

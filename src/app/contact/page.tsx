@@ -3,6 +3,7 @@
 import { FormEvent, useState } from 'react';
 import ResumeDownload from '@/components/ResumeDownload';
 import AvailabilityQuickSlots from '@/components/AvailabilityQuickSlots';
+import PageHero from '@/components/PageHero';
 import { trackEvent } from '@/lib/analytics';
 
 type Lang = 'en' | 'fr';
@@ -239,14 +240,12 @@ export default function Contact() {
 
   return (
     <div>
-      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-          <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100 animate-slide-down">{t.heroTitle}</h1>
-          <p className="text-xl text-gray-700 dark:text-slate-200 mb-8">{t.heroSub}</p>
-          <p className="text-sm text-cyan-700 dark:text-cyan-300 mb-8 font-semibold">{t.heroNote}</p>
-          <ResumeDownload />
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Brief projet"
+        title={t.heroTitle}
+        description={`${t.heroSub} ${t.heroNote}`}
+        action={<ResumeDownload />}
+      />
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <AvailabilityQuickSlots lang={lang} />

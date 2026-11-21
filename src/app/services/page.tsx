@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import TrackedWhatsAppButton from '@/components/TrackedWhatsAppButton';
+import PageHero from '@/components/PageHero';
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -134,22 +135,21 @@ export default async function ServicesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd).replace(/</g, '\\u003c') }}
       />
-      <section className="min-h-[40vh] bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 flex items-center justify-center py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100">
-            {t.title}
-          </h1>
-          <p className="text-xl text-gray-700 dark:text-slate-200">
-            {t.subtitle}
-          </p>
-          <p className="text-sm text-cyan-700 dark:text-cyan-300 mt-3 font-semibold">
-            {t.reply}
-          </p>
-          <p className="mt-3 inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold bg-cyan-100 dark:bg-cyan-900/50 text-cyan-800 dark:text-cyan-200">
-            {t.availabilityNote}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Conception & developpement"
+        title={t.title}
+        description={t.subtitle}
+        action={
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-semibold text-cyan-800 dark:border-cyan-900 dark:bg-cyan-950/50 dark:text-cyan-200">
+              {t.reply}
+            </span>
+            <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+              {t.availabilityNote}
+            </span>
+          </div>
+        }
+      />
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <h2 className="text-3xl font-bold mb-8 text-center text-slate-900 dark:text-slate-100">{t.blockTitle}</h2>

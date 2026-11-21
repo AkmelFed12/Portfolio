@@ -126,7 +126,7 @@ export default async function Home() {
     '@type': 'WebSite',
     name: 'Ladji Moussa OUATTARA Portfolio',
     url: siteUrl,
-    inLanguage: 'en',
+    inLanguage: 'fr-FR',
   };
 
   return (
@@ -143,61 +143,56 @@ export default async function Home() {
           __html: JSON.stringify(websiteJsonLd).replace(/</g, '\\u003c'),
         }}
       />
-      <section className="relative overflow-hidden min-h-[60vh] border-b border-slate-200/70 bg-gradient-to-br from-slate-50 via-white to-cyan-50/60 dark:border-slate-800 dark:from-slate-950 dark:via-slate-950 dark:to-cyan-950/30 flex items-center justify-center py-16 sm:py-24">
-        <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl dark:bg-cyan-500/10" />
-        <div className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-slate-300/30 blur-3xl dark:bg-slate-700/20" />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-          <Image
-            src="/images/ladji-moussa-profile.jpeg"
-            alt="Portrait de Ladji Moussa OUATTARA"
-            width={112}
-            height={112}
-            priority
-            className="mx-auto mb-6 h-28 w-28 rounded-full object-cover shadow-xl ring-4 ring-white dark:ring-slate-900"
-          />
-          <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/80 px-4 py-2 text-sm font-semibold text-cyan-800 shadow-sm dark:border-cyan-900 dark:bg-slate-900/80 dark:text-cyan-200">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
-            Disponible pour de nouvelles opportunites
+      <section className="relative overflow-hidden border-b border-slate-200/70 dark:border-slate-800">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,_rgba(34,211,238,0.16),_transparent_24%),radial-gradient(circle_at_12%_82%,_rgba(15,124,140,0.10),_transparent_28%)]" />
+        <div className="relative mx-auto grid min-h-[680px] max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">
+          <div className="animate-fade-in">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/80 px-4 py-2 text-sm font-semibold text-cyan-800 shadow-sm dark:border-cyan-900 dark:bg-slate-900/80 dark:text-cyan-200">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+              Disponible pour de nouvelles opportunites
+            </div>
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-cyan-700 dark:text-cyan-300">
+              Developpement web Full-Stack
+            </p>
+            <h1 className="text-balance text-5xl font-extrabold leading-[0.98] tracking-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
+              Ladji Moussa OUATTARA
+            </h1>
+            <p className="mt-6 max-w-xl text-xl font-semibold leading-8 text-slate-700 dark:text-slate-200 sm:text-2xl">
+              {t.role}
+            </p>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+              {t.summary}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/projects" className="btn-primary focus-ring w-full sm:w-auto">
+                {t.ctaWork}
+              </Link>
+              <Link href="/contact" className="btn-secondary focus-ring w-full sm:w-auto">
+                {t.ctaContact}
+              </Link>
+              <TrackedWhatsAppButton
+                label={t.ctaWhatsApp}
+                source="hero_primary_cta"
+                className="btn-accent focus-ring w-full sm:w-auto"
+              />
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 mb-5 sm:mb-6 animate-slide-down">
-            Ladji Moussa OUATTARA
-          </h1>
-          <p className="text-xl sm:text-2xl font-semibold text-gray-700 dark:text-slate-200 mb-6 animate-slide-up">{t.role}</p>
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-              {t.badge1}
-            </span>
-            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-              {t.badge2}
-            </span>
-            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-              {t.badge3}
-            </span>
-          </div>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up">
-            {t.summary}
-          </p>
-          <p className="mb-6 inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold bg-cyan-100 dark:bg-cyan-900/50 text-cyan-800 dark:text-cyan-200">
-            {t.availabilityNote}
-          </p>
-          <div className="flex gap-3 sm:gap-4 justify-center flex-wrap stagger-item-1">
-            <Link
-              href="/projects"
-              className="btn-primary focus-ring w-full sm:w-auto"
-            >
-              {t.ctaWork}
-            </Link>
-            <Link
-              href="/contact"
-              className="btn-secondary focus-ring w-full sm:w-auto"
-            >
-              {t.ctaContact}
-            </Link>
-            <TrackedWhatsAppButton
-              label={t.ctaWhatsApp}
-              source="hero_primary_cta"
-              className="btn-accent focus-ring w-full sm:w-auto"
-            />
+          <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end">
+            <div className="absolute -inset-5 rounded-[2rem] border border-cyan-200/60 bg-cyan-100/20 blur-sm dark:border-cyan-900/50 dark:bg-cyan-950/10" />
+            <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-3 shadow-[0_30px_80px_-35px_rgba(15,23,42,0.45)] dark:border-slate-800 dark:bg-slate-900">
+              <Image
+                src="/images/ladji-moussa-profile.jpeg"
+                alt="Portrait de Ladji Moussa OUATTARA"
+                width={480}
+                height={600}
+                priority
+                className="aspect-[4/5] w-full rounded-[1.25rem] object-cover"
+              />
+              <div className="absolute bottom-7 left-7 right-7 rounded-xl border border-white/40 bg-slate-950/85 p-4 text-white backdrop-blur">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-cyan-300">Actuellement</p>
+                <p className="mt-1 font-semibold">Disponible pour un stage & des collaborations</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -245,6 +240,7 @@ export default async function Home() {
                 tech={project.tech}
                 caseStudyLink={`/projects/${project.slug}`}
                 link={project.link}
+                github={project.github}
                 image={project.image}
                 mobileImage={project.mobileImage}
               />

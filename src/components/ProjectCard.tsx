@@ -29,9 +29,9 @@ export default function ProjectCard({
   const previewImage = image || mobileImage;
 
   return (
-    <div className="surface-card group h-full overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+    <article className="surface-card group flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:shadow-xl dark:hover:border-cyan-800">
       {previewImage && (
-        <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-slate-800/70">
+        <div className="relative aspect-[16/10] overflow-hidden border-b border-slate-200/70 bg-slate-100 dark:border-slate-800 dark:bg-slate-800/70">
           <Image
             src={previewImage}
             alt={`${title} aperçu`}
@@ -41,7 +41,7 @@ export default function ProjectCard({
           />
         </div>
       )}
-      <div className="flex h-[calc(100%-12rem)] flex-col p-5 sm:p-6">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
           {title}
         </h3>
@@ -111,6 +111,6 @@ export default function ProjectCard({
           />
         </div>
       </div>
-    </div>
+    </article>
   );
 }
